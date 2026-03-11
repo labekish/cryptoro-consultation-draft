@@ -54,12 +54,12 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
   <div class="container">
     <section class="hero" id="top">
       <div class="hero__content">
-        <p class="hero__label">Первая консультация: практический план действий</p>
+        <p class="hero__label" aria-hidden="true"></p>
         <h1 class="hero__title">Безопасная система работы с криптоактивами за 60 минут</h1>
-        <p class="hero__text">Соберём понятную схему входа в крипторынок и снизим операционные риски: от выбора кошелька до безопасных сценариев работы.</p>
+        <p class="hero__text">Итог консультации: персональный план действий и понятная схема защиты активов.</p>
         <div class="hero__actions">
-          <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить экспертный разбор</button>
-          <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Забронировать время</button>
+          <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
+          <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Выбрать формат сессии</button>
         </div>
       </div>
       <div class="hero__media" aria-hidden="true"></div>
