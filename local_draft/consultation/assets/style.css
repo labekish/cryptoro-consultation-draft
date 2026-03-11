@@ -807,7 +807,7 @@ a {
 
 .consult-page .faq-item__title {
   color: #262e3e;
-  font-size: clamp(24px, 1.75vw, 44px);
+  font-size: clamp(22px, 1.55vw, 38px);
   line-height: 1.12;
   letter-spacing: -0.01em;
   font-weight: 500;
@@ -857,14 +857,17 @@ a {
   overflow: hidden;
   padding: 0 20px 0;
   color: #566173;
-  transition: max-height 0.34s ease, opacity 0.24s ease, padding-bottom 0.34s ease, background-color 0.24s ease;
+  pointer-events: none;
+  transition: max-height 0.36s ease, opacity 0.26s ease, padding-bottom 0.36s ease, background-color 0.24s ease;
 }
 
 .consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
+  max-height: 260px;
   opacity: 1;
   padding-bottom: 20px;
   background: #f28b1a;
   color: rgba(255, 255, 255, 0.96);
+  pointer-events: auto;
 }
 
 .consult-page .faq-item__answer p {
@@ -1064,6 +1067,7 @@ a {
   }
 
   .consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
+    max-height: 220px;
     padding-bottom: 14px;
   }
 
@@ -1191,6 +1195,7 @@ a {
   }
 
   .consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
+    max-height: 200px;
     padding-bottom: 12px;
   }
 
