@@ -112,7 +112,7 @@ a {
   --btn-border-hover: transparent;
   --btn-border-active: transparent;
   --btn-hex-bg: #ffffff;
-  --btn-hex-fg: #f4821c;
+  --btn-hex-fg: #272b37;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +163,7 @@ a {
   --btn-border-hover: #ff9d45;
   --btn-border-active: #fd8d29;
   --btn-hex-bg: #ffffff;
-  --btn-hex-fg: #f4821c;
+  --btn-hex-fg: #272b37;
 }
 
 .consult-page .btn--ghost {
@@ -784,28 +784,28 @@ a {
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
+  width: 43px;
   height: 50px;
-  clip-path: polygon(25% 4%, 75% 4%, 96% 50%, 75% 96%, 25% 96%, 4% 50%);
+  border-radius: 4.56618px;
+  clip-path: polygon(50% 0%, 96% 24%, 96% 76%, 50% 100%, 4% 76%, 4% 24%);
   background: var(--btn-hex-bg);
-  color: var(--btn-hex-fg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  line-height: 1;
-  font-weight: 700;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.consult-page .btn--with-hex .btn__hex-icon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--btn-hex-fg);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M4 14L14 4M14 4H7M14 4V11' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M4 14L14 4M14 4H7M14 4V11' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
 }
 
 .consult-page .consult-form .btn--with-hex {
-  padding-right: 112px;
-}
-
-.consult-page .consult-form .btn--with-hex .btn__hex-icon {
-  width: 52px;
-  height: 58px;
-  right: 18px;
-  font-size: 32px;
+  padding-right: 98px;
 }
 
 .consult-page .consult-form__result {
@@ -1269,14 +1269,7 @@ a {
   }
 
   .consult-page .consult-form .btn--with-hex {
-    padding-right: 100px;
-  }
-
-  .consult-page .consult-form .btn--with-hex .btn__hex-icon {
-    width: 58px;
-    height: 52px;
-    right: 16px;
-    font-size: 32px;
+    padding-right: 88px;
   }
 
   .consult-page .audience-card {
@@ -1371,7 +1364,7 @@ a {
     width: 40px;
     height: 46px;
     right: 14px;
-    font-size: 24px;
+    border-radius: 4px;
   }
 }
 
@@ -1522,7 +1515,7 @@ a {
     width: 32px;
     height: 36px;
     right: 10px;
-    font-size: 18px;
+    border-radius: 3px;
   }
 
   .consult-page .faq {
@@ -1598,14 +1591,7 @@ a {
   }
 
   .consult-page .consult-form .btn--with-hex {
-    padding-right: 78px;
-  }
-
-  .consult-page .consult-form .btn--with-hex .btn__hex-icon {
-    width: 42px;
-    height: 38px;
-    right: 10px;
-    font-size: 22px;
+    padding-right: 70px;
   }
 
   .consult-page .consult-form__result {
