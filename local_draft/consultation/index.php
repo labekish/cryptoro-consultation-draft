@@ -62,9 +62,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
           <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Забронировать время</button>
         </div>
       </div>
-      <div class="hero__media" aria-hidden="true">
-        <div class="hero__media-shape"></div>
-      </div>
+      <div class="hero__media" aria-hidden="true"></div>
     </section>
 
     <section class="section section--light" id="benefits">
@@ -106,15 +104,17 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
           <h3>Оставляете заявку</h3>
           <p>Укажите имя и телефон, чтобы менеджер подтвердил детали и формат консультации.</p>
         </article>
-        <article class="step-card">
+        <article class="step-card step-card--with-media">
           <span class="step-card__index">02</span>
           <h3>Бронируете время</h3>
           <p>Выбираем удобное окно для созвона и фиксируем длительность сессии.</p>
+          <div class="step-card__media step-card__media--calendar" aria-hidden="true"></div>
         </article>
-        <article class="step-card">
+        <article class="step-card step-card--with-media">
           <span class="step-card__index">03</span>
           <h3>Подтверждаете слот</h3>
           <p>Получаете напоминание и список вводных, которые лучше подготовить заранее.</p>
+          <div class="step-card__media step-card__media--form" aria-hidden="true"></div>
         </article>
         <article class="step-card">
           <span class="step-card__index">04</span>
