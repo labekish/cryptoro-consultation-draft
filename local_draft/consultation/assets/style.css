@@ -771,8 +771,8 @@ a {
 }
 
 .consult-page .btn--with-hex {
-  position: relative;
-  padding-right: 92px;
+  gap: 12px;
+  padding-right: 24px;
 }
 
 .consult-page .btn--with-hex .btn__label {
@@ -780,14 +780,12 @@ a {
 }
 
 .consult-page .btn--with-hex .btn__hex-icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   width: 43px;
   height: 50px;
-  border-radius: 4.56618px;
-  clip-path: polygon(50% 0%, 96% 24%, 96% 76%, 50% 100%, 4% 76%, 4% 24%);
+  flex: 0 0 43px;
+  border-radius: 8px;
+  clip-path: polygon(50% 2%, 90% 24%, 90% 76%, 50% 98%, 10% 76%, 10% 24%);
   background: var(--btn-hex-bg);
   color: transparent;
   font-size: 0;
@@ -805,7 +803,8 @@ a {
 }
 
 .consult-page .consult-form .btn--with-hex {
-  padding-right: 98px;
+  gap: 10px;
+  padding-right: 24px;
 }
 
 .consult-page .consult-form__result {
@@ -1269,7 +1268,8 @@ a {
   }
 
   .consult-page .consult-form .btn--with-hex {
-    padding-right: 88px;
+    gap: 8px;
+    padding-right: 20px;
   }
 
   .consult-page .audience-card {
@@ -1357,14 +1357,15 @@ a {
   }
 
   .consult-page .btn--with-hex {
-    padding-right: 82px;
+    gap: 10px;
+    padding-right: 20px;
   }
 
   .consult-page .btn--with-hex .btn__hex-icon {
     width: 40px;
     height: 46px;
-    right: 14px;
-    border-radius: 4px;
+    flex-basis: 40px;
+    border-radius: 7px;
   }
 }
 
@@ -1508,14 +1509,15 @@ a {
   }
 
   .consult-page .btn--with-hex {
-    padding-right: 64px;
+    gap: 8px;
+    padding-right: 16px;
   }
 
   .consult-page .btn--with-hex .btn__hex-icon {
     width: 32px;
     height: 36px;
-    right: 10px;
-    border-radius: 3px;
+    flex-basis: 32px;
+    border-radius: 6px;
   }
 
   .consult-page .faq {
@@ -1591,7 +1593,8 @@ a {
   }
 
   .consult-page .consult-form .btn--with-hex {
-    padding-right: 70px;
+    gap: 6px;
+    padding-right: 14px;
   }
 
   .consult-page .consult-form__result {
