@@ -365,10 +365,11 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
 
     <section class="section section--cta" id="cta">
       <h2 class="section__title section__title--white">Есть вопросы перед записью?</h2>
-      <p class="section__lead section__lead--white">Напишите в чат или оставьте заявку, чтобы согласовать формат первой встречи.</p>
+      <p class="section__lead section__lead--white">Напишите или позвоните — разберём вашу ситуацию и подберём формат консультации.</p>
       <div class="cta__actions">
-        <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Оставить заявку</button>
-        <a class="btn btn--ghost-light" href="mailto:info@cryptoro.ru">Написать на почту</a>
+        <a class="btn btn--telegram" href="https://t.me/cryptoro" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+        <a class="btn btn--contact" href="tel:+74951918174">+7 495 191-81-74</a>
+        <a class="btn btn--contact" href="mailto:shop@cryptoro.ru">shop@cryptoro.ru</a>
       </div>
     </section>
   </div>

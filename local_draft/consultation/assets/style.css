@@ -179,7 +179,7 @@ a {
 }
 
 .consult-page .section--cta {
-  background: linear-gradient(125deg, #1b2130 0%, #202a3f 100%);
+  background: linear-gradient(125deg, #232c42 0%, #232a3e 100%);
   color: #ffffff;
 }
 
@@ -995,11 +995,58 @@ a {
   color: #dce3f1;
 }
 
+.consult-page #cta {
+  padding: 34px 42px;
+}
+
+.consult-page #cta .section__title {
+  font-size: clamp(64px, 4.1vw, 98px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+.consult-page #cta .section__lead {
+  margin-top: 16px;
+  font-size: clamp(28px, 1.6vw, 42px);
+  line-height: 1.28;
+  color: rgba(233, 239, 250, 0.9);
+}
+
 .consult-page .cta__actions {
-  margin-top: 12px;
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 14px;
+}
+
+.consult-page #cta .btn {
+  min-height: 72px;
+  padding: 0 34px;
+  border-radius: 999px;
+  font-size: clamp(28px, 1.45vw, 38px);
+  font-weight: 600;
+}
+
+.consult-page .btn--telegram {
+  background: #1ea4dd;
+  border-color: #1ea4dd;
+  color: #ffffff;
+}
+
+.consult-page .btn--telegram:hover {
+  background: #1798cf;
+  border-color: #1798cf;
+}
+
+.consult-page .btn--contact {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(228, 236, 250, 0.35);
+  color: rgba(231, 238, 250, 0.95);
+}
+
+.consult-page .btn--contact:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
 }
 
 @media (max-width: 1024px) {
@@ -1201,6 +1248,30 @@ a {
   .consult-page .metric-item span {
     font-size: 16px;
   }
+
+  .consult-page #cta {
+    padding: 24px 22px;
+  }
+
+  .consult-page #cta .section__title {
+    font-size: clamp(46px, 7.2vw, 68px);
+  }
+
+  .consult-page #cta .section__lead {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+
+  .consult-page .cta__actions {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .consult-page #cta .btn {
+    min-height: 56px;
+    padding: 0 24px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 740px) {
@@ -1315,6 +1386,31 @@ a {
 
   .consult-page .metric-item span {
     font-size: 13px;
+  }
+
+  .consult-page #cta {
+    padding: 16px 14px;
+  }
+
+  .consult-page #cta .section__title {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1;
+  }
+
+  .consult-page #cta .section__lead {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .consult-page .cta__actions {
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .consult-page #cta .btn {
+    min-height: 48px;
+    padding: 0 14px;
+    font-size: 16px;
   }
 
   .consult-page .faq {
