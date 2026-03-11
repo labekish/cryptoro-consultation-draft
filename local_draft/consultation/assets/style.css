@@ -781,11 +781,11 @@ a {
 
 .consult-page .btn--with-hex .btn__hex-icon {
   position: relative;
-  width: 43px;
+  width: 46px;
   height: 50px;
-  flex: 0 0 43px;
-  border-radius: 8px;
-  clip-path: polygon(50% 2%, 90% 24%, 90% 76%, 50% 98%, 10% 76%, 10% 24%);
+  flex: 0 0 46px;
+  border-radius: 7px;
+  clip-path: polygon(50% 0%, 98% 24%, 98% 76%, 50% 100%, 2% 76%, 2% 24%);
   background: var(--btn-hex-bg);
   color: transparent;
   font-size: 0;
@@ -1362,10 +1362,10 @@ a {
   }
 
   .consult-page .btn--with-hex .btn__hex-icon {
-    width: 40px;
+    width: 42px;
     height: 46px;
-    flex-basis: 40px;
-    border-radius: 7px;
+    flex-basis: 42px;
+    border-radius: 6px;
   }
 }
 
@@ -1514,10 +1514,10 @@ a {
   }
 
   .consult-page .btn--with-hex .btn__hex-icon {
-    width: 32px;
-    height: 36px;
-    flex-basis: 32px;
-    border-radius: 6px;
+    width: 34px;
+    height: 37px;
+    flex-basis: 34px;
+    border-radius: 5px;
   }
 
   .consult-page .faq {
