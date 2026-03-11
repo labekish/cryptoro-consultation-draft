@@ -262,7 +262,10 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
               <input type="tel" name="phone" placeholder="Телефон / Telegram" aria-label="Телефон / Telegram" required>
             </label>
           </div>
-          <button class="btn btn--primary btn--full" type="submit">Получить персональный план</button>
+          <button class="btn btn--primary btn--full btn--with-hex" type="submit">
+            <span class="btn__label">Получить персональный план</span>
+            <span class="btn__hex-icon" aria-hidden="true">↗</span>
+          </button>
           <p class="consult-form__result" data-form-result hidden></p>
         </form>
       <?php endif; ?>
