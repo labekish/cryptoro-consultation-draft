@@ -484,66 +484,93 @@ a {
 
 
 .consult-page .audience-grid {
-  margin-top: 10px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 16px;
 }
 
 .consult-page .audience-card {
-  border-radius: var(--radius-md);
-  padding: 10px;
+  border-radius: 28px;
+  padding: 24px;
   color: #ffffff;
-  min-height: 120px;
+  min-height: 540px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
+  gap: 14px;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
+  border: 1px solid #e1e6ef;
 }
 
-.consult-page .audience-card::before,
-.consult-page .audience-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
+.consult-page #audience .section__title {
+  font-size: clamp(56px, 3.5vw, 80px);
+  line-height: 1.02;
 }
 
-.consult-page .audience-card::before {
+.consult-page #audience .section__lead {
+  margin-top: 12px;
+  font-size: clamp(18px, 1.15vw, 28px);
+  color: #6a7282;
+}
+
+.consult-page .audience-card h3 {
+  margin: 0;
+  font-size: clamp(28px, 1.9vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.consult-page .audience-card p {
+  margin: 0;
+  font-size: clamp(15px, 1.02vw, 22px);
+  line-height: 1.32;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.consult-page .audience-card__media {
+  margin-top: auto;
+  min-height: 170px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.consult-page .audience-card h3,
-.consult-page .audience-card p {
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
+.consult-page .audience-card--investor {
+  background: #252c42;
 }
 
-.consult-page .audience-card--investor::before {
-  background-image: url('./images/audience-investor.png');
+.consult-page .audience-card--business {
+  background: #f28b1a;
+  border-color: #f28b1a;
 }
 
-.consult-page .audience-card--investor::after {
-  background: linear-gradient(180deg, rgba(17, 28, 46, 0.5) 0%, rgba(17, 28, 46, 0.9) 100%);
+.consult-page .audience-card--teams {
+  background: #eef1f6;
+  border-color: #dfe4ed;
 }
 
-.consult-page .audience-card--business::before {
-  background-image: url('./images/audience-business.png');
+.consult-page .audience-card--light h3 {
+  color: #2d3546;
 }
 
-.consult-page .audience-card--business::after {
-  background: linear-gradient(180deg, rgba(242, 136, 27, 0.42) 0%, rgba(242, 136, 27, 0.87) 100%);
+.consult-page .audience-card--light p {
+  color: #5c6677;
 }
 
-.consult-page .audience-card--teams::before {
-  background-image: url('./images/audience-team.png');
+.consult-page .audience-card__media--investor {
+  background-image: url('./images/audience-investor-photo.png');
 }
 
-.consult-page .audience-card--teams::after {
-  background: linear-gradient(180deg, rgba(66, 83, 113, 0.45) 0%, rgba(66, 83, 113, 0.86) 100%);
+.consult-page .audience-card__media--business {
+  background-image: url('./images/audience-business-photo.png');
+}
+
+.consult-page .audience-card__media--teams {
+  background-image: url('./images/audience-team-photo.png');
 }
 
 .consult-page .check-list {
@@ -845,6 +872,25 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .consult-page #audience .section__title {
+    font-size: clamp(40px, 6.2vw, 62px);
+  }
+
+  .consult-page #audience .section__lead {
+    font-size: 16px;
+  }
+
+  .consult-page .audience-card {
+    min-height: 360px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .consult-page .audience-card__media {
+    min-height: 130px;
+    border-radius: 14px;
+  }
+
   .consult-page .pricing {
     grid-template-columns: 1fr;
   }
@@ -889,6 +935,34 @@ a {
   .consult-page .consult-form__row,
   .consult-page .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .consult-page #audience .section__title {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .consult-page #audience .section__lead {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .consult-page .audience-card {
+    min-height: 0;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .consult-page .audience-card h3 {
+    font-size: 32px;
+  }
+
+  .consult-page .audience-card p {
+    font-size: 14px;
+  }
+
+  .consult-page .audience-card__media {
+    min-height: 112px;
+    border-radius: 12px;
   }
 
   .consult-page #workflow .section__title {
