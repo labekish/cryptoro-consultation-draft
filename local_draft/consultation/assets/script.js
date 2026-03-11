@@ -28,7 +28,7 @@
   // Аккордеон FAQ: открываем только один пункт за раз.
   function initFaqAccordion() {
     var items = document.querySelectorAll('[data-faq-item]');
-    var setState = function (item, expanded) {
+    var setState = function (item, expanded, instant) {
       var question = item.querySelector('.faq-item__question');
       var answer = item.querySelector('.faq-item__answer');
       if (!question || !answer) {
@@ -36,7 +36,43 @@
       }
 
       question.setAttribute('aria-expanded', String(expanded));
-      answer.hidden = !expanded;
+
+      if (expanded) {
+        answer.hidden = false;
+        var openHeight = answer.scrollHeight;
+
+        if (instant) {
+          answer.style.maxHeight = openHeight + 'px';
+          answer.style.opacity = '1';
+          return;
+        }
+
+        answer.style.maxHeight = '0px';
+        answer.style.opacity = '0';
+        answer.offsetHeight;
+        answer.style.maxHeight = openHeight + 'px';
+        answer.style.opacity = '1';
+        return;
+      }
+
+      if (instant) {
+        answer.style.maxHeight = '0px';
+        answer.style.opacity = '0';
+        answer.hidden = true;
+        return;
+      }
+
+      if (answer.hidden) {
+        answer.style.maxHeight = '0px';
+        answer.style.opacity = '0';
+        return;
+      }
+
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      answer.style.opacity = '1';
+      answer.offsetHeight;
+      answer.style.maxHeight = '0px';
+      answer.style.opacity = '0';
     };
 
     items.forEach(function (item) {
@@ -47,17 +83,45 @@
         return;
       }
 
-      // Синхронизируем class/state с изначальной разметкой.
-      setState(item, question.getAttribute('aria-expanded') === 'true');
+      answer.addEventListener('transitionend', function (event) {
+        if (event.propertyName !== 'max-height') {
+          return;
+        }
+
+        var expanded = question.getAttribute('aria-expanded') === 'true';
+        if (!expanded) {
+          answer.hidden = true;
+          return;
+        }
+
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      });
+
+      // Синхронизируем начальное состояние FAQ без анимации.
+      setState(item, question.getAttribute('aria-expanded') === 'true', true);
 
       question.addEventListener('click', function () {
         var isExpanded = question.getAttribute('aria-expanded') === 'true';
 
         items.forEach(function (otherItem) {
-          setState(otherItem, false);
+          setState(otherItem, false, false);
         });
 
-        setState(item, !isExpanded);
+        setState(item, !isExpanded, false);
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      items.forEach(function (item) {
+        var question = item.querySelector('.faq-item__question');
+        var answer = item.querySelector('.faq-item__answer');
+        if (!question || !answer) {
+          return;
+        }
+
+        if (question.getAttribute('aria-expanded') === 'true') {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
       });
     });
   }
