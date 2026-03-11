@@ -44,7 +44,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
   <link rel="canonical" href="<?= htmlspecialchars($PAGE_SLUG, ENT_QUOTES) ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/style.css">
 </head>
 <body>
@@ -370,7 +370,10 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
       <h2 class="section__title section__title--white">Есть вопросы перед записью?</h2>
       <p class="section__lead section__lead--white">Напишите или позвоните — разберём вашу ситуацию и подберём формат консультации.</p>
       <div class="cta__actions">
-        <a class="btn btn--telegram" href="https://t.me/cryptoro" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+        <a class="btn btn--telegram btn--with-hex" href="https://t.me/cryptoro" target="_blank" rel="noopener noreferrer">
+          <span class="btn__label">Написать в Telegram</span>
+          <span class="btn__hex-icon" aria-hidden="true">↗</span>
+        </a>
         <a class="btn btn--contact" href="tel:+74951918174">+7 495 191-81-74</a>
         <a class="btn btn--contact" href="mailto:shop@cryptoro.ru">shop@cryptoro.ru</a>
       </div>

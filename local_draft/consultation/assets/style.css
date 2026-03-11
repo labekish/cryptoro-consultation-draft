@@ -102,55 +102,92 @@ a {
 }
 
 .consult-page .btn {
+  --btn-bg: transparent;
+  --btn-bg-hover: transparent;
+  --btn-bg-active: transparent;
+  --btn-color: #ffffff;
+  --btn-color-hover: #ffffff;
+  --btn-color-active: #ffffff;
+  --btn-border: transparent;
+  --btn-border-hover: transparent;
+  --btn-border-active: transparent;
+  --btn-hex-bg: #ffffff;
+  --btn-hex-fg: #f4821c;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 0 16px;
-  font-size: 11px;
-  font-weight: 700;
+  min-height: 60px;
+  border: 2px solid var(--btn-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   text-decoration: none;
   line-height: 1;
 }
 
 .consult-page .hero .btn {
-  min-height: 84px;
-  padding: 0 42px;
-  font-size: clamp(20px, 1vw, 30px);
+  min-height: 80px;
+  padding: 0 38px;
+  font-size: clamp(24px, 1.2vw, 34px);
 }
 
 .consult-page .btn:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--btn-border-hover);
+  color: var(--btn-color-hover);
   transform: translateY(-1px);
 }
 
-.consult-page .btn--primary {
-  background: var(--accent);
-  color: #ffffff;
+.consult-page .btn:active {
+  background: var(--btn-bg-active);
+  border-color: var(--btn-border-active);
+  color: var(--btn-color-active);
+  transform: translateY(0);
 }
 
-.consult-page .btn--primary:hover {
-  background: var(--accent-dark);
+.consult-page .btn--primary {
+  --btn-bg: #f4821c;
+  --btn-bg-hover: #ff9d45;
+  --btn-bg-active: #fd8d29;
+  --btn-color: #ffffff;
+  --btn-color-hover: #ffffff;
+  --btn-color-active: #ffffff;
+  --btn-border: #f4821c;
+  --btn-border-hover: #ff9d45;
+  --btn-border-active: #fd8d29;
+  --btn-hex-bg: #ffffff;
+  --btn-hex-fg: #f4821c;
 }
 
 .consult-page .btn--ghost {
-  background: transparent;
-  color: #f28b1a;
-  border-color: #f28b1a;
-}
-
-.consult-page .btn--ghost:hover {
-  border-color: #ff9f36;
-  color: #ff9f36;
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(244, 130, 28, 0.08);
+  --btn-bg-active: rgba(244, 130, 28, 0.14);
+  --btn-color: #f4821c;
+  --btn-color-hover: #ff9d45;
+  --btn-color-active: #fd8d29;
+  --btn-border: #f4821c;
+  --btn-border-hover: #ff9d45;
+  --btn-border-active: #fd8d29;
 }
 
 .consult-page .btn--ghost-light {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(255, 255, 255, 0.08);
+  --btn-bg-active: rgba(255, 255, 255, 0.14);
+  --btn-color: #ffffff;
+  --btn-color-hover: #ffffff;
+  --btn-color-active: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.55);
+  --btn-border-hover: rgba(255, 255, 255, 0.8);
+  --btn-border-active: rgba(255, 255, 255, 0.9);
 }
 
 .consult-page .btn--full {
@@ -727,38 +764,48 @@ a {
 
 .consult-page .consult-form .btn--full {
   margin-top: 14px;
-  min-height: 98px;
-  border-radius: 999px;
-  font-size: clamp(26px, 1.65vw, 44px);
+  min-height: 84px;
+  border-radius: 30px;
+  font-size: clamp(26px, 1.45vw, 34px);
   font-weight: 600;
 }
 
-.consult-page .consult-form .btn--with-hex {
+.consult-page .btn--with-hex {
   position: relative;
-  overflow: hidden;
-  padding-right: 128px;
+  padding-right: 92px;
 }
 
-.consult-page .consult-form .btn--with-hex .btn__label {
+.consult-page .btn--with-hex .btn__label {
   display: inline-block;
 }
 
-.consult-page .consult-form .btn--with-hex .btn__hex-icon {
+.consult-page .btn--with-hex .btn__hex-icon {
   position: absolute;
-  right: 20px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 72px;
-  height: 66px;
+  width: 44px;
+  height: 50px;
   clip-path: polygon(25% 4%, 75% 4%, 96% 50%, 75% 96%, 25% 96%, 4% 50%);
-  background: #ffffff;
-  color: #f28b1a;
+  background: var(--btn-hex-bg);
+  color: var(--btn-hex-fg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 42px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 700;
+}
+
+.consult-page .consult-form .btn--with-hex {
+  padding-right: 112px;
+}
+
+.consult-page .consult-form .btn--with-hex .btn__hex-icon {
+  width: 52px;
+  height: 58px;
+  right: 18px;
+  font-size: 32px;
 }
 
 .consult-page .consult-form__result {
@@ -1048,33 +1095,37 @@ a {
 }
 
 .consult-page #cta .btn {
-  min-height: 72px;
+  min-height: 64px;
   padding: 0 34px;
-  border-radius: 999px;
-  font-size: clamp(28px, 1.45vw, 38px);
+  border-radius: 30px;
+  font-size: clamp(24px, 1.25vw, 32px);
   font-weight: 600;
 }
 
 .consult-page .btn--telegram {
-  background: #1ea4dd;
-  border-color: #1ea4dd;
-  color: #ffffff;
-}
-
-.consult-page .btn--telegram:hover {
-  background: #1798cf;
-  border-color: #1798cf;
+  --btn-bg: #01cd92;
+  --btn-bg-hover: #10bd8b;
+  --btn-bg-active: #01ab7a;
+  --btn-color: #ffffff;
+  --btn-color-hover: #ffffff;
+  --btn-color-active: #ffffff;
+  --btn-border: #01cd92;
+  --btn-border-hover: #10bd8b;
+  --btn-border-active: #01ab7a;
+  --btn-hex-bg: #ffffff;
+  --btn-hex-fg: #01cd92;
 }
 
 .consult-page .btn--contact {
-  background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(228, 236, 250, 0.35);
-  color: rgba(231, 238, 250, 0.95);
-}
-
-.consult-page .btn--contact:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #ffffff;
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(255, 255, 255, 0.09);
+  --btn-bg-active: rgba(255, 255, 255, 0.15);
+  --btn-color: rgba(231, 238, 250, 0.95);
+  --btn-color-hover: #ffffff;
+  --btn-color-active: #ffffff;
+  --btn-border: rgba(228, 236, 250, 0.42);
+  --btn-border-hover: rgba(255, 255, 255, 0.72);
+  --btn-border-active: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 1024px) {
@@ -1311,6 +1362,17 @@ a {
     padding: 0 24px;
     font-size: 20px;
   }
+
+  .consult-page .btn--with-hex {
+    padding-right: 82px;
+  }
+
+  .consult-page .btn--with-hex .btn__hex-icon {
+    width: 40px;
+    height: 46px;
+    right: 14px;
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 740px) {
@@ -1450,6 +1512,17 @@ a {
     min-height: 48px;
     padding: 0 14px;
     font-size: 16px;
+  }
+
+  .consult-page .btn--with-hex {
+    padding-right: 64px;
+  }
+
+  .consult-page .btn--with-hex .btn__hex-icon {
+    width: 32px;
+    height: 36px;
+    right: 10px;
+    font-size: 18px;
   }
 
   .consult-page .faq {
