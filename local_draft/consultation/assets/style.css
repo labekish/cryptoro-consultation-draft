@@ -34,14 +34,15 @@ a {
 }
 
 .consult-page {
-  padding: 14px 0 24px;
+  padding: 10px 0 20px;
 }
 
 .container {
-  width: min(1040px, calc(100% - 24px));
+  /* Как на текущих страницах CRYPTORO: почти во всю ширину с малыми полями. */
+  width: min(1720px, calc(100% - 16px));
   margin: 0 auto;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero {
@@ -604,11 +605,11 @@ a {
 
 @media (max-width: 740px) {
   .consult-page {
-    padding-top: 10px;
+    padding-top: 8px;
   }
 
   .container {
-    width: calc(100% - 10px);
+    width: calc(100% - 8px);
     gap: 8px;
   }
 
