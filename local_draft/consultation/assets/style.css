@@ -37,7 +37,7 @@ a {
   padding: 10px 0 20px;
 }
 
-.container {
+.consult-page .container {
   /* Как на текущих страницах CRYPTORO: почти во всю ширину с малыми полями. */
   width: min(1720px, calc(100% - 16px));
   margin: 0 auto;
@@ -45,7 +45,7 @@ a {
   gap: 8px;
 }
 
-.hero {
+.consult-page .hero {
   background: linear-gradient(115deg, #1b2130 0%, #28324a 55%, #1a2030 100%);
   color: var(--text-light);
   border-radius: var(--radius-xl);
@@ -57,13 +57,13 @@ a {
   box-shadow: var(--shadow-soft);
 }
 
-.hero__label {
+.consult-page .hero__label {
   margin: 0 0 8px;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.hero__title {
+.consult-page .hero__title {
   margin: 0;
   font-size: clamp(20px, 3.3vw, 54px);
   line-height: 1.02;
@@ -71,20 +71,20 @@ a {
   max-width: 12ch;
 }
 
-.hero__text {
+.consult-page .hero__text {
   margin: 10px 0 14px;
   color: #d9deea;
   font-size: 12px;
   max-width: 56ch;
 }
 
-.hero__actions {
+.consult-page .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.hero__media {
+.consult-page .hero__media {
   min-height: 236px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -93,14 +93,14 @@ a {
   overflow: hidden;
 }
 
-.hero__media::before {
+.consult-page .hero__media::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(155deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 55%);
 }
 
-.btn {
+.consult-page .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -116,103 +116,103 @@ a {
   line-height: 1;
 }
 
-.btn:hover {
+.consult-page .btn:hover {
   transform: translateY(-1px);
 }
 
-.btn--primary {
+.consult-page .btn--primary {
   background: var(--accent);
   color: #ffffff;
 }
 
-.btn--primary:hover {
+.consult-page .btn--primary:hover {
   background: var(--accent-dark);
 }
 
-.btn--ghost {
+.consult-page .btn--ghost {
   background: transparent;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-.btn--ghost:hover {
+.consult-page .btn--ghost:hover {
   border-color: rgba(255, 255, 255, 0.82);
 }
 
-.btn--ghost-light {
+.consult-page .btn--ghost-light {
   background: transparent;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-.btn--full {
+.consult-page .btn--full {
   width: 100%;
 }
 
-.section {
+.consult-page .section {
   background: #ffffff;
   border-radius: var(--radius-xl);
   padding: 14px;
   box-shadow: var(--shadow-soft);
 }
 
-.section--light {
+.consult-page .section--light {
   background: var(--bg-light);
 }
 
-.section--pricing {
+.consult-page .section--pricing {
   background: linear-gradient(120deg, #f28b1a 0%, #ef7d12 58%, #e96d00 100%);
   color: #ffffff;
 }
 
-.section--cta {
+.consult-page .section--cta {
   background: linear-gradient(125deg, #1b2130 0%, #202a3f 100%);
   color: #ffffff;
 }
 
-.section__title {
+.consult-page .section__title {
   margin: 0;
   font-size: clamp(18px, 2.2vw, 40px);
   line-height: 1.06;
   letter-spacing: -0.02em;
 }
 
-.section__title--white {
+.consult-page .section__title--white {
   color: #ffffff;
 }
 
-.section__lead {
+.consult-page .section__lead {
   margin: 8px 0 0;
   font-size: 12px;
   color: #4b5565;
 }
 
-.section__lead--white {
+.consult-page .section__lead--white {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.benefits-grid {
+.consult-page .benefits-grid {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.benefit-card {
+.consult-page .benefit-card {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 10px;
 }
 
-.benefit-card--focus {
+.consult-page .benefit-card--focus {
   background: #1e2537;
   color: #f7f9ff;
   border-color: transparent;
 }
 
-.benefit-card__index,
-.step-card__index {
+.consult-page .benefit-card__index,
+.consult-page .step-card__index {
   display: inline-flex;
   width: 20px;
   height: 20px;
@@ -225,47 +225,47 @@ a {
   color: #b55d00;
 }
 
-.benefit-card h3,
-.step-card h3,
-.audience-card h3 {
+.consult-page .benefit-card h3,
+.consult-page .step-card h3,
+.consult-page .audience-card h3 {
   margin: 6px 0 5px;
   font-size: 14px;
   line-height: 1.2;
 }
 
-.benefit-card p,
-.step-card p,
-.audience-card p {
+.consult-page .benefit-card p,
+.consult-page .step-card p,
+.consult-page .audience-card p {
   margin: 0;
   font-size: 11px;
   color: var(--text-muted);
 }
 
-.benefit-card--focus p {
+.consult-page .benefit-card--focus p {
   color: #dce3f1;
 }
 
-.steps-grid {
+.consult-page .steps-grid {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
-.step-card {
+.consult-page .step-card {
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: #ffffff;
   padding: 10px;
 }
 
-.step-card--with-media {
+.consult-page .step-card--with-media {
   display: grid;
   align-content: start;
   gap: 6px;
 }
 
-.step-card__media {
+.consult-page .step-card__media {
   width: 100%;
   min-height: 72px;
   border: 1px solid #dce2ec;
@@ -276,22 +276,22 @@ a {
   background-size: cover;
 }
 
-.step-card__media--calendar {
+.consult-page .step-card__media--calendar {
   background-image: url('./images/workflow-calendar.png');
 }
 
-.step-card__media--form {
+.consult-page .step-card__media--form {
   background-image: url('./images/workflow-form.png');
 }
 
-.audience-grid {
+.consult-page .audience-grid {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.audience-card {
+.consult-page .audience-card {
   border-radius: var(--radius-md);
   padding: 10px;
   color: #ffffff;
@@ -303,51 +303,51 @@ a {
   overflow: hidden;
 }
 
-.audience-card::before,
-.audience-card::after {
+.consult-page .audience-card::before,
+.consult-page .audience-card::after {
   content: '';
   position: absolute;
   inset: 0;
 }
 
-.audience-card::before {
+.consult-page .audience-card::before {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.audience-card h3,
-.audience-card p {
+.consult-page .audience-card h3,
+.consult-page .audience-card p {
   position: relative;
   z-index: 1;
   color: #ffffff;
 }
 
-.audience-card--investor::before {
+.consult-page .audience-card--investor::before {
   background-image: url('./images/audience-investor.png');
 }
 
-.audience-card--investor::after {
+.consult-page .audience-card--investor::after {
   background: linear-gradient(180deg, rgba(17, 28, 46, 0.5) 0%, rgba(17, 28, 46, 0.9) 100%);
 }
 
-.audience-card--business::before {
+.consult-page .audience-card--business::before {
   background-image: url('./images/audience-business.png');
 }
 
-.audience-card--business::after {
+.consult-page .audience-card--business::after {
   background: linear-gradient(180deg, rgba(242, 136, 27, 0.42) 0%, rgba(242, 136, 27, 0.87) 100%);
 }
 
-.audience-card--teams::before {
+.consult-page .audience-card--teams::before {
   background-image: url('./images/audience-team.png');
 }
 
-.audience-card--teams::after {
+.consult-page .audience-card--teams::after {
   background: linear-gradient(180deg, rgba(66, 83, 113, 0.45) 0%, rgba(66, 83, 113, 0.86) 100%);
 }
 
-.check-list {
+.consult-page .check-list {
   margin: 10px 0 0;
   padding: 0;
   list-style: none;
@@ -356,14 +356,14 @@ a {
   gap: 8px;
 }
 
-.check-list li {
+.consult-page .check-list li {
   position: relative;
   padding: 0 0 0 12px;
   color: #4a5565;
   font-size: 12px;
 }
 
-.check-list li::before {
+.consult-page .check-list li::before {
   content: '';
   position: absolute;
   width: 6px;
@@ -374,7 +374,7 @@ a {
   top: 6px;
 }
 
-.consult-form {
+.consult-page .consult-form {
   margin-top: 10px;
   background: #ffffff;
   border: 1px solid var(--line);
@@ -382,25 +382,25 @@ a {
   padding: 10px;
 }
 
-.consult-form__row {
+.consult-page .consult-form__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
-.consult-form__field {
+.consult-page .consult-form__field {
   display: grid;
   gap: 5px;
   margin-bottom: 8px;
 }
 
-.consult-form__field span {
+.consult-page .consult-form__field span {
   font-size: 11px;
   color: #4a5465;
 }
 
-.consult-form__field input,
-.consult-form__field textarea {
+.consult-page .consult-form__field input,
+.consult-page .consult-form__field textarea {
   width: 100%;
   border: 1px solid #cfd7e6;
   border-radius: 8px;
@@ -412,19 +412,19 @@ a {
   background: #ffffff;
 }
 
-.consult-form__field textarea {
+.consult-page .consult-form__field textarea {
   min-height: 84px;
   resize: vertical;
 }
 
-.consult-form__field input:focus,
-.consult-form__field textarea:focus {
+.consult-page .consult-form__field input:focus,
+.consult-page .consult-form__field textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(242, 139, 26, 0.15);
 }
 
-.consult-form__consent {
+.consult-page .consult-form__consent {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -433,43 +433,43 @@ a {
   color: #475365;
 }
 
-.consult-form__consent input {
+.consult-page .consult-form__consent input {
   margin-top: 2px;
 }
 
-.consult-form__consent a {
+.consult-page .consult-form__consent a {
   color: #b55d00;
 }
 
-.consult-form__result {
+.consult-page .consult-form__result {
   margin: 10px 0 0;
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 12px;
 }
 
-.consult-form__result--error {
+.consult-page .consult-form__result--error {
   background: #ffe6e6;
   color: #8b1f1f;
 }
 
-.consult-form__result--success {
+.consult-page .consult-form__result--success {
   background: #e5f9ea;
   color: #1a6b2f;
 }
 
-.faq {
+.consult-page .faq {
   margin-top: 10px;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--line);
 }
 
-.faq-item + .faq-item {
+.consult-page .faq-item + .faq-item {
   border-top: 1px solid var(--line);
 }
 
-.faq-item__question {
+.consult-page .faq-item__question {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -485,34 +485,34 @@ a {
   cursor: pointer;
 }
 
-.faq-item__question::after {
+.consult-page .faq-item__question::after {
   content: '+';
   color: var(--accent);
   font-size: 18px;
   line-height: 1;
 }
 
-.faq-item__question[aria-expanded='true']::after {
+.consult-page .faq-item__question[aria-expanded='true']::after {
   content: '−';
 }
 
-.faq-item__answer {
+.consult-page .faq-item__answer {
   padding: 0 12px 12px;
   color: #4b5565;
 }
 
-.faq-item__answer p {
+.consult-page .faq-item__answer p {
   margin: 0;
   font-size: 12px;
 }
 
-.pricing {
+.consult-page .pricing {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 10px;
 }
 
-.pricing__price {
+.consult-page .pricing__price {
   margin: 10px 0 0;
   display: inline-flex;
   align-items: center;
@@ -527,7 +527,7 @@ a {
   line-height: 1;
 }
 
-.pricing__list {
+.consult-page .pricing__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -537,26 +537,26 @@ a {
   font-size: 12px;
 }
 
-.pricing__list li {
+.consult-page .pricing__list li {
   position: relative;
   padding-left: 14px;
 }
 
-.pricing__list li::before {
+.consult-page .pricing__list li::before {
   content: '•';
   position: absolute;
   left: 0;
   top: -1px;
 }
 
-.stats-grid {
+.consult-page .stats-grid {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
-.stat-card {
+.consult-page .stat-card {
   border-radius: var(--radius-md);
   background: rgba(15, 23, 42, 0.9);
   color: #f8fbff;
@@ -565,18 +565,18 @@ a {
   gap: 3px;
 }
 
-.stat-card strong {
+.consult-page .stat-card strong {
   font-size: 28px;
   line-height: 1;
   color: var(--accent);
 }
 
-.stat-card span {
+.consult-page .stat-card span {
   font-size: 10px;
   color: #dce3f1;
 }
 
-.cta__actions {
+.consult-page .cta__actions {
   margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
@@ -584,21 +584,21 @@ a {
 }
 
 @media (max-width: 1024px) {
-  .hero {
+  .consult-page .hero {
     grid-template-columns: 1fr;
   }
 
-  .hero__media {
+  .consult-page .hero__media {
     min-height: 220px;
   }
 
-  .benefits-grid,
-  .audience-grid,
-  .stats-grid {
+  .consult-page .benefits-grid,
+  .consult-page .audience-grid,
+  .consult-page .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .pricing {
+  .consult-page .pricing {
     grid-template-columns: 1fr;
   }
 }
@@ -608,36 +608,36 @@ a {
     padding-top: 8px;
   }
 
-  .container {
+  .consult-page .container {
     width: calc(100% - 8px);
     gap: 8px;
   }
 
-  .hero,
-  .section {
+  .consult-page .hero,
+  .consult-page .section {
     border-radius: 12px;
     padding: 12px;
   }
 
-  .hero__title {
+  .consult-page .hero__title {
     font-size: clamp(28px, 8.5vw, 38px);
     max-width: 100%;
   }
 
-  .hero__media {
+  .consult-page .hero__media {
     min-height: 180px;
   }
 
-  .benefits-grid,
-  .steps-grid,
-  .audience-grid,
-  .check-list,
-  .consult-form__row,
-  .stats-grid {
+  .consult-page .benefits-grid,
+  .consult-page .steps-grid,
+  .consult-page .audience-grid,
+  .consult-page .check-list,
+  .consult-page .consult-form__row,
+  .consult-page .stats-grid {
     grid-template-columns: 1fr;
   }
 
-  .btn {
+  .consult-page .btn {
     width: 100%;
   }
 }
