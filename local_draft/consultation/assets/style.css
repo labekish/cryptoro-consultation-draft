@@ -603,21 +603,24 @@ a {
 /* Блок "Что проверяем и что подготовить" — как в макете: заголовок слева, карточки справа. */
 .consult-page .diagnostics-layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(360px, 430px) minmax(820px, 1240px);
   gap: 22px;
   align-items: start;
+  justify-content: space-between;
 }
 
 .consult-page .diagnostics-layout__title {
-  font-size: clamp(62px, 3.9vw, 96px);
+  font-size: clamp(54px, 3.2vw, 82px);
   line-height: 1.02;
   letter-spacing: -0.02em;
+  max-width: 100%;
 }
 
 .consult-page .diagnostics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+  width: 100%;
 }
 
 .consult-page .diagnostics-item {
