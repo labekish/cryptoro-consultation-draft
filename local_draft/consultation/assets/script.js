@@ -37,7 +37,6 @@
 
       question.setAttribute('aria-expanded', String(expanded));
       answer.hidden = !expanded;
-      item.classList.toggle('is-open', expanded);
     };
 
     items.forEach(function (item) {

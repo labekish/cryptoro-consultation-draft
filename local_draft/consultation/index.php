@@ -271,7 +271,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="section" id="faq">
       <h2 class="section__title">Частые вопросы</h2>
       <div class="faq" data-faq>
-        <article class="faq-item is-open" data-faq-item>
+        <article class="faq-item" data-faq-item>
           <button class="faq-item__question" type="button" aria-expanded="true">
             <span class="faq-item__head">
               <span class="faq-item__index">01</span>
