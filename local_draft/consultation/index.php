@@ -67,32 +67,40 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
 
     <section class="section section--light" id="benefits">
       <h2 class="section__title">Как помогает консультация</h2>
-      <div class="benefits-grid">
-        <article class="benefit-card">
-          <span class="benefit-card__index">01</span>
-          <h3>Системно и спокойно</h3>
-          <p>Вы получите структуру действий без спешки и эмоциональных решений.</p>
+      <!-- Компоновка как в макете: две боковые колонки + центральный фокус-блок. -->
+      <div class="benefits-layout">
+        <div class="benefits-layout__col">
+          <article class="benefit-side">
+            <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true">⌂</span>
+            <h3>Системно и спокойно</h3>
+            <p>Выстраиваем понятную схему защиты активов без перегруза и лишних шагов.</p>
+          </article>
+          <article class="benefit-side">
+            <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true">◌</span>
+            <h3>Персональный подход</h3>
+            <p>Разбираем именно ваш кейс и даем приоритеты, которые можно применить сразу.</p>
+          </article>
+        </div>
+
+        <article class="benefit-focus">
+          <h3>Безопасность<br>в фокусе</h3>
+          <div class="benefit-focus__inner">
+            Ваш план действий<br>после сессии
+          </div>
         </article>
-        <article class="benefit-card benefit-card--focus">
-          <span class="benefit-card__index">02</span>
-          <h3>Безопасность в фокусе</h3>
-          <p>Покажу уязвимости вашего текущего подхода и как их закрыть при минимальном бюджете.</p>
-        </article>
-        <article class="benefit-card">
-          <span class="benefit-card__index">03</span>
-          <h3>Опыт эксперта</h3>
-          <p>Практика с разными уровнями входа: от первых сделок до крупных сумм.</p>
-        </article>
-        <article class="benefit-card">
-          <span class="benefit-card__index">04</span>
-          <h3>Персональный подход</h3>
-          <p>Сценарий под ваши цели: инвестиции, сохранность капитала или запуск процесса в команде.</p>
-        </article>
-        <article class="benefit-card">
-          <span class="benefit-card__index">05</span>
-          <h3>Для любого уровня</h3>
-          <p>Начинаем с вашей точки: от базовой настройки до оптимизации уже работающей схемы.</p>
-        </article>
+
+        <div class="benefits-layout__col">
+          <article class="benefit-side">
+            <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true">⌁</span>
+            <h3>Опыт экспертов</h3>
+            <p>Показываем рабочие практики и проверенные сценарии, применимые в реальной работе.</p>
+          </article>
+          <article class="benefit-side">
+            <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true">◍</span>
+            <h3>Для любого уровня</h3>
+            <p>Подходит и новичкам, и опытным пользователям: сложное объясняем простым языком.</p>
+          </article>
+        </div>
       </div>
     </section>
 
