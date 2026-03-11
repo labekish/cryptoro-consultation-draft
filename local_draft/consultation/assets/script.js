@@ -28,6 +28,17 @@
   // Аккордеон FAQ: открываем только один пункт за раз.
   function initFaqAccordion() {
     var items = document.querySelectorAll('[data-faq-item]');
+    var setState = function (item, expanded) {
+      var question = item.querySelector('.faq-item__question');
+      var answer = item.querySelector('.faq-item__answer');
+      if (!question || !answer) {
+        return;
+      }
+
+      question.setAttribute('aria-expanded', String(expanded));
+      answer.hidden = !expanded;
+      item.classList.toggle('is-open', expanded);
+    };
 
     items.forEach(function (item) {
       var question = item.querySelector('.faq-item__question');
@@ -37,22 +48,17 @@
         return;
       }
 
+      // Синхронизируем class/state с изначальной разметкой.
+      setState(item, question.getAttribute('aria-expanded') === 'true');
+
       question.addEventListener('click', function () {
         var isExpanded = question.getAttribute('aria-expanded') === 'true';
 
         items.forEach(function (otherItem) {
-          var otherQuestion = otherItem.querySelector('.faq-item__question');
-          var otherAnswer = otherItem.querySelector('.faq-item__answer');
-          if (!otherQuestion || !otherAnswer) {
-            return;
-          }
-
-          otherQuestion.setAttribute('aria-expanded', 'false');
-          otherAnswer.hidden = true;
+          setState(otherItem, false);
         });
 
-        question.setAttribute('aria-expanded', String(!isExpanded));
-        answer.hidden = isExpanded;
+        setState(item, !isExpanded);
       });
     });
   }
