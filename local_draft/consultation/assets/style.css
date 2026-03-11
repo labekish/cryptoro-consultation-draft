@@ -660,23 +660,39 @@ a {
 }
 
 .consult-page .consult-form {
-  margin-top: 10px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 10px;
+  margin-top: 14px;
+  padding: 0;
 }
 
 .consult-page .consult-form__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.consult-page .consult-form__chips {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 10px;
+}
+
+.consult-page .consult-form__chip {
+  min-height: 36px;
+  border-radius: 999px;
+  padding: 0 14px;
+  border: 1px solid #e2e6ee;
+  background: #eaedf3;
+  color: #565f6f;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
 }
 
 .consult-page .consult-form__field {
   display: grid;
-  gap: 5px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .consult-page .consult-form__field span {
@@ -684,53 +700,39 @@ a {
   color: #4a5465;
 }
 
-.consult-page .consult-form__field input,
-.consult-page .consult-form__field textarea {
+.consult-page .consult-form__field input {
   width: 100%;
-  border: 1px solid #cfd7e6;
-  border-radius: 8px;
-  min-height: 36px;
-  font-size: 13px;
-  padding: 8px 10px;
+  border: 1px solid #dde3ed;
+  border-radius: 16px;
+  min-height: 74px;
+  font-size: 40px;
+  line-height: 1.1;
+  padding: 0 24px;
   font: inherit;
   color: #111827;
-  background: #ffffff;
-}
-
-.consult-page .consult-form__field textarea {
-  min-height: 84px;
-  resize: vertical;
+  background: #f7f8fb;
 }
 
 .consult-page .consult-form__field input:focus,
-.consult-page .consult-form__field textarea:focus {
+.consult-page .consult-form__field input:focus-visible {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(242, 139, 26, 0.15);
 }
 
-.consult-page .consult-form__consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 10px;
-  font-size: 11px;
-  color: #475365;
-}
-
-.consult-page .consult-form__consent input {
-  margin-top: 2px;
-}
-
-.consult-page .consult-form__consent a {
-  color: #b55d00;
+.consult-page .consult-form .btn--full {
+  margin-top: 14px;
+  min-height: 98px;
+  border-radius: 999px;
+  font-size: clamp(26px, 1.65vw, 44px);
+  font-weight: 600;
 }
 
 .consult-page .consult-form__result {
   margin: 10px 0 0;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 16px;
 }
 
 .consult-page .consult-form__result--error {
@@ -741,6 +743,17 @@ a {
 .consult-page .consult-form__result--success {
   background: #e5f9ea;
   color: #1a6b2f;
+}
+
+.consult-page #consult-form-section .section__title {
+  font-size: clamp(56px, 3.2vw, 84px);
+  line-height: 1.02;
+}
+
+.consult-page #consult-form-section .section__lead {
+  margin-top: 12px;
+  font-size: clamp(18px, 1.1vw, 28px);
+  color: #676f7f;
 }
 
 .consult-page .faq {
@@ -953,6 +966,32 @@ a {
     min-height: 128px;
   }
 
+  .consult-page #consult-form-section .section__title {
+    font-size: clamp(40px, 6.2vw, 62px);
+  }
+
+  .consult-page #consult-form-section .section__lead {
+    font-size: 16px;
+  }
+
+  .consult-page .consult-form__chip {
+    min-height: 32px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .consult-page .consult-form__field input {
+    min-height: 60px;
+    border-radius: 12px;
+    font-size: 30px;
+    padding: 0 18px;
+  }
+
+  .consult-page .consult-form .btn--full {
+    min-height: 74px;
+    font-size: clamp(22px, 3vw, 34px);
+  }
+
   .consult-page .audience-card {
     min-height: 360px;
     padding: 16px;
@@ -999,6 +1038,43 @@ a {
   .consult-page .hero__media {
     min-height: 240px;
     border-radius: 14px;
+  }
+
+  .consult-page #consult-form-section .section__title {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .consult-page #consult-form-section .section__lead {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .consult-page .consult-form__chips {
+    margin-bottom: 8px;
+    gap: 6px;
+  }
+
+  .consult-page .consult-form__chip {
+    min-height: 30px;
+    font-size: 12px;
+  }
+
+  .consult-page .consult-form__field input {
+    min-height: 52px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0 14px;
+  }
+
+  .consult-page .consult-form .btn--full {
+    min-height: 54px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .consult-page .consult-form__result {
+    font-size: 13px;
+    border-radius: 10px;
   }
 
   .consult-page .benefits-layout,

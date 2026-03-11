@@ -73,7 +73,7 @@
         if (result) {
           result.hidden = false;
           result.className = 'consult-form__result consult-form__result--error';
-          result.textContent = 'Пожалуйста, заполните обязательные поля и подтвердите согласие.';
+          result.textContent = 'Пожалуйста, заполните обязательные поля.';
         }
         form.reportValidity();
         return;

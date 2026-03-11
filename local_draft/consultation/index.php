@@ -221,7 +221,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
 
     <section class="section section--light" id="consult-form-section">
       <h2 class="section__title">Форма записи</h2>
-      <p class="section__lead">Оставьте заявку, и мы предложим удобное время для первой сессии.</p>
+      <p class="section__lead">Оставьте контакты и кратко опишите задачу. Мы предложим удобное время и формат консультации.</p>
 
       <?php if ($bitrixMode && $CONSULT_FORM_ID > 0): ?>
         <?php
@@ -250,25 +250,19 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
         ?>
       <?php else: ?>
         <form class="consult-form consult-form--mock" id="consult-form" novalidate>
+          <div class="consult-form__chips" aria-hidden="true">
+            <span class="consult-form__chip">Ответ в течение 15 минут</span>
+            <span class="consult-form__chip">Конфиденциально</span>
+          </div>
           <div class="consult-form__row">
             <label class="consult-form__field">
-              <span>Ваше имя</span>
-              <input type="text" name="name" placeholder="Иван" required>
+              <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
             </label>
             <label class="consult-form__field">
-              <span>Телефон</span>
-              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+              <input type="tel" name="phone" placeholder="Телефон / Telegram" aria-label="Телефон / Telegram" required>
             </label>
           </div>
-          <label class="consult-form__field">
-            <span>Комментарий</span>
-            <textarea name="comment" rows="4" placeholder="Кратко опишите ваш запрос"></textarea>
-          </label>
-          <label class="consult-form__consent">
-            <input type="checkbox" name="consent" required>
-            <span>Согласен на обработку персональных данных согласно <a href="<?= htmlspecialchars($PRIVACY_URL, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">политике конфиденциальности</a>.</span>
-          </label>
-          <button class="btn btn--primary btn--full" type="submit">Получить экспертный разбор</button>
+          <button class="btn btn--primary btn--full" type="submit">Получить персональный план</button>
           <p class="consult-form__result" data-form-result hidden></p>
         </form>
       <?php endif; ?>
