@@ -173,6 +173,11 @@ a {
   color: #ffffff;
 }
 
+.consult-page .section--metrics {
+  background: linear-gradient(125deg, #242b3f 0%, #232a3f 100%);
+  color: #ffffff;
+}
+
 .consult-page .section--cta {
   background: linear-gradient(125deg, #1b2130 0%, #202a3f 100%);
   color: #ffffff;
@@ -878,21 +883,47 @@ a {
 
 .consult-page .pricing {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 10px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.consult-page .section--pricing .section__title {
+  font-size: clamp(70px, 4.6vw, 112px);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+}
+
+.consult-page .pricing__description {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(20px, 1.3vw, 30px);
+  line-height: 1.34;
+}
+
+.consult-page .pricing__included {
+  padding-top: 12px;
+}
+
+.consult-page .pricing__label {
+  margin: 0 0 16px;
+  color: rgba(255, 235, 212, 0.85);
+  font-size: clamp(16px, 1.05vw, 22px);
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .consult-page .pricing__price {
-  margin: 10px 0 0;
+  margin: 28px 0 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 32px;
-  padding: 0 14px;
+  min-height: 82px;
+  padding: 0 38px;
   border-radius: 999px;
   background: #ffffff;
   color: #e36900;
-  font-size: 28px;
+  font-size: clamp(48px, 2.9vw, 72px);
   font-weight: 800;
   line-height: 1;
 }
@@ -902,47 +933,65 @@ a {
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 6px;
+  gap: 18px;
   align-content: start;
-  font-size: 12px;
+  font-size: clamp(24px, 1.5vw, 38px);
 }
 
 .consult-page .pricing__list li {
   position: relative;
-  padding-left: 14px;
+  padding-left: 30px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.97);
 }
 
 .consult-page .pricing__list li::before {
-  content: '•';
+  content: '';
   position: absolute;
   left: 0;
-  top: -1px;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.95);
 }
 
-.consult-page .stats-grid {
-  margin-top: 10px;
+.consult-page .metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 0;
 }
 
-.consult-page .stat-card {
-  border-radius: var(--radius-md);
-  background: rgba(15, 23, 42, 0.9);
+.consult-page .metric-item {
+  position: relative;
   color: #f8fbff;
-  padding: 10px;
+  padding: 24px 26px;
   display: grid;
-  gap: 3px;
+  gap: 10px;
+  align-content: center;
+  min-height: 160px;
 }
 
-.consult-page .stat-card strong {
-  font-size: 28px;
+.consult-page .metric-item + .metric-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.consult-page .metric-item strong {
+  font-size: clamp(56px, 3.2vw, 88px);
   line-height: 1;
   color: var(--accent);
+  font-weight: 700;
 }
 
-.consult-page .stat-card span {
-  font-size: 10px;
+.consult-page .metric-item span {
+  font-size: clamp(20px, 1.12vw, 28px);
+  line-height: 1.2;
   color: #dce3f1;
 }
 
@@ -968,7 +1017,7 @@ a {
 
   .consult-page .benefits-layout,
   .consult-page .audience-grid,
-  .consult-page .stats-grid {
+  .consult-page .metrics-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1012,7 +1061,7 @@ a {
   }
 
   .consult-page .audience-grid,
-  .consult-page .stats-grid {
+  .consult-page .metrics-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1106,6 +1155,51 @@ a {
 
   .consult-page .pricing {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .consult-page .section--pricing .section__title {
+    font-size: clamp(50px, 7.2vw, 74px);
+  }
+
+  .consult-page .pricing__description {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .consult-page .pricing__label {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .consult-page .pricing__list {
+    font-size: 24px;
+    gap: 12px;
+  }
+
+  .consult-page .pricing__price {
+    margin-top: 16px;
+    min-height: 62px;
+    font-size: clamp(36px, 5vw, 48px);
+    padding: 0 24px;
+  }
+
+  .consult-page .metric-item {
+    min-height: 120px;
+    padding: 18px 16px;
+  }
+
+  .consult-page .metric-item + .metric-item::before {
+    top: 18px;
+    bottom: 18px;
+  }
+
+  .consult-page .metric-item strong {
+    font-size: clamp(40px, 5vw, 56px);
+  }
+
+  .consult-page .metric-item span {
+    font-size: 16px;
   }
 }
 
@@ -1152,6 +1246,75 @@ a {
 
   .consult-page #faq .section__title {
     font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .consult-page .section--pricing .section__title {
+    font-size: clamp(42px, 12vw, 56px);
+    line-height: 0.96;
+  }
+
+  .consult-page .pricing {
+    gap: 14px;
+  }
+
+  .consult-page .pricing__description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.32;
+  }
+
+  .consult-page .pricing__label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .consult-page .pricing__list {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .consult-page .pricing__list li {
+    padding-left: 18px;
+  }
+
+  .consult-page .pricing__list li::before {
+    width: 7px;
+    height: 7px;
+    top: 0.5em;
+  }
+
+  .consult-page .pricing__price {
+    margin-top: 12px;
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 30px;
+  }
+
+  .consult-page .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consult-page .metric-item {
+    min-height: 0;
+    padding: 14px 12px;
+    gap: 6px;
+  }
+
+  .consult-page .metric-item + .metric-item::before {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: 1px;
+    top: 0;
+    bottom: auto;
+  }
+
+  .consult-page .metric-item strong {
+    font-size: 34px;
+  }
+
+  .consult-page .metric-item span {
+    font-size: 13px;
   }
 
   .consult-page .faq {
@@ -1237,7 +1400,7 @@ a {
   .consult-page .diagnostics-grid,
   .consult-page .check-list,
   .consult-page .consult-form__row,
-  .consult-page .stats-grid {
+  .consult-page .metrics-grid {
     grid-template-columns: 1fr;
   }
 
