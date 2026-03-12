@@ -1938,7 +1938,10 @@ a {
 .consult-page li,
 .consult-page strong,
 .consult-page span {
-  overflow-wrap: break-word;
+  /* Жестко фиксируем переносы: не рвать слова внутри, даже если глобальные стили шаблона пытаются это сделать. */
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
 }
 
 .consult-page h1,
@@ -1960,7 +1963,8 @@ a {
 .consult-page .hero__title {
   font-size: var(--fs-h1);
   line-height: 1;
-  max-width: 13ch;
+  max-width: 16ch;
+  text-wrap: pretty;
 }
 
 .consult-page .hero__text {
@@ -2213,7 +2217,8 @@ a {
 }
 
 .consult-page .pricing__list li {
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .consult-page .metric-item {
