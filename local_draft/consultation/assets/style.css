@@ -1,15 +1,27 @@
+/* Точечный bridge из CRYPTORO template.css: берем только шрифты и базовую типографику. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root {
+  --font-family-main: 'Manrope', var(--font-family, var(--ui-font-family-system, sans-serif));
+  --font-family-heading: 'Manrope', var(--font3, 'Gilroy'), sans-serif;
+  --font-family-ui: var(--font5, 'Space Grotesk'), 'Manrope', sans-serif;
+  --section-gap: 26px;
+  --section-padding: 28px;
+  --faq-bg: var(--ui-color-base-05, #f6f8fc);
+  --faq-line: var(--ui-color-base-20, #dfe4ed);
+  --faq-text: var(--ui-color-base-default, #262e3e);
+  --faq-muted: var(--ui-color-base-60, #959ca4);
+  --faq-open-accent: #f28b1a;
   --bg-main: #171b26;
-  --bg-light: #f2f4f8;
-  --line: #d8deea;
+  --bg-light: #f5f7fb;
+  --line: #e1e6ef;
   --text-main: #111827;
   --text-muted: #586375;
   --text-light: #f5f7fb;
   --accent: #f28b1a;
   --accent-dark: #d36f00;
-  --radius-xl: 16px;
-  --radius-md: 10px;
-  --shadow-soft: 0 14px 32px rgba(17, 24, 39, 0.14);
+  --radius-xl: 30px;
+  --radius-md: 14px;
+  --shadow-soft: 0 6px 18px rgba(17, 24, 39, 0.08);
 }
 
 * {
@@ -22,11 +34,21 @@ body {
   padding: 0;
 }
 
+html {
+  font-family: var(--font-family-main) !important;
+}
+
 body {
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at 50% 0%, #0f1320 0%, #091532 40%, #0c1526 100%);
+  font-family: var(--font-family-main), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
   color: var(--text-main);
   line-height: 1.4;
+}
+
+.consult-page,
+.consult-page * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -34,28 +56,37 @@ a {
 }
 
 .consult-page {
-  padding: 10px 0 20px;
+  padding: 18px 0 34px;
 }
 
 .consult-page .container {
   /* Как на текущих страницах CRYPTORO: почти во всю ширину с малыми полями. */
-  width: min(1720px, calc(100% - 16px));
+  width: min(1860px, calc(100% - 40px));
   margin: 0 auto;
   display: grid;
-  gap: 8px;
+  gap: var(--section-gap);
+}
+
+/* Жестко сбрасываем возможные глобальные стили шаблона Bitrix (margin/order у section). */
+.consult-page section {
+  margin: 0 !important;
+  order: initial !important;
+  min-width: 0;
+  width: 100%;
 }
 
 .consult-page .hero {
   background: linear-gradient(115deg, #1b2130 0%, #28324a 55%, #1a2030 100%);
   color: var(--text-light);
   border-radius: var(--radius-xl);
-  padding: 34px 42px;
+  padding: 34px 40px;
   display: grid;
   grid-template-columns: 1fr 0.95fr;
-  gap: 26px;
+  gap: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  min-height: 760px;
+  border: 1px solid rgba(220, 228, 241, 0.25);
+  min-height: clamp(420px, 40vw, 660px);
 }
 
 .consult-page .hero__label {
@@ -64,7 +95,8 @@ a {
 
 .consult-page .hero__title {
   margin: 0;
-  font-size: clamp(58px, 5.5vw, 120px);
+  font-family: var(--font-family-heading);
+  font-size: clamp(56px, 5.2vw, 106px);
   line-height: 0.95;
   letter-spacing: -0.03em;
   max-width: 14ch;
@@ -72,24 +104,25 @@ a {
 }
 
 .consult-page .hero__text {
-  margin: 24px 0 34px;
+  margin: 24px 0 30px;
   color: #d6deee;
-  font-size: clamp(18px, 1.1vw, 28px);
-  line-height: 1.26;
+  font-size: clamp(17px, 1.15vw, 25px);
+  line-height: 1.3;
   max-width: 36ch;
 }
 
 .consult-page .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 12px;
 }
 
 .consult-page .hero__media {
   min-height: 100%;
-  border-radius: 24px;
+  border-radius: 22px;
   border: 2px solid rgba(255, 255, 255, 0.42);
-  background: url('./images/hero-photo.png') center center / cover no-repeat;
+  /* Hero: используем фото №1, сдвиг к верхней части для читаемого фокуса. */
+  background: url('./images/hero-photo-v2.jpg') center 24% / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -116,16 +149,16 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 62px;
   border: 2px solid var(--btn-border);
-  border-radius: 30px;
-  padding: 0 24px;
+  border-radius: 999px;
+  padding: 0 26px;
   background: var(--btn-bg);
   color: var(--btn-color);
-  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  font-family: var(--font-family-ui);
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   text-decoration: none;
@@ -133,9 +166,9 @@ a {
 }
 
 .consult-page .hero .btn {
-  min-height: 80px;
-  padding: 0 38px;
-  font-size: clamp(24px, 1.2vw, 34px);
+  min-height: 58px;
+  padding: 0 28px;
+  font-size: clamp(17px, 1.02vw, 24px);
 }
 
 .consult-page .btn:hover {
@@ -178,18 +211,6 @@ a {
   --btn-border-active: #fd8d29;
 }
 
-.consult-page .btn--ghost-light {
-  --btn-bg: transparent;
-  --btn-bg-hover: rgba(255, 255, 255, 0.08);
-  --btn-bg-active: rgba(255, 255, 255, 0.14);
-  --btn-color: #ffffff;
-  --btn-color-hover: #ffffff;
-  --btn-color-active: #ffffff;
-  --btn-border: rgba(255, 255, 255, 0.55);
-  --btn-border-hover: rgba(255, 255, 255, 0.8);
-  --btn-border-active: rgba(255, 255, 255, 0.9);
-}
-
 .consult-page .btn--full {
   width: 100%;
 }
@@ -197,8 +218,9 @@ a {
 .consult-page .section {
   background: #ffffff;
   border-radius: var(--radius-xl);
-  padding: 14px;
+  padding: var(--section-padding);
   box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
 }
 
 .consult-page .section--light {
@@ -211,20 +233,20 @@ a {
 }
 
 .consult-page .section--metrics {
-  background: linear-gradient(125deg, #242b3f 0%, #232a3f 100%);
-  color: #ffffff;
-}
-
-.consult-page .section--cta {
-  background: linear-gradient(125deg, #232c42 0%, #232a3e 100%);
-  color: #ffffff;
+  /* После переноса под hero делаем светлую палитру, чтобы не дублировать темный первый экран. */
+  background: linear-gradient(130deg, #eef3fa 0%, #e7edf8 100%);
+  color: #1f2a3f;
+  border-color: #d7dfec;
 }
 
 .consult-page .section__title {
   margin: 0;
-  font-size: clamp(18px, 2.2vw, 40px);
-  line-height: 1.06;
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  font-size: clamp(20px, 2.2vw, 40px);
+  line-height: 1.08;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .consult-page .section__title--white {
@@ -233,19 +255,16 @@ a {
 
 .consult-page .section__lead {
   margin: 8px 0 0;
-  font-size: 12px;
+  font-size: 16px;
   color: #4b5565;
-}
-
-.consult-page .section__lead--white {
-  color: rgba(255, 255, 255, 0.9);
+  text-wrap: pretty;
 }
 
 .consult-page .benefits-layout {
-  margin-top: 14px;
+  margin-top: 18px;
   display: grid;
   grid-template-columns: 1fr 1.1fr 1fr;
-  gap: 16px;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -256,7 +275,7 @@ a {
 }
 
 .consult-page .benefit-side {
-  padding: 12px 10px 14px;
+  padding: 16px 14px 18px;
   border-bottom: 1px solid #dee4ee;
 }
 
@@ -280,35 +299,37 @@ a {
 
 .consult-page .benefit-side h3 {
   margin: 0 0 8px;
-  font-size: clamp(34px, 2.2vw, 56px);
-  line-height: 1.05;
-  font-weight: 600;
+  font-family: var(--font-family-heading);
+  font-size: clamp(24px, 1.55vw, 38px);
+  line-height: 1.12;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
 .consult-page .benefit-side p {
   margin: 0;
-  font-size: clamp(14px, 0.95vw, 22px);
-  line-height: 1.34;
+  font-size: clamp(14px, 0.92vw, 18px);
+  line-height: 1.3;
   color: #566173;
 }
 
 .consult-page .benefit-focus {
   background: #222a40;
-  border-radius: 28px;
-  padding: 26px 22px;
+  border-radius: 24px;
+  padding: 20px 16px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 520px;
+  min-height: 430px;
 }
 
 .consult-page .benefit-focus h3 {
   margin: 0;
+  font-family: var(--font-family-heading);
   text-align: center;
-  font-size: clamp(54px, 3.5vw, 82px);
-  line-height: 0.95;
+  font-size: clamp(36px, 2.35vw, 54px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
   font-weight: 500;
 }
@@ -316,15 +337,16 @@ a {
 .consult-page .benefit-focus__inner {
   border: 3px solid #f28b1a;
   border-radius: 28px;
-  min-height: 250px;
+  min-height: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(36px, 2.4vw, 52px);
-  line-height: 1.08;
+  font-family: var(--font-family-heading);
+  font-size: clamp(24px, 1.6vw, 34px);
+  line-height: 1.18;
   color: #f1f5ff;
-  padding: 20px;
+  padding: 16px;
 }
 
 .consult-page .step-card__index {
@@ -355,23 +377,24 @@ a {
 }
 
 .consult-page .steps-grid {
-  margin-top: 14px;
+  margin-top: 18px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 .consult-page .step-card {
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1px solid #dfe4ed;
   background: #f5f7fb;
-  padding: 18px;
+  padding: 20px;
   min-height: 250px;
 }
 
 .consult-page .step-card--with-media {
   display: grid;
   align-content: start;
+  justify-items: start;
   gap: 10px;
   min-height: 330px;
 }
@@ -382,20 +405,40 @@ a {
   line-height: 1;
 }
 
+.consult-page #workflow .steps-grid {
+  gap: 14px;
+}
+
+.consult-page #workflow .step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 62px 22px 20px;
+}
+
 .consult-page #workflow .step-card__index {
-  width: auto;
+  /* Фиксируем одинаковую позицию 01/02/03/04 во всех карточках. */
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: inline-flex;
+  width: fit-content;
   height: auto;
   border-radius: 0;
   background: transparent;
   color: #f28b1a;
   font-size: clamp(22px, 1.6vw, 32px);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
   padding: 0;
-  margin-bottom: 8px;
+  margin: 0;
+  text-align: left;
 }
 
 .consult-page #workflow .step-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+  font-family: var(--font-family-heading);
   font-size: clamp(40px, 2.7vw, 62px);
   line-height: 1.04;
   letter-spacing: -0.02em;
@@ -404,13 +447,20 @@ a {
 
 .consult-page #workflow .step-card p {
   margin: 0;
-  font-size: clamp(15px, 1.05vw, 24px);
-  line-height: 1.3;
+  min-height: 2.75em;
+  font-size: clamp(16px, 1.08vw, 22px);
+  line-height: 1.34;
   color: #5a6475;
 }
 
+.consult-page #workflow .step-card--with-media .step-card__calendar,
+.consult-page #workflow .step-card--with-media .step-card__booking {
+  margin-top: 16px;
+}
+
 .consult-page .step-card__calendar {
-  margin-top: 8px;
+  width: 100%;
+  margin-top: 12px;
   border: 1px solid #dce2ec;
   border-radius: 14px;
   padding: 10px 12px 12px;
@@ -466,7 +516,8 @@ a {
 }
 
 .consult-page .step-card__booking {
-  margin-top: 8px;
+  width: 100%;
+  margin-top: 12px;
   border: 1px solid #dce2ec;
   border-radius: 14px;
   padding: 10px;
@@ -526,21 +577,22 @@ a {
 
 
 .consult-page .audience-grid {
-  margin-top: 20px;
+  margin-top: 18px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
 .consult-page .audience-card {
-  border-radius: 28px;
-  padding: 24px;
+  border-radius: 24px;
+  padding: 20px 20px 0;
   color: #ffffff;
-  min-height: 540px;
+  min-height: 430px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
+  gap: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.07);
   border: 1px solid #e1e6ef;
 }
 
@@ -557,8 +609,9 @@ a {
 
 .consult-page .audience-card h3 {
   margin: 0;
-  font-size: clamp(28px, 1.9vw, 44px);
-  line-height: 1.08;
+  font-family: var(--font-family-heading);
+  font-size: clamp(24px, 1.45vw, 34px);
+  line-height: 1.12;
   letter-spacing: -0.01em;
   font-weight: 600;
   color: #ffffff;
@@ -566,19 +619,28 @@ a {
 
 .consult-page .audience-card p {
   margin: 0;
-  font-size: clamp(15px, 1.02vw, 22px);
-  line-height: 1.32;
+  min-height: 3.2em;
+  font-size: clamp(15px, 0.95vw, 18px);
+  line-height: 1.3;
   color: rgba(255, 255, 255, 0.92);
 }
 
 .consult-page .audience-card__media {
+  /* Фото тянется вниз карточки и упирается в нижнюю границу без пустого подвала. */
   margin-top: auto;
-  min-height: 170px;
-  border-radius: 22px;
+  flex: 1 1 auto;
+  min-height: 176px;
+  border-radius: 18px 18px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background-position: center;
+  border-bottom: 0;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.consult-page .audience-card--regular {
+  background: #edf1f7;
+  border-color: #dfe5ef;
 }
 
 .consult-page .audience-card--investor {
@@ -604,56 +666,72 @@ a {
 }
 
 .consult-page .audience-card__media--investor {
-  background-image: url('./images/audience-investor-photo.png');
+  /* Плитка "Частным инвесторам": фото №3. */
+  background-image: url('./images/audience-investor-photo-v7.jpg');
+  background-position: center 45%;
+}
+
+.consult-page .audience-card__media--regular {
+  background-image: url('./images/audience-investor-photo-v6.jpg');
+  background-position: center 52%;
 }
 
 .consult-page .audience-card__media--business {
-  background-image: url('./images/audience-business-photo.png');
+  /* Плитка "Предпринимателям": фото №4. */
+  background-image: url('./images/audience-business-photo-v7.jpg');
+  background-position: center 38%;
 }
 
 .consult-page .audience-card__media--teams {
-  background-image: url('./images/audience-team-photo.png');
+  /* Плитка "Командам и проектам": фото №2. */
+  background-image: url('./images/audience-team-photo-v7.jpg');
+  background-position: center 42%;
 }
 
-.consult-page .check-list {
-  margin: 10px 0 0;
+.consult-page #fit .section__title {
+  font-size: clamp(46px, 3.05vw, 68px);
+  line-height: 1.04;
+}
+
+.consult-page .fit-list {
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
-.consult-page .check-list li {
+.consult-page .fit-list li {
   position: relative;
-  padding: 0 0 0 12px;
-  color: #4a5565;
-  font-size: 12px;
+  padding-left: 18px;
+  color: #495568;
+  font-size: clamp(17px, 1.03vw, 22px);
+  line-height: 1.32;
 }
 
-.consult-page .check-list li::before {
+.consult-page .fit-list li::before {
   content: '';
   position: absolute;
+  left: 0;
+  top: 0.62em;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  left: 0;
-  top: 6px;
 }
 
 /* Блок "Что проверяем и что подготовить" — как в макете: заголовок слева, карточки справа. */
 .consult-page .diagnostics-layout {
   display: grid;
-  grid-template-columns: minmax(360px, 430px) minmax(820px, 1240px);
-  gap: 22px;
+  grid-template-columns: minmax(300px, 390px) minmax(820px, 1240px);
+  gap: 20px;
   align-items: start;
   justify-content: space-between;
 }
 
 .consult-page .diagnostics-layout__title {
-  font-size: clamp(54px, 3.2vw, 82px);
-  line-height: 1.02;
+  font-size: clamp(50px, 3.05vw, 76px);
+  line-height: 1.04;
   letter-spacing: -0.02em;
   max-width: 100%;
 }
@@ -666,19 +744,19 @@ a {
 }
 
 .consult-page .diagnostics-item {
-  min-height: 148px;
-  border-radius: 18px;
+  min-height: 172px;
+  border-radius: 20px;
   border: 1px solid #dfe4ed;
   background: #f5f7fb;
-  padding: 14px 16px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .consult-page .diagnostics-item__icon {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 999px;
   background: #f3e2cf;
   color: #f28b1a;
@@ -691,18 +769,15 @@ a {
 
 .consult-page .diagnostics-item p {
   margin: 0;
-  font-size: clamp(15px, 1.05vw, 24px);
+  font-family: var(--font-family-heading);
+  font-size: clamp(20px, 1.22vw, 27px);
   line-height: 1.28;
   color: #2f3748;
   font-weight: 500;
 }
 
-.consult-page .diagnostics-item--wide {
-  grid-column: 1 / -1;
-}
-
 .consult-page .consult-form {
-  margin-top: 14px;
+  margin-top: 18px;
   padding: 0;
 }
 
@@ -716,17 +791,17 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .consult-page .consult-form__chip {
-  min-height: 36px;
+  min-height: 42px;
   border-radius: 999px;
-  padding: 0 14px;
+  padding: 0 16px;
   border: 1px solid #e2e6ee;
   background: #eaedf3;
   color: #565f6f;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -745,11 +820,11 @@ a {
 .consult-page .consult-form__field input {
   width: 100%;
   border: 1px solid #dde3ed;
-  border-radius: 16px;
-  min-height: 74px;
-  font-size: 40px;
+  border-radius: 18px;
+  min-height: 80px;
+  font-size: 24px;
   line-height: 1.1;
-  padding: 0 24px;
+  padding: 0 26px;
   font: inherit;
   color: #111827;
   background: #f7f8fb;
@@ -762,11 +837,45 @@ a {
   box-shadow: 0 0 0 2px rgba(242, 139, 26, 0.15);
 }
 
+/* Чекбокс согласия: стиль в общей стилистике формы. */
+.consult-page .consult-form__consent {
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #5f697b;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.consult-page .consult-form__consent input[type='checkbox'] {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  accent-color: #f28b1a;
+}
+
+.consult-page .consult-form__consent a {
+  color: #d36f00;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.consult-page .consult-form__consent a:hover {
+  color: #f28b1a;
+}
+
+.consult-page .consult-form__consent input[type='checkbox']:focus-visible {
+  outline: 2px solid rgba(242, 139, 26, 0.45);
+  outline-offset: 1px;
+}
+
 .consult-page .consult-form .btn--full {
   margin-top: 14px;
-  min-height: 84px;
+  min-height: 88px;
   border-radius: 30px;
-  font-size: clamp(26px, 1.45vw, 34px);
+  font-size: clamp(28px, 1.55vw, 38px);
   font-weight: 600;
 }
 
@@ -821,6 +930,13 @@ a {
   font-size: 16px;
 }
 
+.consult-page .consult-form__microtext {
+  margin: 12px 4px 0;
+  color: #6a7384;
+  font-size: clamp(14px, 0.95vw, 18px);
+  line-height: 1.3;
+}
+
 .consult-page .consult-form__result--error {
   background: #ffe6e6;
   color: #8b1f1f;
@@ -838,148 +954,188 @@ a {
 
 .consult-page #consult-form-section .section__lead {
   margin-top: 12px;
-  font-size: clamp(18px, 1.1vw, 28px);
+  font-size: clamp(18px, 1.18vw, 26px);
   color: #676f7f;
 }
 
 .consult-page #faq .section__title {
-  font-size: clamp(56px, 3.2vw, 84px);
-  line-height: 1.02;
+  font-size: clamp(56px, 3.35vw, 86px);
+  line-height: 1;
+  max-width: 20ch;
 }
 
 .consult-page .faq {
-  margin-top: 16px;
-  border-radius: 20px;
+  margin-top: 18px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 1px solid #dfe4ed;
-  background: #f6f8fc;
+  border: 1px solid var(--faq-line);
+  background: var(--faq-bg);
 }
 
 .consult-page .faq-item {
-  background: #f6f8fc;
+  background: var(--faq-bg);
+  position: relative;
 }
 
 .consult-page .faq-item + .faq-item {
-  border-top: 1px solid #dfe4ed;
+  border-top: 1px solid var(--faq-line);
 }
 
 .consult-page .faq-item__question {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   background: transparent;
   border: 0;
   text-align: left;
-  padding: 22px 20px;
+  padding: 28px 28px;
   font-family: inherit;
   cursor: pointer;
 }
 
 .consult-page .faq-item__head {
   min-width: 0;
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
 }
 
 .consult-page .faq-item__index {
-  color: #b9bfcb;
-  font-size: clamp(16px, 1.05vw, 24px);
+  color: var(--faq-muted);
+  font-size: clamp(14px, 0.9vw, 18px);
   line-height: 1;
-  font-weight: 600;
+  font-weight: 500;
+  padding-top: 0.25em;
 }
 
 .consult-page .faq-item__title {
-  color: #262e3e;
-  font-size: clamp(22px, 1.55vw, 38px);
-  line-height: 1.12;
+  color: var(--faq-text);
+  font-family: var(--font-family-heading);
+  font-size: clamp(42px, 2.75vw, 66px);
+  line-height: 1.06;
   letter-spacing: -0.01em;
   font-weight: 500;
+  text-wrap: balance;
 }
 
 .consult-page .faq-item__toggle {
-  width: 24px;
-  flex: 0 0 24px;
+  width: 54px;
+  min-height: 54px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #f28b1a;
-  line-height: 1;
+  color: var(--faq-open-accent);
+  line-height: 0.9;
 }
 
 .consult-page .faq-item__toggle::before {
   content: '+';
-  font-size: clamp(28px, 1.6vw, 38px);
+  font-size: clamp(48px, 2.7vw, 72px);
+  font-weight: 300;
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] {
-  background: #f28b1a;
-  padding-bottom: 10px;
+.consult-page .faq-item.is-open {
+  background: var(--faq-open-accent);
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] .faq-item__index {
-  display: none;
+.consult-page .faq-item.is-open .faq-item__index {
+  color: rgba(255, 241, 224, 0.9);
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] .faq-item__title {
+.consult-page .faq-item.is-open .faq-item__title {
   color: #ffffff;
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] .faq-item__toggle {
-  color: #ffd8ac;
+.consult-page .faq-item.is-open .faq-item__toggle {
+  color: #fff1df;
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] .faq-item__toggle::before {
-  content: attr(data-index);
-  font-size: clamp(20px, 1.2vw, 28px);
-  font-weight: 600;
+.consult-page .faq-item.is-open .faq-item__toggle::before {
+  content: '×';
+  font-size: clamp(44px, 2.6vw, 66px);
+  font-weight: 300;
 }
 
 .consult-page .faq-item__answer {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  padding: 0 20px 0;
-  color: #566173;
+  padding: 0 28px 0 94px;
+  color: var(--faq-muted);
   pointer-events: none;
-  transition: max-height 0.36s ease, opacity 0.26s ease, padding-bottom 0.36s ease, background-color 0.24s ease;
+  transition: max-height 0.42s ease, opacity 0.3s ease, padding-bottom 0.42s ease;
 }
 
-.consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
-  max-height: 260px;
+.consult-page .faq-item.is-open .faq-item__answer {
+  max-height: 420px;
   opacity: 1;
-  padding-bottom: 20px;
-  background: #f28b1a;
+  padding-bottom: 30px;
   color: rgba(255, 255, 255, 0.96);
   pointer-events: auto;
 }
 
 .consult-page .faq-item__answer p {
   margin: 0;
-  font-size: clamp(16px, 1.05vw, 24px);
-  line-height: 1.34;
+  font-size: clamp(27px, 1.6vw, 38px);
+  line-height: 1.24;
+  text-wrap: pretty;
+}
+
+@media (min-width: 1180px) {
+  .consult-page .faq-item.is-open {
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+    align-items: stretch;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__question {
+    grid-column: 1 / 2;
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: 36px;
+    min-height: 270px;
+    align-items: start;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__toggle {
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .consult-page .faq-item.is-open .faq-item__answer {
+    grid-column: 2 / 3;
+    padding: 30px 84px 30px 0;
+    max-height: 999px;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .consult-page .pricing {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
+  gap: 34px;
   align-items: start;
 }
 
 .consult-page .section--pricing .section__title {
+  font-family: var(--font-family-heading);
   font-size: clamp(70px, 4.6vw, 112px);
-  line-height: 0.93;
+  line-height: 0.94;
   letter-spacing: -0.03em;
 }
 
 .consult-page .pricing__description {
   margin: 18px 0 0;
+  font-family: var(--font-family-main);
   color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(20px, 1.3vw, 30px);
+  font-size: clamp(19px, 1.22vw, 26px);
   line-height: 1.34;
+  text-wrap: pretty;
 }
 
 .consult-page .pricing__included {
@@ -999,11 +1155,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 82px;
+  min-height: 74px;
   padding: 0 38px;
   border-radius: 999px;
   background: #ffffff;
   color: #e36900;
+  font-family: var(--font-family-ui);
   font-size: clamp(48px, 2.9vw, 72px);
   font-weight: 800;
   line-height: 1;
@@ -1016,7 +1173,8 @@ a {
   display: grid;
   gap: 18px;
   align-content: start;
-  font-size: clamp(24px, 1.5vw, 38px);
+  font-family: var(--font-family-main);
+  font-size: clamp(23px, 1.42vw, 34px);
 }
 
 .consult-page .pricing__list li {
@@ -1045,7 +1203,7 @@ a {
 
 .consult-page .metric-item {
   position: relative;
-  color: #f8fbff;
+  color: #1f2a3f;
   padding: 24px 26px;
   display: grid;
   gap: 10px;
@@ -1060,85 +1218,39 @@ a {
   top: 24px;
   bottom: 24px;
   width: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(35, 48, 71, 0.16);
 }
 
 .consult-page .metric-item strong {
-  font-size: clamp(56px, 3.2vw, 88px);
-  line-height: 1;
+  font-family: var(--font-family-ui);
+  font-size: clamp(38px, 2.4vw, 58px);
+  line-height: 1.06;
   color: var(--accent);
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .consult-page .metric-item span {
-  font-size: clamp(20px, 1.12vw, 28px);
-  line-height: 1.2;
-  color: #dce3f1;
-}
-
-.consult-page #cta {
-  padding: 34px 42px;
-}
-
-.consult-page #cta .section__title {
-  font-size: clamp(64px, 4.1vw, 98px);
-  line-height: 0.96;
-  letter-spacing: -0.02em;
-}
-
-.consult-page #cta .section__lead {
-  margin-top: 16px;
-  font-size: clamp(28px, 1.6vw, 42px);
-  line-height: 1.28;
-  color: rgba(233, 239, 250, 0.9);
-}
-
-.consult-page .cta__actions {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.consult-page #cta .btn {
-  min-height: 64px;
-  padding: 0 34px;
-  border-radius: 30px;
-  font-size: clamp(24px, 1.25vw, 32px);
-  font-weight: 600;
-}
-
-.consult-page .btn--telegram {
-  --btn-bg: #01cd92;
-  --btn-bg-hover: #10bd8b;
-  --btn-bg-active: #01ab7a;
-  --btn-color: #ffffff;
-  --btn-color-hover: #ffffff;
-  --btn-color-active: #ffffff;
-  --btn-border: #01cd92;
-  --btn-border-hover: #10bd8b;
-  --btn-border-active: #01ab7a;
-  --btn-hex-bg: #ffffff;
-  --btn-hex-fg: #01cd92;
-}
-
-.consult-page .btn--contact {
-  --btn-bg: transparent;
-  --btn-bg-hover: rgba(255, 255, 255, 0.09);
-  --btn-bg-active: rgba(255, 255, 255, 0.15);
-  --btn-color: rgba(231, 238, 250, 0.95);
-  --btn-color-hover: #ffffff;
-  --btn-color-active: #ffffff;
-  --btn-border: rgba(228, 236, 250, 0.42);
-  --btn-border-hover: rgba(255, 255, 255, 0.72);
-  --btn-border-active: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-family-main);
+  font-size: clamp(17px, 0.98vw, 22px);
+  line-height: 1.24;
+  color: #4c5770;
 }
 
 @media (max-width: 1024px) {
+  .consult-page {
+    padding-top: 14px;
+  }
+
+  .consult-page .container {
+    width: calc(100% - 24px);
+    gap: 18px;
+  }
+
   .consult-page .hero {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding: 20px;
+    padding: 24px;
     gap: 16px;
   }
 
@@ -1159,17 +1271,25 @@ a {
 
   .consult-page #workflow .step-card {
     min-height: 220px;
+    padding: 54px 18px 18px;
   }
 
   .consult-page #workflow .step-card--with-media {
     min-height: 300px;
   }
 
+  .consult-page #workflow .step-card__index {
+    top: 18px;
+    left: 18px;
+  }
+
   .consult-page #workflow .step-card h3 {
     font-size: clamp(34px, 4.4vw, 52px);
+    margin-bottom: 10px;
   }
 
   .consult-page #workflow .step-card p {
+    min-height: 0;
     font-size: 15px;
   }
 
@@ -1185,7 +1305,7 @@ a {
 
   .consult-page .benefit-side {
     border: 1px solid #dee4ee;
-    border-radius: 14px;
+    border-radius: 18px;
   }
 
   .consult-page .benefit-focus {
@@ -1205,6 +1325,14 @@ a {
     font-size: 16px;
   }
 
+  .consult-page #fit .section__title {
+    font-size: clamp(34px, 5.4vw, 56px);
+  }
+
+  .consult-page .fit-list li {
+    font-size: 16px;
+  }
+
   .consult-page .diagnostics-layout {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1219,6 +1347,11 @@ a {
     min-height: 128px;
   }
 
+  .consult-page .diagnostics-item p {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
   .consult-page #consult-form-section .section__title {
     font-size: clamp(40px, 6.2vw, 62px);
   }
@@ -1228,50 +1361,62 @@ a {
   }
 
   .consult-page #faq .section__title {
-    font-size: clamp(40px, 6.2vw, 62px);
+    font-size: clamp(42px, 6.2vw, 66px);
+    max-width: 100%;
   }
 
   .consult-page .faq-item__question {
-    padding: 16px 14px;
+    padding: 22px 18px;
   }
 
   .consult-page .faq-item__head {
-    gap: 10px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 14px;
   }
 
   .consult-page .faq-item__title {
-    font-size: clamp(21px, 3vw, 32px);
+    font-size: clamp(30px, 3.9vw, 46px);
   }
 
   .consult-page .faq-item__answer {
-    padding: 0 14px 0;
+    padding: 0 18px 0 68px;
   }
 
-  .consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
-    max-height: 220px;
-    padding-bottom: 14px;
+  .consult-page .faq-item.is-open .faq-item__answer {
+    max-height: 300px;
+    padding-bottom: 18px;
   }
 
   .consult-page .faq-item__answer p {
-    font-size: 15px;
+    font-size: 19px;
   }
 
   .consult-page .consult-form__chip {
     min-height: 32px;
     padding: 0 12px;
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .consult-page .consult-form__microtext {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .consult-page .consult-form__consent {
+    margin-top: 10px;
+    font-size: 14px;
   }
 
   .consult-page .consult-form__field input {
     min-height: 60px;
     border-radius: 12px;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0 18px;
   }
 
   .consult-page .consult-form .btn--full {
     min-height: 74px;
-    font-size: clamp(22px, 3vw, 34px);
+    font-size: clamp(22px, 2.9vw, 31px);
   }
 
   .consult-page .consult-form .btn--with-hex {
@@ -1281,12 +1426,14 @@ a {
 
   .consult-page .audience-card {
     min-height: 360px;
-    padding: 16px;
-    border-radius: 18px;
+    padding: 18px;
+    border-radius: 20px;
   }
 
   .consult-page .audience-card__media {
-    min-height: 130px;
+    margin-top: 10px;
+    flex: 1 1 auto;
+    min-height: 150px;
     border-radius: 14px;
   }
 
@@ -1339,30 +1486,6 @@ a {
     font-size: 16px;
   }
 
-  .consult-page #cta {
-    padding: 24px 22px;
-  }
-
-  .consult-page #cta .section__title {
-    font-size: clamp(46px, 7.2vw, 68px);
-  }
-
-  .consult-page #cta .section__lead {
-    margin-top: 10px;
-    font-size: 17px;
-  }
-
-  .consult-page .cta__actions {
-    margin-top: 16px;
-    gap: 10px;
-  }
-
-  .consult-page #cta .btn {
-    min-height: 56px;
-    padding: 0 24px;
-    font-size: 20px;
-  }
-
   .consult-page .btn--with-hex {
     gap: 14px;
     padding-right: 20px;
@@ -1378,18 +1501,18 @@ a {
 
 @media (max-width: 740px) {
   .consult-page {
-    padding-top: 8px;
+    padding-top: 10px;
   }
 
   .consult-page .container {
-    width: calc(100% - 8px);
-    gap: 8px;
+    width: calc(100% - 16px);
+    gap: 12px;
   }
 
   .consult-page .hero,
   .consult-page .section {
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 18px;
+    padding: 14px;
   }
 
   .consult-page .hero__title {
@@ -1419,6 +1542,7 @@ a {
 
   .consult-page #faq .section__title {
     font-size: clamp(34px, 10vw, 48px);
+    max-width: 100%;
   }
 
   .consult-page .section--pricing .section__title {
@@ -1490,31 +1614,6 @@ a {
     font-size: 13px;
   }
 
-  .consult-page #cta {
-    padding: 16px 14px;
-  }
-
-  .consult-page #cta .section__title {
-    font-size: clamp(34px, 10vw, 48px);
-    line-height: 1;
-  }
-
-  .consult-page #cta .section__lead {
-    margin-top: 8px;
-    font-size: 14px;
-  }
-
-  .consult-page .cta__actions {
-    margin-top: 12px;
-    gap: 8px;
-  }
-
-  .consult-page #cta .btn {
-    min-height: 48px;
-    padding: 0 14px;
-    font-size: 16px;
-  }
-
   .consult-page .btn--with-hex {
     gap: 12px;
     padding-right: 16px;
@@ -1533,47 +1632,48 @@ a {
   }
 
   .consult-page .faq-item__question {
-    padding: 12px 10px;
+    padding: 14px 12px;
     gap: 10px;
   }
 
   .consult-page .faq-item__head {
-    gap: 8px;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 10px;
   }
 
   .consult-page .faq-item__index {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .consult-page .faq-item__title {
-    font-size: 19px;
-    line-height: 1.2;
+    font-size: 23px;
+    line-height: 1.18;
   }
 
   .consult-page .faq-item__toggle {
-    width: 20px;
-    flex-basis: 20px;
+    width: 30px;
+    min-height: 30px;
   }
 
   .consult-page .faq-item__toggle::before {
-    font-size: 24px;
+    font-size: 34px;
   }
 
-  .consult-page .faq-item__question[aria-expanded='true'] .faq-item__toggle::before {
-    font-size: 14px;
+  .consult-page .faq-item.is-open .faq-item__toggle::before {
+    font-size: 30px;
   }
 
   .consult-page .faq-item__answer {
-    padding: 0 10px 0;
+    padding: 0 12px 0 48px;
   }
 
-  .consult-page .faq-item__question[aria-expanded='true'] + .faq-item__answer {
-    max-height: 200px;
-    padding-bottom: 12px;
+  .consult-page .faq-item.is-open .faq-item__answer {
+    max-height: 260px;
+    padding-bottom: 14px;
   }
 
   .consult-page .faq-item__answer p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .consult-page .consult-form__chips {
@@ -1584,6 +1684,18 @@ a {
   .consult-page .consult-form__chip {
     min-height: 30px;
     font-size: 12px;
+  }
+
+  .consult-page .consult-form__consent {
+    margin-top: 8px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .consult-page .consult-form__consent input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
   }
 
   .consult-page .consult-form__field input {
@@ -1613,7 +1725,6 @@ a {
   .consult-page .steps-grid,
   .consult-page .audience-grid,
   .consult-page .diagnostics-grid,
-  .consult-page .check-list,
   .consult-page .consult-form__row,
   .consult-page .metrics-grid {
     grid-template-columns: 1fr;
@@ -1638,7 +1749,7 @@ a {
   }
 
   .consult-page .diagnostics-item p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .consult-page #audience .section__title {
@@ -1650,10 +1761,24 @@ a {
     font-size: 14px;
   }
 
+  .consult-page #fit .section__title {
+    font-size: clamp(30px, 8.4vw, 42px);
+  }
+
+  .consult-page .fit-list {
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .consult-page .fit-list li {
+    font-size: 14px;
+    padding-left: 14px;
+  }
+
   .consult-page .audience-card {
     min-height: 0;
     padding: 14px;
-    border-radius: 14px;
+    border-radius: 16px;
   }
 
   .consult-page .audience-card h3 {
@@ -1661,11 +1786,14 @@ a {
   }
 
   .consult-page .audience-card p {
+    min-height: 0;
     font-size: 14px;
   }
 
   .consult-page .audience-card__media {
-    min-height: 112px;
+    margin-top: 8px;
+    flex: 0 0 auto;
+    min-height: 132px;
     border-radius: 12px;
   }
 
@@ -1675,7 +1803,7 @@ a {
 
   .consult-page #workflow .step-card {
     min-height: 0;
-    padding: 14px;
+    padding: 46px 14px 14px;
   }
 
   .consult-page #workflow .step-card--with-media {
@@ -1684,7 +1812,8 @@ a {
 
   .consult-page #workflow .step-card__index {
     font-size: 24px;
-    margin-bottom: 6px;
+    top: 14px;
+    left: 14px;
   }
 
   .consult-page #workflow .step-card h3 {
@@ -1764,5 +1893,626 @@ a {
     min-height: 52px;
     font-size: 16px;
     padding: 0 20px;
+  }
+}
+
+/* ==========================================================================
+   Стабилизация типографики и сетки (без изменения HTML-структуры)
+   --------------------------------------------------------------------------
+   Цель: убрать "съезды" текста, нормализовать шкалу размеров и ритм блоков
+   на desktop/tablet/mobile.
+   ========================================================================== */
+.consult-page {
+  --fs-h1: clamp(42px, 4.2vw, 86px);
+  --fs-h2: clamp(36px, 3.1vw, 64px);
+  --fs-h3: clamp(26px, 2.1vw, 42px);
+  --fs-body-lg: clamp(17px, 1.1vw, 24px);
+  --fs-body: clamp(16px, 0.95vw, 20px);
+  --fs-small: clamp(14px, 0.84vw, 17px);
+  --fs-btn: clamp(16px, 0.98vw, 22px);
+}
+
+.consult-page h1,
+.consult-page h2,
+.consult-page h3,
+.consult-page p,
+.consult-page li,
+.consult-page strong,
+.consult-page span {
+  overflow-wrap: break-word;
+}
+
+.consult-page h1,
+.consult-page h2,
+.consult-page h3 {
+  text-wrap: balance;
+}
+
+.consult-page p,
+.consult-page li {
+  text-wrap: pretty;
+}
+
+.consult-page .hero {
+  padding: clamp(24px, 2.2vw, 38px) clamp(22px, 2.4vw, 40px);
+  gap: clamp(18px, 1.8vw, 28px);
+}
+
+.consult-page .hero__title {
+  font-size: var(--fs-h1);
+  line-height: 1;
+  max-width: 13ch;
+}
+
+.consult-page .hero__text {
+  margin: 18px 0 24px;
+  font-size: var(--fs-body-lg);
+  line-height: 1.34;
+  max-width: 42ch;
+}
+
+.consult-page .hero .btn {
+  min-height: 56px;
+  font-size: var(--fs-btn);
+}
+
+.consult-page .hero__media {
+  min-height: clamp(320px, 33vw, 560px);
+}
+
+.consult-page .section {
+  padding: clamp(18px, 1.7vw, 30px);
+}
+
+.consult-page .section__title {
+  font-size: var(--fs-h2);
+  line-height: 1.06;
+  max-width: 22ch;
+}
+
+.consult-page .section__lead {
+  margin-top: 10px;
+  font-size: var(--fs-body);
+  line-height: 1.42;
+  max-width: 78ch;
+}
+
+.consult-page .benefits-layout {
+  gap: 14px;
+}
+
+.consult-page .benefit-side h3 {
+  font-size: clamp(24px, 1.7vw, 34px);
+  line-height: 1.12;
+}
+
+.consult-page .benefit-side p {
+  font-size: clamp(15px, 0.95vw, 18px);
+  line-height: 1.35;
+}
+
+.consult-page .benefit-focus {
+  min-height: clamp(320px, 26vw, 430px);
+}
+
+.consult-page .benefit-focus h3 {
+  font-size: clamp(36px, 2.4vw, 52px);
+  line-height: 1.04;
+}
+
+.consult-page .benefit-focus__inner {
+  font-size: clamp(22px, 1.45vw, 30px);
+  line-height: 1.22;
+}
+
+.consult-page #workflow .section__title {
+  font-size: clamp(42px, 3.35vw, 70px);
+}
+
+.consult-page #workflow .step-card {
+  min-height: clamp(230px, 17vw, 300px);
+  padding: 56px 22px 20px;
+}
+
+.consult-page #workflow .step-card h3 {
+  font-size: clamp(34px, 2.45vw, 50px);
+  line-height: 1.08;
+  margin-bottom: 10px;
+}
+
+.consult-page #workflow .step-card p {
+  font-size: clamp(16px, 1.02vw, 20px);
+  line-height: 1.35;
+  min-height: 0;
+}
+
+.consult-page #workflow .step-card__index,
+.consult-page .faq-item__index,
+.consult-page .metric-item strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.consult-page #audience .section__title {
+  font-size: clamp(40px, 3.1vw, 66px);
+}
+
+.consult-page #audience .section__lead {
+  font-size: clamp(16px, 1.05vw, 22px);
+}
+
+/* Секция аудитории: фиксируем одинаковую высоту текстовой части и фото во всех 4 карточках. */
+.consult-page #audience .audience-grid {
+  align-items: stretch;
+}
+
+.consult-page .audience-card {
+  display: grid;
+  grid-template-rows: minmax(2.2em, auto) minmax(4em, auto) 1fr;
+  min-height: 390px;
+  gap: 10px;
+  padding: 20px 20px 0;
+}
+
+.consult-page .audience-card h3 {
+  font-size: clamp(28px, 1.8vw, 40px);
+  line-height: 1.1;
+  min-height: 2.2em;
+}
+
+.consult-page .audience-card p {
+  font-size: clamp(16px, 0.98vw, 19px);
+  line-height: 1.33;
+  min-height: 4em;
+}
+
+.consult-page .audience-card__media {
+  align-self: end;
+  min-height: 0;
+  height: clamp(190px, 13.5vw, 260px);
+  border-radius: 16px 16px 0 0;
+}
+
+.consult-page #fit .section__title {
+  font-size: clamp(36px, 2.8vw, 58px);
+}
+
+.consult-page .fit-list li {
+  font-size: clamp(17px, 1vw, 21px);
+  line-height: 1.34;
+}
+
+.consult-page .diagnostics-layout {
+  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.consult-page .diagnostics-layout__title {
+  font-size: clamp(36px, 2.75vw, 58px);
+  line-height: 1.06;
+}
+
+.consult-page .diagnostics-item {
+  min-height: 150px;
+  padding: 18px 20px;
+}
+
+.consult-page .diagnostics-item p {
+  font-size: clamp(18px, 1.12vw, 24px);
+  line-height: 1.32;
+}
+
+.consult-page #consult-form-section .section__title {
+  font-size: clamp(40px, 3vw, 64px);
+}
+
+.consult-page #consult-form-section .section__lead {
+  font-size: clamp(16px, 1vw, 21px);
+}
+
+.consult-page .consult-form__chip {
+  font-size: clamp(13px, 0.9vw, 16px);
+}
+
+.consult-page .consult-form__field input {
+  font-size: clamp(18px, 1.35vw, 26px);
+}
+
+.consult-page .consult-form .btn--full {
+  font-size: clamp(20px, 1.35vw, 32px);
+}
+
+.consult-page .consult-form__microtext {
+  font-size: clamp(14px, 0.9vw, 17px);
+}
+
+.consult-page #faq .section__title {
+  font-size: clamp(40px, 3vw, 66px);
+  max-width: 18ch;
+}
+
+.consult-page .faq-item__question {
+  padding: 22px 24px;
+}
+
+.consult-page .faq-item__head {
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.consult-page .faq-item__title {
+  font-size: clamp(28px, 2.1vw, 44px);
+  line-height: 1.1;
+}
+
+.consult-page .faq-item__toggle::before {
+  font-size: clamp(40px, 2.45vw, 58px);
+}
+
+.consult-page .faq-item.is-open .faq-item__toggle::before {
+  font-size: clamp(38px, 2.2vw, 54px);
+}
+
+.consult-page .faq-item__answer {
+  padding: 0 24px 0 76px;
+}
+
+.consult-page .faq-item.is-open .faq-item__answer {
+  max-height: 520px;
+}
+
+.consult-page .faq-item__answer p {
+  font-size: clamp(17px, 1.22vw, 28px);
+  line-height: 1.32;
+}
+
+.consult-page .section--pricing .section__title {
+  font-size: clamp(44px, 3.6vw, 86px);
+  line-height: 0.98;
+}
+
+.consult-page .pricing__description {
+  font-size: clamp(16px, 1.06vw, 22px);
+  line-height: 1.4;
+}
+
+.consult-page .pricing__main,
+.consult-page .pricing__included {
+  min-width: 0;
+}
+
+.consult-page .pricing__label {
+  font-size: clamp(14px, 0.9vw, 18px);
+}
+
+.consult-page .pricing__price {
+  font-size: clamp(34px, 2.3vw, 58px);
+}
+
+.consult-page .pricing__list {
+  font-size: clamp(18px, 1.2vw, 28px);
+  gap: 14px;
+}
+
+.consult-page .pricing__list li {
+  overflow-wrap: anywhere;
+}
+
+.consult-page .metric-item {
+  min-height: 140px;
+  padding: 22px 22px;
+}
+
+.consult-page .metric-item strong {
+  font-size: clamp(36px, 2.35vw, 52px);
+}
+
+.consult-page .metric-item span {
+  font-size: clamp(16px, 0.92vw, 20px);
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .consult-page {
+    --fs-h1: clamp(38px, 6.4vw, 58px);
+    --fs-h2: clamp(32px, 5.2vw, 48px);
+    --fs-h3: clamp(24px, 3.8vw, 34px);
+    --fs-body-lg: clamp(16px, 1.9vw, 20px);
+    --fs-body: clamp(15px, 1.55vw, 18px);
+    --fs-small: 14px;
+    --fs-btn: clamp(15px, 1.65vw, 18px);
+  }
+
+  .consult-page .section__title,
+  .consult-page #workflow .section__title,
+  .consult-page #audience .section__title,
+  .consult-page #fit .section__title,
+  .consult-page .diagnostics-layout__title,
+  .consult-page #consult-form-section .section__title,
+  .consult-page #faq .section__title {
+    max-width: 100%;
+  }
+
+  .consult-page .section {
+    padding: 20px;
+  }
+
+  .consult-page .hero {
+    padding: 22px;
+  }
+
+  .consult-page #workflow .step-card {
+    min-height: 220px;
+    padding: 50px 18px 16px;
+  }
+
+  .consult-page #workflow .step-card h3 {
+    font-size: clamp(30px, 4vw, 42px);
+  }
+
+  .consult-page #workflow .step-card__index {
+    font-size: clamp(22px, 3vw, 28px);
+  }
+
+  .consult-page .audience-card {
+    grid-template-rows: minmax(2.15em, auto) minmax(3.7em, auto) 1fr;
+    min-height: 350px;
+    padding: 18px 18px 0;
+  }
+
+  .consult-page .audience-card h3 {
+    font-size: clamp(24px, 3.7vw, 34px);
+    min-height: 2.15em;
+  }
+
+  .consult-page .audience-card p {
+    min-height: 3.7em;
+  }
+
+  .consult-page .audience-card__media {
+    min-height: 0;
+    height: 170px;
+  }
+
+  .consult-page .diagnostics-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .consult-page .diagnostics-item p {
+    font-size: clamp(17px, 2vw, 21px);
+  }
+
+  .consult-page .faq-item__question {
+    padding: 18px;
+  }
+
+  .consult-page .faq-item__answer {
+    padding: 0 18px 0 64px;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__answer {
+    max-height: 360px;
+    padding-bottom: 18px;
+  }
+
+  .consult-page .faq-item__answer p {
+    font-size: clamp(16px, 1.8vw, 20px);
+  }
+
+  .consult-page .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consult-page .metric-item {
+    min-height: 116px;
+  }
+}
+
+@media (max-width: 740px) {
+  .consult-page {
+    --fs-h1: clamp(34px, 9.6vw, 44px);
+    --fs-h2: clamp(30px, 8.4vw, 38px);
+    --fs-h3: clamp(22px, 6.6vw, 30px);
+    --fs-body-lg: 16px;
+    --fs-body: 14px;
+    --fs-small: 13px;
+    --fs-btn: 16px;
+  }
+
+  .consult-page .container {
+    gap: 14px;
+  }
+
+  .consult-page .hero,
+  .consult-page .section {
+    padding: 14px;
+  }
+
+  .consult-page .hero__text {
+    margin: 12px 0 14px;
+    max-width: 100%;
+  }
+
+  .consult-page .hero__media {
+    min-height: 220px;
+  }
+
+  .consult-page .section__lead {
+    margin-top: 8px;
+  }
+
+  .consult-page #workflow .step-card {
+    padding: 46px 14px 14px;
+    min-height: 0;
+  }
+
+  .consult-page #workflow .step-card h3 {
+    font-size: clamp(26px, 8vw, 34px);
+    margin-bottom: 8px;
+  }
+
+  .consult-page #workflow .step-card p {
+    font-size: 14px;
+  }
+
+  .consult-page .audience-card {
+    min-height: 0;
+    padding: 14px 14px 0;
+    display: flex;
+    gap: 8px;
+  }
+
+  .consult-page .audience-card h3 {
+    font-size: clamp(26px, 8.2vw, 32px);
+    min-height: 0;
+  }
+
+  .consult-page .audience-card p {
+    font-size: 14px;
+    min-height: 0;
+  }
+
+  .consult-page .audience-card__media {
+    min-height: 136px;
+    height: 136px;
+  }
+
+  .consult-page .fit-list li {
+    font-size: 14px;
+  }
+
+  .consult-page .diagnostics-item {
+    min-height: 108px;
+    padding: 12px;
+  }
+
+  .consult-page .diagnostics-item p {
+    font-size: 15px;
+  }
+
+  .consult-page .consult-form__field input {
+    min-height: 52px;
+    font-size: 18px;
+  }
+
+  .consult-page .consult-form .btn--full {
+    min-height: 54px;
+    font-size: 16px;
+  }
+
+  .consult-page .faq-item__head {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .consult-page .faq-item__title {
+    font-size: clamp(21px, 7vw, 27px);
+    line-height: 1.16;
+  }
+
+  .consult-page .faq-item__toggle {
+    width: 30px;
+    min-height: 30px;
+  }
+
+  .consult-page .faq-item__toggle::before {
+    font-size: 32px;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__toggle::before {
+    font-size: 30px;
+  }
+
+  .consult-page .faq-item__answer {
+    padding: 0 12px 0 44px;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__answer {
+    max-height: 300px;
+    padding-bottom: 14px;
+  }
+
+  .consult-page .faq-item__answer p {
+    font-size: 14px;
+  }
+
+  .consult-page .pricing__list {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .consult-page .metric-item {
+    min-height: 0;
+    padding: 12px;
+  }
+}
+
+/* Секция "Консультация подойдет...": делаем композицию как у соседних блоков (заголовок + карточки). */
+.consult-page #fit {
+  display: grid;
+  grid-template-columns: minmax(320px, 560px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.consult-page #fit .section__title {
+  margin: 0;
+  max-width: 11ch;
+}
+
+.consult-page #fit .fit-list {
+  margin: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.consult-page #fit .fit-list li {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  padding: 16px 18px 16px 40px;
+  border: 1px solid #dfe4ed;
+  border-radius: 16px;
+  background: #f7f9fc;
+}
+
+.consult-page #fit .fit-list li::before {
+  left: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1024px) {
+  .consult-page #fit {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .consult-page #fit .section__title {
+    max-width: 100%;
+  }
+
+  .consult-page #fit .fit-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 740px) {
+  .consult-page #fit .fit-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .consult-page #fit .fit-list li {
+    min-height: 0;
+    padding: 12px 12px 12px 34px;
+    border-radius: 12px;
+  }
+
+  .consult-page #fit .fit-list li::before {
+    left: 14px;
+    width: 7px;
+    height: 7px;
   }
 }

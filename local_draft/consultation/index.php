@@ -7,7 +7,7 @@
 $CONSULT_FORM_ID = 0; // TODO: замените на реальный ID веб-формы в Bitrix.
 $PRIVACY_URL = '/privacy-policy/'; // TODO: замените на фактический URL политики конфиденциальности.
 $PAGE_SLUG = '/consultation/'; // TODO: замените на финальный slug страницы.
-$PAGE_TITLE = 'Безопасная система работы с криптоактивами за 60 минут';
+$PAGE_TITLE = 'Персональная консультация по безопасной работе с криптоактивами';
 
 // Вычисляем базовый путь до ассетов относительно текущего скрипта.
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/local_draft/consultation/index.php'));
@@ -27,7 +27,7 @@ if ($hasBitrixFiles && !defined('B_PROLOG_INCLUDED')) {
 if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICATION)) {
     $bitrixMode = true;
     $APPLICATION->SetTitle($PAGE_TITLE);
-    $APPLICATION->SetPageProperty('description', 'Практическая консультация по безопасной работе с криптоактивами: стратегия, риски, маршрут действий.');
+    $APPLICATION->SetPageProperty('description', 'Персональная консультация по безопасной работе с криптоактивами для пользователей, инвесторов, предпринимателей и команд.');
     $APPLICATION->SetPageProperty('keywords', 'криптовалюта, консультация, безопасность, криптоактивы');
     $APPLICATION->SetAdditionalCSS($assetBase . '/style.css');
     $APPLICATION->AddHeadScript($assetBase . '/script.js');
@@ -40,11 +40,8 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($PAGE_TITLE, ENT_QUOTES) ?></title>
-  <meta name="description" content="Практическая консультация по безопасной работе с криптоактивами: стратегия, риски, маршрут действий.">
+  <meta name="description" content="Персональная консультация по безопасной работе с криптоактивами для пользователей, инвесторов, предпринимателей и команд.">
   <link rel="canonical" href="<?= htmlspecialchars($PAGE_SLUG, ENT_QUOTES) ?>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/style.css">
 </head>
 <body>
@@ -55,67 +52,90 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="hero" id="top">
       <div class="hero__content">
         <p class="hero__label" aria-hidden="true"></p>
-        <h1 class="hero__title">Безопасная система работы с криптоактивами за 60 минут</h1>
-        <p class="hero__text">Итог консультации: персональный план действий и понятная схема защиты активов.</p>
+        <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами за&nbsp;60 минут</h1>
+        <p class="hero__text">Персональная консультация для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд. Покажем риски, объясним всё простым языком и&nbsp;дадим понятный план действий.</p>
         <div class="hero__actions">
           <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
-          <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Выбрать формат сессии</button>
+          <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Выбрать время консультации</button>
         </div>
       </div>
       <div class="hero__media" aria-hidden="true"></div>
     </section>
 
+    <section class="section section--metrics" id="metrics">
+      <div class="metrics-grid">
+        <article class="metric-item">
+          <strong>Разбор</strong>
+          <span>Персональный подход</span>
+        </article>
+        <article class="metric-item">
+          <strong>Практика</strong>
+          <span>Рекомендации по делу</span>
+        </article>
+        <article class="metric-item">
+          <strong>60 мин</strong>
+          <span>Консультация по делу</span>
+        </article>
+        <article class="metric-item">
+          <strong>NDA</strong>
+          <span>Конфиденциальность</span>
+        </article>
+      </div>
+    </section>
+
+
     <section class="section section--light" id="benefits">
-      <h2 class="section__title">Как помогает консультация</h2>
-      <!-- Компоновка как в макете: две боковые колонки + центральный фокус-блок. -->
+      <h2 class="section__title">Что вы получите после консультации</h2>
+      <p class="section__lead">Без сложных терминов и лишней теории.</p>
+      <!-- Компоновка оставлена прежней: две боковые колонки + центральный фокус-блок. -->
       <div class="benefits-layout">
         <div class="benefits-layout__col">
           <article class="benefit-side">
             <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true">⌂</span>
-            <h3>Системно и спокойно</h3>
-            <p>Выстраиваем понятную схему защиты активов без перегруза и лишних шагов.</p>
+            <h3>Поймете свою текущую ситуацию</h3>
+            <p>Увидите, что уже работает нормально, а где нужна корректировка.</p>
           </article>
           <article class="benefit-side">
             <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true">◌</span>
-            <h3>Персональный подход</h3>
-            <p>Разбираем именно ваш кейс и даем приоритеты, которые можно применить сразу.</p>
+            <h3>Увидите основные риски</h3>
+            <p>Определим, что важно закрыть в первую очередь.</p>
           </article>
         </div>
 
         <article class="benefit-focus">
-          <h3>Безопасность<br>в фокусе</h3>
+          <h3>Итог<br>сессии</h3>
           <div class="benefit-focus__inner">
-            Ваш план действий<br>после сессии
+            Понятный план действий<br>под вашу ситуацию
           </div>
         </article>
 
         <div class="benefits-layout__col">
           <article class="benefit-side">
             <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true">⌁</span>
-            <h3>Опыт экспертов</h3>
-            <p>Показываем рабочие практики и проверенные сценарии, применимые в реальной работе.</p>
+            <h3>Получите рекомендации по делу</h3>
+            <p>Сфокусируемся на шагах, которые можно внедрить сразу.</p>
           </article>
           <article class="benefit-side">
             <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true">◍</span>
-            <h3>Для любого уровня</h3>
-            <p>Подходит и новичкам, и опытным пользователям: сложное объясняем простым языком.</p>
+            <h3>Уйдете с планом действий</h3>
+            <p>Закрепим последовательность шагов на ближайший период.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="workflow">
-      <h2 class="section__title">Как это работает</h2>
+      <h2 class="section__title">Как все проходит</h2>
       <div class="steps-grid">
         <article class="step-card">
           <span class="step-card__index">01</span>
           <h3>Оставляете заявку</h3>
-          <p>Фиксируем задачу, формат и удобное время консультации.</p>
+          <p>Коротко пишете, что хотите разобрать.</p>
         </article>
         <article class="step-card step-card--with-media">
           <span class="step-card__index">02</span>
-          <h3>Бронируете время</h3>
-          <p>Выбираете дату и время в удобном формате без переписки туда-сюда.</p>
+          <h3>Выбираете удобное время</h3>
+          <p>Согласовываем формат и&nbsp;слот для онлайн-встречи.</p>
           <div class="step-card__calendar" aria-hidden="true">
             <div class="step-card__calendar-head">
               <span>‹</span>
@@ -140,8 +160,8 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
         </article>
         <article class="step-card step-card--with-media">
           <span class="step-card__index">03</span>
-          <h3>Подтверждаете слот</h3>
-          <p>Получаете подтверждение и напоминание перед встречей.</p>
+          <h3>При необходимости готовите материалы</h3>
+          <p>Подскажем, что лучше прислать заранее.</p>
           <div class="step-card__booking" aria-hidden="true">
             <div class="step-card__booking-status">Сессия забронирована</div>
             <div class="step-card__booking-row">
@@ -154,74 +174,85 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
         </article>
         <article class="step-card">
           <span class="step-card__index">04</span>
-          <h3>Проводим сессию</h3>
-          <p>Встречаемся онлайн и выдаем четкий план действий по вашему кейсу.</p>
+          <h3>Получаете разбор и рекомендации</h3>
+          <p>Обсуждаем вашу ситуацию и фиксируем следующие шаги.</p>
         </article>
       </div>
     </section>
 
     <section class="section section--light" id="audience">
-      <h2 class="section__title">Кому подходит консультация</h2>
-      <p class="section__lead">Выберите свой сценарий: персональный, предпринимательский или командный.</p>
+      <h2 class="section__title">Это важно не только для бизнеса и инвесторов</h2>
+      <p class="section__lead">Консультация подходит всем, кто уже пользуется криптой или только хочет навести в ней порядок без ошибок и хаоса.</p>
       <div class="audience-grid">
+        <article class="audience-card audience-card--regular audience-card--light">
+          <h3>Обычным пользователям</h3>
+          <p>Если хотите хранить крипту спокойнее и не бояться ошибок или потери доступа.</p>
+          <div class="audience-card__media audience-card__media--regular" aria-hidden="true"></div>
+        </article>
         <article class="audience-card audience-card--investor">
           <h3>Частным инвесторам</h3>
-          <p>Если хотите уверенно хранить активы, снизить риски и выстроить понятный личный процесс.</p>
+          <p>Если хотите снизить риски и навести порядок в хранении активов.</p>
           <div class="audience-card__media audience-card__media--investor" aria-hidden="true"></div>
         </article>
         <article class="audience-card audience-card--business">
           <h3>Предпринимателям</h3>
-          <p>Если нужны правила доступа, контроль операций и безопасная работа с цифровыми активами в бизнесе.</p>
+          <p>Если крипта связана с личными или рабочими задачами и нужен понятный порядок.</p>
           <div class="audience-card__media audience-card__media--business" aria-hidden="true"></div>
         </article>
         <article class="audience-card audience-card--teams audience-card--light">
           <h3>Командам и проектам</h3>
-          <p>Если важны роли, процессы и масштабируемая система безопасности без ручного хаоса.</p>
+          <p>Если важно безопасно распределить доступы, роли и процессы.</p>
           <div class="audience-card__media audience-card__media--teams" aria-hidden="true"></div>
         </article>
       </div>
     </section>
 
+    <section class="section section--light" id="fit">
+      <h2 class="section__title">Консультация подойдет, если вы хотите</h2>
+      <ul class="fit-list">
+        <li>безопасно хранить криптоактивы и не переживать из-за доступа;</li>
+        <li>понять, где у вас слабые места;</li>
+        <li>навести порядок в доступах и инструментах;</li>
+        <li>получить понятный план действий.</li>
+      </ul>
+    </section>
+
     <section class="section" id="diagnostics">
-      <!-- Компоновка как в макете: крупный заголовок слева и карточки-пункты справа. -->
+      <!-- Блок о предметном наполнении консультации: что именно можно разобрать. -->
       <div class="diagnostics-layout">
-        <h2 class="section__title diagnostics-layout__title">Что проверяем и что подготовить</h2>
+        <h2 class="section__title diagnostics-layout__title">Что можно обсудить на консультации</h2>
         <div class="diagnostics-grid">
           <article class="diagnostics-item">
             <span class="diagnostics-item__icon" aria-hidden="true">◌</span>
-            <p>Проверяем хранение активов и устойчивость схемы доступа.</p>
+            <p>Как сейчас организовано хранение активов.</p>
           </article>
           <article class="diagnostics-item">
             <span class="diagnostics-item__icon" aria-hidden="true">⌁</span>
-            <p>Фиксируем роли и права, чтобы исключить лишние риски.</p>
+            <p>Насколько безопасно настроены доступы.</p>
           </article>
           <article class="diagnostics-item">
             <span class="diagnostics-item__icon" aria-hidden="true">↻</span>
-            <p>Сверяем резервные сценарии и порядок восстановления.</p>
+            <p>Где есть лишние риски и уязвимости.</p>
           </article>
           <article class="diagnostics-item">
             <span class="diagnostics-item__icon" aria-hidden="true">≡</span>
-            <p>Подбираем инструменты по задачам без переплаты.</p>
+            <p>Что делать, если все уже устроено хаотично.</p>
           </article>
           <article class="diagnostics-item">
             <span class="diagnostics-item__icon" aria-hidden="true">▣</span>
-            <p>Заранее сформулируйте цели и ваш рабочий контекст.</p>
+            <p>Какие шаги помогут выстроить более надежную схему.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">⚠</span>
-            <p>Соберите ограничения, чтобы быстрее выйти на решение.</p>
-          </article>
-          <article class="diagnostics-item diagnostics-item--wide">
             <span class="diagnostics-item__icon" aria-hidden="true">⤴</span>
-            <p>Подготовьте текущую схему и список вопросов к разбору.</p>
+            <p>Даже если пока нет системы - это нормально. С этого часто и начинается работа.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section section--light" id="consult-form-section">
-      <h2 class="section__title">Форма записи</h2>
-      <p class="section__lead">Оставьте контакты и кратко опишите задачу. Мы предложим удобное время и формат консультации.</p>
+      <h2 class="section__title">Запишитесь на консультацию</h2>
+      <p class="section__lead">Оставьте контакты - свяжемся с вами, уточним задачу и предложим удобное время.</p>
 
       <?php if ($bitrixMode && $CONSULT_FORM_ID > 0): ?>
         <?php
@@ -262,10 +293,15 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
               <input type="tel" name="phone" placeholder="Телефон / Telegram" aria-label="Телефон / Telegram" required>
             </label>
           </div>
+          <label class="consult-form__consent">
+            <input type="checkbox" name="consent" required>
+            <span>Я согласен с <a href="/company/consent/" target="_blank" rel="noopener noreferrer">обработкой персональных данных</a></span>
+          </label>
           <button class="btn btn--primary btn--full btn--with-hex" type="submit">
             <span class="btn__label">Получить персональный план</span>
             <span class="btn__hex-icon" aria-hidden="true">↗</span>
           </button>
+          <p class="consult-form__microtext">Подходит и новичкам, и тем, кто уже пользуется криптой.</p>
           <p class="consult-form__result" data-form-result hidden></p>
         </form>
       <?php endif; ?>
@@ -275,51 +311,63 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
       <h2 class="section__title">Частые вопросы</h2>
       <div class="faq" data-faq>
         <article class="faq-item" data-faq-item>
-          <button class="faq-item__question" type="button" aria-expanded="true">
+          <button class="faq-item__question faq-question" type="button" aria-expanded="true">
             <span class="faq-item__head">
               <span class="faq-item__index">01</span>
               <span class="faq-item__title">Сколько длится консультация?</span>
             </span>
             <span class="faq-item__toggle" data-index="01" aria-hidden="true"></span>
           </button>
-          <div class="faq-item__answer">
-            <p>60 минут. По итогу вы получаете приоритетный план действий и рекомендации по инструментам.</p>
+          <div class="faq-item__answer faq-answer">
+            <p>Обычно 60 минут. Этого достаточно, чтобы понять вашу ситуацию, увидеть основные риски и определить следующие шаги.</p>
           </div>
         </article>
         <article class="faq-item" data-faq-item>
-          <button class="faq-item__question" type="button" aria-expanded="false">
+          <button class="faq-item__question faq-question" type="button" aria-expanded="false">
             <span class="faq-item__head">
               <span class="faq-item__index">02</span>
-              <span class="faq-item__title">Онлайн или офлайн?</span>
+              <span class="faq-item__title">Подходит ли это новичкам?</span>
             </span>
             <span class="faq-item__toggle" data-index="02" aria-hidden="true"></span>
           </button>
-          <div class="faq-item__answer" hidden>
-            <p>Базовый формат — онлайн-созвон. Офлайн встречи обсуждаются отдельно.</p>
+          <div class="faq-item__answer faq-answer" hidden>
+            <p>Да. Не нужно быть экспертом или глубоко разбираться в технических деталях. Мы объясняем все простым языком и подстраиваемся под ваш уровень.</p>
           </div>
         </article>
         <article class="faq-item" data-faq-item>
-          <button class="faq-item__question" type="button" aria-expanded="false">
+          <button class="faq-item__question faq-question" type="button" aria-expanded="false">
             <span class="faq-item__head">
               <span class="faq-item__index">03</span>
-              <span class="faq-item__title">Что вы получите по итогу?</span>
+              <span class="faq-item__title">Что я получу по итогам?</span>
             </span>
             <span class="faq-item__toggle" data-index="03" aria-hidden="true"></span>
           </button>
-          <div class="faq-item__answer" hidden>
-            <p>Персональный маршрут действий, список рисков и конкретные следующие шаги по вашей ситуации.</p>
+          <div class="faq-item__answer faq-answer" hidden>
+            <p>Вы получите разбор вашей ситуации, рекомендации и понятный план действий без лишней воды.</p>
           </div>
         </article>
         <article class="faq-item" data-faq-item>
-          <button class="faq-item__question" type="button" aria-expanded="false">
+          <button class="faq-item__question faq-question" type="button" aria-expanded="false">
             <span class="faq-item__head">
               <span class="faq-item__index">04</span>
-              <span class="faq-item__title">Можно ли после сессии сопровождение?</span>
+              <span class="faq-item__title">Есть ли смысл идти, если пока все хаотично?</span>
             </span>
             <span class="faq-item__toggle" data-index="04" aria-hidden="true"></span>
           </button>
-          <div class="faq-item__answer" hidden>
-            <p>Да, при необходимости подключаем формат сопровождения с отдельным графиком и SLA.</p>
+          <div class="faq-item__answer faq-answer" hidden>
+            <p>Да. Очень часто на консультацию приходят именно с этим запросом: ничего не сломано, но все непонятно и тревожно. Мы помогаем навести порядок.</p>
+          </div>
+        </article>
+        <article class="faq-item" data-faq-item>
+          <button class="faq-item__question faq-question" type="button" aria-expanded="false">
+            <span class="faq-item__head">
+              <span class="faq-item__index">05</span>
+              <span class="faq-item__title">Консультация проходит онлайн?</span>
+            </span>
+            <span class="faq-item__toggle" data-index="05" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__answer faq-answer" hidden>
+            <p>Да, консультация проходит онлайн.</p>
           </div>
         </article>
       </div>
@@ -328,56 +376,23 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="section section--pricing" id="pricing">
       <div class="pricing">
         <div class="pricing__main">
-          <h2 class="section__title section__title--white">Стоимость<br>и формат</h2>
-          <p class="pricing__description">Экспертная сессия — 60 минут онлайн.<br>Итог: персональный план внедрения, схема защиты активов и рекомендации по инструментам.<br>После сессии: возможность подключить сопровождение по отдельному тарифу.</p>
+          <h2 class="section__title section__title--white">Персональная консультация<br>по безопасной работе<br>с криптоактивами</h2>
+          <p class="pricing__description">60 минут предметного разбора для обычных пользователей, инвесторов, предпринимателей и команд.</p>
           <p class="pricing__price">от 4 900 ₽</p>
         </div>
         <div class="pricing__included">
-          <p class="pricing__label">Что входит в сессию</p>
+          <p class="pricing__label">Что входит</p>
           <ul class="pricing__list">
-            <li>Аудит текущего хранения активов</li>
-            <li>Персональный план защиты</li>
-            <li>Рекомендации по инструментам</li>
-            <li>Запись и материалы после сессии</li>
+            <li>Разбор вашей текущей ситуации</li>
+            <li>Выявление основных рисков</li>
+            <li>Практические рекомендации</li>
+            <li>Понятный план дальнейших действий</li>
           </ul>
         </div>
       </div>
 
     </section>
 
-    <section class="section section--metrics" id="metrics">
-      <div class="metrics-grid">
-        <article class="metric-item">
-          <strong>200+</strong>
-          <span>Сессий проведено</span>
-        </article>
-        <article class="metric-item">
-          <strong>98%</strong>
-          <span>Клиентов рекомендуют</span>
-        </article>
-        <article class="metric-item">
-          <strong>60 мин</strong>
-          <span>Чёткий результат за сессию</span>
-        </article>
-        <article class="metric-item">
-          <strong>NDA</strong>
-          <span>Конфиденциальность</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--cta" id="cta">
-      <h2 class="section__title section__title--white">Есть вопросы перед записью?</h2>
-      <p class="section__lead section__lead--white">Напишите или позвоните — разберём вашу ситуацию и подберём формат консультации.</p>
-      <div class="cta__actions">
-        <a class="btn btn--telegram btn--with-hex" href="https://t.me/cryptoro" target="_blank" rel="noopener noreferrer">
-          <span class="btn__label">Написать в Telegram</span>
-          <span class="btn__hex-icon" aria-hidden="true">↗</span>
-        </a>
-        <a class="btn btn--contact" href="tel:+74951918174">+7 495 191-81-74</a>
-        <a class="btn btn--contact" href="mailto:shop@cryptoro.ru">shop@cryptoro.ru</a>
-      </div>
-    </section>
   </div>
 </main>
 
