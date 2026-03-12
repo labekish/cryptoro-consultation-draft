@@ -51,6 +51,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Защита от глобальных Bitrix-правил вида word-break: break-all/break-word. */
+.consult-page h1,
+.consult-page h2,
+.consult-page h3,
+.consult-page p,
+.consult-page li,
+.consult-page span,
+.consult-page strong,
+.consult-page a,
+.consult-page button {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
 a {
   color: inherit;
 }
