@@ -1,2 +1,12 @@
 .DS_Store
 **/.DS_Store
+
+# Локальные временные артефакты согласования дизайна (не передаем в репозиторий).
+audience-grid*.png
+workflow-grid*.png
+pexels-*.jpg
+local_draft/consultation/_backup/
+local_draft/consultation/assets/images/_contact-sheet.jpg
+local_draft/consultation/assets/images/_tmp-*.png
+local_draft/consultation/assets/images/candidates/
+local_draft/consultation/assets/images/audience-*-photo-v[2-6].jpg
