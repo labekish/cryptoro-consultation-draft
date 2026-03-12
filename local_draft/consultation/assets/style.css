@@ -61,9 +61,10 @@ body {
 .consult-page strong,
 .consult-page a,
 .consult-page button {
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  line-break: auto;
 }
 
 a {
@@ -114,8 +115,11 @@ a {
   font-size: clamp(56px, 5.2vw, 106px);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  max-width: 14ch;
+  max-width: 16ch;
   font-weight: 500;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
 }
 
 .consult-page .hero__text {

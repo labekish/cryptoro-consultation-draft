@@ -52,7 +52,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="hero" id="top">
       <div class="hero__content">
         <p class="hero__label" aria-hidden="true"></p>
-        <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами за&nbsp;60 минут</h1>
+        <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами&nbsp;за&nbsp;60 минут</h1>
         <p class="hero__text">Персональная консультация для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд. Покажем риски, объясним всё простым языком и&nbsp;дадим понятный план действий.</p>
         <div class="hero__actions">
           <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
