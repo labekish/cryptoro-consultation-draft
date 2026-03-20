@@ -313,7 +313,7 @@ a {
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  background: #f3e2cf;
+  background: rgba(1, 205, 146, 0.12);
   color: #01cd92;
   font-size: 20px;
   line-height: 1;
@@ -871,7 +871,7 @@ a {
   width: 60px;
   height: 60px;
   border-radius: 999px;
-  background: #f3e2cf;
+  background: rgba(1, 205, 146, 0.12);
   color: #01cd92;
   display: inline-flex;
   align-items: center;
@@ -955,7 +955,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 999px;
-  background: #f3e2cf;
+  background: rgba(1, 205, 146, 0.12);
   color: #01cd92;
   display: inline-flex;
   align-items: center;
