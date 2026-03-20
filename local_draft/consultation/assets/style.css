@@ -1,8 +1,8 @@
 /* Точечный bridge из CRYPTORO template.css: берем только шрифты и базовую типографику. */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 :root {
   --font-family-main: 'Manrope', var(--font-family, var(--ui-font-family-system, sans-serif));
-  --font-family-heading: 'Manrope', var(--font3, 'Gilroy'), sans-serif;
+  --font-family-heading: var(--font3, 'Gilroy'), 'Manrope', sans-serif;
   --font-family-ui: var(--font5, 'Space Grotesk'), 'Manrope', sans-serif;
   --section-gap: 26px;
   --section-padding: 28px;
@@ -10,15 +10,15 @@
   --faq-line: var(--ui-color-base-20, #dfe4ed);
   --faq-text: var(--ui-color-base-default, #262e3e);
   --faq-muted: var(--ui-color-base-60, #959ca4);
-  --faq-open-accent: #f28b1a;
+  --faq-open-accent: #01cd92;
   --bg-main: #171b26;
   --bg-light: #f5f7fb;
   --line: #e1e6ef;
   --text-main: #111827;
   --text-muted: #586375;
   --text-light: #f5f7fb;
-  --accent: #f28b1a;
-  --accent-dark: #d36f00;
+  --accent: #01cd92;
+  --accent-dark: #009e74;
   --radius-xl: 30px;
   --radius-md: 14px;
   --shadow-soft: 0 6px 18px rgba(17, 24, 39, 0.08);
@@ -208,15 +208,15 @@ a {
 }
 
 .consult-page .btn--primary {
-  --btn-bg: #f4821c;
-  --btn-bg-hover: #ff9d45;
-  --btn-bg-active: #fd8d29;
+  --btn-bg: #01cd92;
+  --btn-bg-hover: #1ddea5;
+  --btn-bg-active: #00ba84;
   --btn-color: #ffffff;
   --btn-color-hover: #ffffff;
   --btn-color-active: #ffffff;
-  --btn-border: #f4821c;
-  --btn-border-hover: #ff9d45;
-  --btn-border-active: #fd8d29;
+  --btn-border: #01cd92;
+  --btn-border-hover: #1ddea5;
+  --btn-border-active: #00ba84;
   --btn-hex-bg: #ffffff;
   --btn-hex-fg: #272b37;
 }
@@ -225,12 +225,12 @@ a {
   --btn-bg: transparent;
   --btn-bg-hover: rgba(244, 130, 28, 0.08);
   --btn-bg-active: rgba(244, 130, 28, 0.14);
-  --btn-color: #f4821c;
-  --btn-color-hover: #ff9d45;
-  --btn-color-active: #fd8d29;
-  --btn-border: #f4821c;
-  --btn-border-hover: #ff9d45;
-  --btn-border-active: #fd8d29;
+  --btn-color: #01cd92;
+  --btn-color-hover: #1ddea5;
+  --btn-color-active: #00ba84;
+  --btn-border: #01cd92;
+  --btn-border-hover: #1ddea5;
+  --btn-border-active: #00ba84;
 }
 
 .consult-page .btn--full {
@@ -250,7 +250,7 @@ a {
 }
 
 .consult-page .section--pricing {
-  background: linear-gradient(120deg, #f28b1a 0%, #ef7d12 58%, #e96d00 100%);
+  background: linear-gradient(120deg, #01cd92 0%, #00ba84 58%, #009e74 100%);
   color: #ffffff;
 }
 
@@ -314,7 +314,7 @@ a {
   justify-content: center;
   margin-bottom: 12px;
   background: #f3e2cf;
-  color: #f28b1a;
+  color: #01cd92;
   font-size: 20px;
   line-height: 1;
   position: relative;
@@ -452,7 +452,7 @@ a {
 }
 
 .consult-page .benefit-focus__check {
-  color: #f28b1a;
+  color: #01cd92;
   font-size: 18px;
   line-height: 1;
   font-weight: 700;
@@ -460,7 +460,7 @@ a {
 }
 
 .consult-page .benefit-focus__inner {
-  border: 2px solid #f28b1a;
+  border: 2px solid #01cd92;
   border-radius: 28px;
   min-height: 168px;
   display: flex;
@@ -561,7 +561,7 @@ a {
   height: auto;
   border-radius: 0;
   background: transparent;
-  color: #f28b1a;
+  color: #01cd92;
   font-size: clamp(22px, 1.6vw, 32px);
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -644,9 +644,9 @@ a {
 }
 
 .consult-page .step-card__calendar-days span.is-active {
-  background: #f28b1a;
+  background: #01cd92;
   color: #ffffff;
-  border-color: #f28b1a;
+  border-color: #01cd92;
 }
 
 .consult-page .step-card__booking {
@@ -663,7 +663,7 @@ a {
 .consult-page .step-card__booking-status {
   min-height: 36px;
   border-radius: 10px;
-  background: #f28b1a;
+  background: #01cd92;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -782,8 +782,8 @@ a {
 }
 
 .consult-page .audience-card--business {
-  background: #f28b1a;
-  border-color: #f28b1a;
+  background: #01cd92;
+  border-color: #01cd92;
 }
 
 .consult-page .audience-card--teams {
@@ -872,7 +872,7 @@ a {
   height: 60px;
   border-radius: 999px;
   background: #f3e2cf;
-  color: #f28b1a;
+  color: #01cd92;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -956,7 +956,7 @@ a {
   height: 56px;
   border-radius: 999px;
   background: #f3e2cf;
-  color: #f28b1a;
+  color: #01cd92;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1148,17 +1148,17 @@ a {
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
-  accent-color: #f28b1a;
+  accent-color: #01cd92;
 }
 
 .consult-page .consult-form__consent a {
-  color: #d36f00;
+  color: #009e74;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .consult-page .consult-form__consent a:hover {
-  color: #f28b1a;
+  color: #01cd92;
 }
 
 .consult-page .consult-form__consent input[type='checkbox']:focus-visible {
