@@ -52,7 +52,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="hero" id="top">
       <div class="hero__content">
         <p class="hero__label" aria-hidden="true"></p>
-        <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами&nbsp;за&nbsp;60 минут</h1>
+        <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами за&nbsp;60 минут</h1>
         <p class="hero__text">Персональная консультация для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд. Покажем риски, объясним всё простым языком и&nbsp;дадим понятный план действий.</p>
         <div class="hero__actions">
           <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
@@ -65,16 +65,16 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="section section--metrics" id="metrics">
       <div class="metrics-grid">
         <article class="metric-item">
+          <strong>60 мин</strong>
+          <span>Предметная консультация</span>
+        </article>
+        <article class="metric-item">
+          <strong>Формат</strong>
+          <span>Онлайн или офлайн</span>
+        </article>
+        <article class="metric-item">
           <strong>Разбор</strong>
           <span>Персональный подход</span>
-        </article>
-        <article class="metric-item">
-          <strong>Практика</strong>
-          <span>Рекомендации по&nbsp;делу</span>
-        </article>
-        <article class="metric-item">
-          <strong>60 мин</strong>
-          <span>Консультация по&nbsp;делу</span>
         </article>
         <article class="metric-item">
           <strong>NDA</strong>
@@ -91,12 +91,12 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
       <div class="benefits-layout">
         <div class="benefits-layout__col">
           <article class="benefit-side">
-            <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true">⌂</span>
+            <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true"></span>
             <h3>Поймете свою текущую ситуацию</h3>
             <p>Увидите, что уже работает нормально, а&nbsp;где нужна корректировка.</p>
           </article>
           <article class="benefit-side">
-            <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true">◌</span>
+            <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true"></span>
             <h3>Увидите основные риски</h3>
             <p>Определим, что важно закрыть в&nbsp;первую очередь.</p>
           </article>
@@ -104,19 +104,24 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
 
         <article class="benefit-focus">
           <h3>Итог<br>сессии</h3>
-          <div class="benefit-focus__inner">
-            Понятный план действий<br>под вашу ситуацию
+          <div class="benefit-focus__photo" aria-hidden="true"></div>
+          <div class="benefit-focus__art">
+            <div class="benefit-focus__checklist">
+              <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>Анализ вашей ситуации</span></div>
+              <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>Выявленные риски</span></div>
+              <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>План действий</span></div>
+            </div>
           </div>
         </article>
 
         <div class="benefits-layout__col">
           <article class="benefit-side">
-            <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true">⌁</span>
+            <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true"></span>
             <h3>Получите рекомендации по&nbsp;делу</h3>
             <p>Сфокусируемся на&nbsp;шагах, которые можно внедрить сразу.</p>
           </article>
           <article class="benefit-side">
-            <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true">◍</span>
+            <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true"></span>
             <h3>Уйдете с&nbsp;планом действий</h3>
             <p>Закрепим последовательность шагов на ближайший период.</p>
           </article>
@@ -135,7 +140,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
         <article class="step-card step-card--with-media">
           <span class="step-card__index">02</span>
           <h3>Выбираете удобное время</h3>
-          <p>Согласовываем формат и&nbsp;слот для онлайн-встречи.</p>
+          <p>Согласовываем формат и&nbsp;слот для встречи онлайн или офлайн.</p>
           <div class="step-card__calendar" aria-hidden="true">
             <div class="step-card__calendar-head">
               <span>‹</span>
@@ -180,71 +185,87 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
       </div>
     </section>
 
-    <section class="section section--light" id="audience">
-      <h2 class="section__title">Это важно не только для бизнеса и&nbsp;инвесторов</h2>
-      <p class="section__lead">Консультация подходит всем, кто уже пользуется криптой или&nbsp;только хочет навести в&nbsp;ней порядок без ошибок и&nbsp;хаоса.</p>
-      <div class="audience-grid">
-        <article class="audience-card audience-card--regular audience-card--light">
-          <h3>Обычным пользователям</h3>
-          <p>Если хотите хранить крипту спокойнее и&nbsp;не бояться ошибок или&nbsp;потери доступа.</p>
-          <div class="audience-card__media audience-card__media--regular" aria-hidden="true"></div>
+    <section class="section section--light" id="prep">
+      <h2 class="section__title">Что важно знать до встречи</h2>
+      <p class="section__lead">Никакой сложной подготовки. Мы подскажем, что полезно заранее продумать, и&nbsp;не будем перегружать вас техническими деталями.</p>
+      <div class="prep-grid">
+        <article class="prep-card">
+          <span class="prep-card__icon prep-card__icon--format" aria-hidden="true"></span>
+          <h3>Можно онлайн или&nbsp;офлайн</h3>
+          <p>Подберём формат встречи под вашу задачу и&nbsp;удобный для вас сценарий.</p>
         </article>
-        <article class="audience-card audience-card--investor">
-          <h3>Частным инвесторам</h3>
-          <p>Если хотите снизить риски и&nbsp;навести порядок в&nbsp;хранении активов.</p>
-          <div class="audience-card__media audience-card__media--investor" aria-hidden="true"></div>
+        <article class="prep-card">
+          <span class="prep-card__icon prep-card__icon--learn" aria-hidden="true"></span>
+          <h3>Не нужны глубокие знания</h3>
+          <p>Объясняем всё простым языком и&nbsp;подстраиваемся под ваш уровень.</p>
         </article>
-        <article class="audience-card audience-card--business">
-          <h3>Предпринимателям</h3>
-          <p>Если крипта связана с&nbsp;личными или&nbsp;рабочими задачами и&nbsp;нужен понятный порядок.</p>
-          <div class="audience-card__media audience-card__media--business" aria-hidden="true"></div>
-        </article>
-        <article class="audience-card audience-card--teams audience-card--light">
-          <h3>Командам и&nbsp;проектам</h3>
-          <p>Если важно безопасно распределить доступы, роли и&nbsp;процессы.</p>
-          <div class="audience-card__media audience-card__media--teams" aria-hidden="true"></div>
+        <article class="prep-card">
+          <span class="prep-card__icon prep-card__icon--privacy" aria-hidden="true"></span>
+          <h3>Не запрашиваем секретные данные</h3>
+          <p>Seed-фразы, приватные ключи и&nbsp;коды доступа не&nbsp;нужно передавать.</p>
         </article>
       </div>
     </section>
 
-    <section class="section section--light" id="fit">
-      <h2 class="section__title">Консультация подойдет, если вы хотите</h2>
-      <ul class="fit-list">
-        <li>безопасно хранить криптоактивы и&nbsp;не переживать из-за доступа;</li>
-        <li>понять, где у&nbsp;вас слабые места;</li>
-        <li>навести порядок в&nbsp;доступах и&nbsp;инструментах;</li>
-        <li>получить понятный план действий.</li>
-      </ul>
+    <section class="section section--light" id="session-scenes">
+      <h2 class="section__title">Как выглядит консультация на практике</h2>
+      <p class="section__lead">Спокойный рабочий формат: разбираем вашу ситуацию, фиксируем риски и&nbsp;сразу переводим разговор в&nbsp;понятные следующие шаги.</p>
+      <div class="scene-grid">
+        <article class="scene-card scene-card--analysis">
+          <div class="scene-card__media scene-card__media--analysis" aria-hidden="true"></div>
+          <div class="scene-card__body">
+            <h3>Разбираем вашу текущую схему</h3>
+            <p>Смотрим, как сейчас устроены хранение, доступы и&nbsp;рабочие привычки.</p>
+          </div>
+        </article>
+        <article class="scene-card scene-card--personal">
+          <div class="scene-card__media scene-card__media--personal" aria-hidden="true"></div>
+          <div class="scene-card__body">
+            <h3>Подстраиваемся под ваш контекст</h3>
+            <p>Личный сценарий, инвестиции или рабочие задачи&nbsp;— говорим именно о&nbsp;вашем кейсе.</p>
+          </div>
+        </article>
+        <article class="scene-card scene-card--team">
+          <div class="scene-card__media scene-card__media--team" aria-hidden="true"></div>
+          <div class="scene-card__body">
+            <h3>Фиксируем роли, риски и&nbsp;шаги</h3>
+            <p>Если в&nbsp;процессе участвует команда, отдельно смотрим доступы, роли и&nbsp;контроль.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="diagnostics">
-      <!-- Блок о предметном наполнении консультации: что именно можно разобрать. -->
+      <!-- Единый блок вместо двух похожих секций: и про запросы пользователя, и про предмет консультации. -->
       <div class="diagnostics-layout">
-        <h2 class="section__title diagnostics-layout__title">Что можно обсудить на&nbsp;консультации</h2>
+        <div class="diagnostics-layout__intro">
+          <h2 class="section__title diagnostics-layout__title">Что можно разобрать на&nbsp;консультации</h2>
+          <p class="section__lead diagnostics-layout__lead">Поможем навести порядок, понять риски и&nbsp;определить следующие шаги.</p>
+        </div>
         <div class="diagnostics-grid">
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">◌</span>
+            <span class="diagnostics-item__icon diagnostics-item__icon--storage" aria-hidden="true"></span>
             <p>Как сейчас организовано хранение активов.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">⌁</span>
+            <span class="diagnostics-item__icon diagnostics-item__icon--access" aria-hidden="true"></span>
             <p>Насколько безопасно настроены доступы.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">↻</span>
+            <span class="diagnostics-item__icon diagnostics-item__icon--risk" aria-hidden="true"></span>
             <p>Где есть лишние риски и&nbsp;уязвимости.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">≡</span>
+            <span class="diagnostics-item__icon diagnostics-item__icon--chaos" aria-hidden="true"></span>
             <p>Что делать, если всё уже устроено хаотично.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">▣</span>
+            <span class="diagnostics-item__icon diagnostics-item__icon--steps" aria-hidden="true"></span>
             <p>Какие шаги помогут выстроить более надежную схему.</p>
           </article>
           <article class="diagnostics-item">
-            <span class="diagnostics-item__icon" aria-hidden="true">⤴</span>
-            <p>Даже если пока нет системы&nbsp;— это нормально. С&nbsp;этого часто и&nbsp;начинается работа.</p>
+            <span class="diagnostics-item__icon diagnostics-item__icon--start" aria-hidden="true"></span>
+            <p>С чего начать, если пока нет системы.</p>
           </article>
         </div>
       </div>

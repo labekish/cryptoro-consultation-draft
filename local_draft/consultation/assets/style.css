@@ -140,8 +140,11 @@ a {
   min-height: 100%;
   border-radius: 22px;
   border: 2px solid rgba(255, 255, 255, 0.42);
-  /* Hero: используем фото №1, сдвиг к верхней части для читаемого фокуса. */
-  background: url('./images/hero-photo-v2.jpg') center 24% / cover no-repeat;
+  background-color: transparent;
+  background-image: url('./images/pexels-mikhail-nilov-7681365.jpg');
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   overflow: hidden;
 }
@@ -150,7 +153,7 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 50%);
+  background: none;
 }
 
 .consult-page .btn {
@@ -284,7 +287,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1.1fr 1fr;
   gap: 18px;
-  align-items: stretch;
+  align-items: center;
 }
 
 .consult-page .benefits-layout__col {
@@ -314,6 +317,41 @@ a {
   color: #f28b1a;
   font-size: 20px;
   line-height: 1;
+  position: relative;
+}
+
+.consult-page .benefit-side__icon::before {
+  content: '';
+  width: 26px;
+  height: 26px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* Иконки в блоке "Что вы получите": понятные символы вместо условных декоративных знаков. */
+.consult-page .benefit-side__icon--lock::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z'/%3E%3Cpath d='m9.2 12.2 1.9 1.9 3.8-4.1'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z'/%3E%3Cpath d='m9.2 12.2 1.9 1.9 3.8-4.1'/%3E%3C/svg%3E");
+}
+
+.consult-page .benefit-side__icon--user::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3Cpath d='m10.3 3.6-7 12.1A2 2 0 0 0 5 18.7h14a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3Cpath d='m10.3 3.6-7 12.1A2 2 0 0 0 5 18.7h14a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z'/%3E%3C/svg%3E");
+}
+
+.consult-page .benefit-side__icon--box::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='4' width='14' height='16' rx='2'/%3E%3Cpath d='M9 9h6'/%3E%3Cpath d='M9 13h6'/%3E%3Cpath d='M9 17h3.5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='4' width='14' height='16' rx='2'/%3E%3Cpath d='M9 9h6'/%3E%3Cpath d='M9 13h6'/%3E%3Cpath d='M9 17h3.5'/%3E%3C/svg%3E");
+}
+
+.consult-page .benefit-side__icon--gear::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 18c2.2-2.5 4.5-4.1 6.9-4.8 1.8-.5 3.7-.6 5.6-.1'/%3E%3Cpath d='M13.5 7.5h6v6'/%3E%3Cpath d='m19.5 7.5-7.2 7.2'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 18c2.2-2.5 4.5-4.1 6.9-4.8 1.8-.5 3.7-.6 5.6-.1'/%3E%3Cpath d='M13.5 7.5h6v6'/%3E%3Cpath d='m19.5 7.5-7.2 7.2'/%3E%3C/svg%3E");
 }
 
 .consult-page .benefit-side h3 {
@@ -333,39 +371,116 @@ a {
 }
 
 .consult-page .benefit-focus {
-  background: #222a40;
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #25304a 0%, #222a40 100%);
   border-radius: 24px;
-  padding: 20px 16px;
+  padding: 22px 18px 18px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 430px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 18px 36px rgba(9, 14, 24, 0.12);
+}
+
+.consult-page .benefit-focus__photo {
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  background-image: url('./images/pexels-gustavo-fring-6285265.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  flex-shrink: 0;
+}
+
+.consult-page .benefit-focus::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 112px;
+  height: 112px;
+  background: radial-gradient(circle at 50% 48%, rgba(242, 139, 26, 0.08) 0%, rgba(242, 139, 26, 0) 62%);
+  pointer-events: none;
 }
 
 .consult-page .benefit-focus h3 {
   margin: 0;
   font-family: var(--font-family-heading);
   text-align: center;
-  font-size: clamp(36px, 2.35vw, 54px);
-  line-height: 1.02;
+  font-size: clamp(30px, 1.9vw, 44px);
+  line-height: 1.06;
   letter-spacing: -0.02em;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.consult-page .benefit-focus__art {
+  width: 100%;
+  max-width: 320px;
+  min-height: 104px;
+  margin: 0 auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consult-page .benefit-focus__checklist {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.consult-page .benefit-focus__checklist-item {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(16px, 1vw, 20px);
+  line-height: 1.25;
+}
+
+.consult-page .benefit-focus__check {
+  color: #f28b1a;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  transform: translateY(1px);
 }
 
 .consult-page .benefit-focus__inner {
-  border: 3px solid #f28b1a;
+  border: 2px solid #f28b1a;
   border-radius: 28px;
-  min-height: 210px;
+  min-height: 168px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: var(--font-family-heading);
-  font-size: clamp(24px, 1.6vw, 34px);
-  line-height: 1.18;
+  font-size: clamp(20px, 1.3vw, 28px);
+  line-height: 1.16;
   color: #f1f5ff;
-  padding: 16px;
+  padding: 18px 22px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  margin-top: auto;
+}
+
+.consult-page .benefit-focus__inner span {
+  display: block;
 }
 
 .consult-page .step-card__index {
@@ -707,39 +822,7 @@ a {
   background-position: center 42%;
 }
 
-.consult-page #fit .section__title {
-  font-size: clamp(46px, 3.05vw, 68px);
-  line-height: 1.04;
-}
-
-.consult-page .fit-list {
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-.consult-page .fit-list li {
-  position: relative;
-  padding-left: 18px;
-  color: #495568;
-  font-size: clamp(17px, 1.03vw, 22px);
-  line-height: 1.32;
-}
-
-.consult-page .fit-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.62em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-/* Блок "Что проверяем и что подготовить" — как в макете: заголовок слева, карточки справа. */
+/* Блок "Что можно разобрать на консультации": заголовок и лид слева, карточки справа. */
 .consult-page .diagnostics-layout {
   display: grid;
   grid-template-columns: minmax(300px, 390px) minmax(820px, 1240px);
@@ -748,11 +831,22 @@ a {
   justify-content: space-between;
 }
 
+.consult-page .diagnostics-layout__intro {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
 .consult-page .diagnostics-layout__title {
   font-size: clamp(50px, 3.05vw, 76px);
   line-height: 1.04;
   letter-spacing: -0.02em;
   max-width: 100%;
+}
+
+.consult-page .diagnostics-layout__lead {
+  margin: 0;
+  max-width: 22ch;
 }
 
 .consult-page .diagnostics-grid {
@@ -784,6 +878,50 @@ a {
   justify-content: center;
   font-size: 20px;
   line-height: 1;
+  position: relative;
+}
+
+.consult-page .diagnostics-item__icon::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.consult-page .diagnostics-item__icon--storage::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='6' width='16' height='12' rx='2'/%3E%3Cpath d='M8 10h8'/%3E%3Cpath d='M8 14h5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='6' width='16' height='12' rx='2'/%3E%3Cpath d='M8 10h8'/%3E%3Cpath d='M8 14h5'/%3E%3C/svg%3E");
+}
+
+.consult-page .diagnostics-item__icon--access::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z'/%3E%3Cpath d='m9.2 12.2 1.9 1.9 3.8-4.1'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z'/%3E%3Cpath d='m9.2 12.2 1.9 1.9 3.8-4.1'/%3E%3C/svg%3E");
+}
+
+.consult-page .diagnostics-item__icon--risk::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3Cpath d='m10.3 3.6-7 12.1A2 2 0 0 0 5 18.7h14a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3Cpath d='m10.3 3.6-7 12.1A2 2 0 0 0 5 18.7h14a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z'/%3E%3C/svg%3E");
+}
+
+.consult-page .diagnostics-item__icon--chaos::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h9'/%3E%3Cpath d='M4 12h16'/%3E%3Cpath d='M4 17h11'/%3E%3Ccircle cx='16' cy='7' r='2'/%3E%3Ccircle cx='9' cy='17' r='2'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h9'/%3E%3Cpath d='M4 12h16'/%3E%3Cpath d='M4 17h11'/%3E%3Ccircle cx='16' cy='7' r='2'/%3E%3Ccircle cx='9' cy='17' r='2'/%3E%3C/svg%3E");
+}
+
+.consult-page .diagnostics-item__icon--steps::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 18h4v-4h5v-4h5'/%3E%3Cpath d='M15 6h4v4'/%3E%3Cpath d='m19 6-6 6'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 18h4v-4h5v-4h5'/%3E%3Cpath d='M15 6h4v4'/%3E%3Cpath d='m19 6-6 6'/%3E%3C/svg%3E");
+}
+
+.consult-page .diagnostics-item__icon--start::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='17' r='2.5'/%3E%3Cpath d='M9.5 17h4.5a4 4 0 0 0 4-4V7'/%3E%3Cpath d='M15 10l3-3 3 3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='17' r='2.5'/%3E%3Cpath d='M9.5 17h4.5a4 4 0 0 0 4-4V7'/%3E%3Cpath d='M15 10l3-3 3 3'/%3E%3C/svg%3E");
 }
 
 .consult-page .diagnostics-item p {
@@ -793,6 +931,144 @@ a {
   line-height: 1.28;
   color: #2f3748;
   font-weight: 500;
+}
+
+.consult-page .prep-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.consult-page .prep-card {
+  min-height: 182px;
+  border-radius: 20px;
+  border: 1px solid #dfe4ed;
+  background: #ffffff;
+  padding: 18px 18px 20px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.consult-page .prep-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #f3e2cf;
+  color: #f28b1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+}
+
+.consult-page .prep-card__icon::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.consult-page .prep-card__icon--format::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5.5' width='16' height='14' rx='2.5'/%3E%3Cpath d='M8 3.8v3.4M16 3.8v3.4M4 9.5h16'/%3E%3Cpath d='m9.4 14.1 1.7 1.7 3.8-3.8'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5.5' width='16' height='14' rx='2.5'/%3E%3Cpath d='M8 3.8v3.4M16 3.8v3.4M4 9.5h16'/%3E%3Cpath d='m9.4 14.1 1.7 1.7 3.8-3.8'/%3E%3C/svg%3E");
+}
+
+.consult-page .prep-card__icon--learn::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v5A2.5 2.5 0 0 1 15.5 15H11l-3.6 3v-3H8.5A2.5 2.5 0 0 1 6 12.5v-5Z'/%3E%3Cpath d='M10 9.5h4M10 12h2.5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v5A2.5 2.5 0 0 1 15.5 15H11l-3.6 3v-3H8.5A2.5 2.5 0 0 1 6 12.5v-5Z'/%3E%3Cpath d='M10 9.5h4M10 12h2.5'/%3E%3C/svg%3E");
+}
+
+.consult-page .prep-card__icon--privacy::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.8 18 6v5.2c0 4-2.3 7-6 9-3.7-2-6-5-6-9V6l6-2.2Z'/%3E%3Cpath d='M9.7 11.6a2.3 2.3 0 1 1 4.6 0v.7M12 13.5v1.9'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.8 18 6v5.2c0 4-2.3 7-6 9-3.7-2-6-5-6-9V6l6-2.2Z'/%3E%3Cpath d='M9.7 11.6a2.3 2.3 0 1 1 4.6 0v.7M12 13.5v1.9'/%3E%3C/svg%3E");
+}
+
+.consult-page .prep-card h3 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(24px, 1.45vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #273043;
+}
+
+.consult-page .prep-card p {
+  margin: 0;
+  font-size: clamp(15px, 0.96vw, 18px);
+  line-height: 1.35;
+  color: #596476;
+}
+
+.consult-page .scene-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.consult-page .scene-card {
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid #dfe4ed;
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-rows: 248px auto;
+}
+
+.consult-page .scene-card__media {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.consult-page .scene-card__media--analysis {
+  background-image: url('./images/audience-investor-photo-v7.jpg');
+  background-position: center 42%;
+}
+
+.consult-page .scene-card__media--personal {
+  background-image: url('./images/audience-business-photo-v7.jpg');
+  background-position: center 38%;
+}
+
+.consult-page .scene-card__media--team {
+  background-image: url('./images/audience-team-photo-v7.jpg');
+  background-position: center 46%;
+}
+
+.consult-page .scene-card__body {
+  padding: 16px 18px 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.consult-page .scene-card__body h3 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(24px, 1.45vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #273043;
+}
+
+.consult-page .scene-card__body p {
+  margin: 0;
+  font-size: clamp(15px, 0.94vw, 18px);
+  line-height: 1.35;
+  color: #5a6577;
 }
 
 .consult-page .consult-form {
@@ -1329,6 +1605,16 @@ a {
 
   .consult-page .benefit-focus {
     min-height: 360px;
+    gap: 16px;
+  }
+
+  .consult-page .benefit-focus__art {
+    max-width: 280px;
+    min-height: 96px;
+  }
+
+  .consult-page .benefit-focus__checklist-item {
+    font-size: 16px;
   }
 
   .consult-page .audience-grid,
@@ -1341,14 +1627,6 @@ a {
   }
 
   .consult-page #audience .section__lead {
-    font-size: 16px;
-  }
-
-  .consult-page #fit .section__title {
-    font-size: clamp(34px, 5.4vw, 56px);
-  }
-
-  .consult-page .fit-list li {
     font-size: 16px;
   }
 
@@ -1780,20 +2058,6 @@ a {
     font-size: 14px;
   }
 
-  .consult-page #fit .section__title {
-    font-size: clamp(30px, 8.4vw, 42px);
-  }
-
-  .consult-page .fit-list {
-    margin-top: 12px;
-    gap: 8px;
-  }
-
-  .consult-page .fit-list li {
-    font-size: 14px;
-    padding-left: 14px;
-  }
-
   .consult-page .audience-card {
     min-height: 0;
     padding: 14px;
@@ -2095,15 +2359,6 @@ a {
   border-radius: 16px 16px 0 0;
 }
 
-.consult-page #fit .section__title {
-  font-size: clamp(36px, 2.8vw, 58px);
-}
-
-.consult-page .fit-list li {
-  font-size: clamp(17px, 1vw, 21px);
-  line-height: 1.34;
-}
-
 .consult-page .diagnostics-layout {
   grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
   gap: 16px;
@@ -2204,7 +2459,10 @@ a {
 }
 
 .consult-page .pricing__label {
-  font-size: clamp(14px, 0.9vw, 18px);
+  font-size: clamp(18px, 1.08vw, 24px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 244, 231, 0.96);
 }
 
 .consult-page .pricing__price {
@@ -2249,7 +2507,6 @@ a {
   .consult-page .section__title,
   .consult-page #workflow .section__title,
   .consult-page #audience .section__title,
-  .consult-page #fit .section__title,
   .consult-page .diagnostics-layout__title,
   .consult-page #consult-form-section .section__title,
   .consult-page #faq .section__title {
@@ -2301,8 +2558,17 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .consult-page .prep-grid,
+  .consult-page .scene-grid {
+    grid-template-columns: 1fr;
+  }
+
   .consult-page .diagnostics-item p {
     font-size: clamp(17px, 2vw, 21px);
+  }
+
+  .consult-page .scene-card {
+    grid-template-rows: 220px auto;
   }
 
   .consult-page .faq-item__question {
@@ -2400,10 +2666,6 @@ a {
     height: 136px;
   }
 
-  .consult-page .fit-list li {
-    font-size: 14px;
-  }
-
   .consult-page .diagnostics-item {
     min-height: 108px;
     padding: 12px;
@@ -2416,6 +2678,42 @@ a {
   .consult-page .consult-form__field input {
     min-height: 52px;
     font-size: 18px;
+  }
+
+  .consult-page .prep-card,
+  .consult-page .scene-card {
+    border-radius: 16px;
+  }
+
+  .consult-page .prep-card {
+    min-height: 0;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .consult-page .prep-card__icon {
+    width: 44px;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .consult-page .prep-card h3,
+  .consult-page .scene-card__body h3 {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .consult-page .prep-card p,
+  .consult-page .scene-card__body p {
+    font-size: 14px;
+  }
+
+  .consult-page .scene-card {
+    grid-template-rows: 180px auto;
+  }
+
+  .consult-page .scene-card__body {
+    padding: 12px 14px 14px;
   }
 
   .consult-page .consult-form .btn--full {
@@ -2470,73 +2768,456 @@ a {
   }
 }
 
-/* Секция "Консультация подойдет...": делаем композицию как у соседних блоков (заголовок + карточки). */
-.consult-page #fit {
-  display: grid;
-  grid-template-columns: minmax(320px, 560px) minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
-}
+/* --------------------------------------------------------------------------
+   Финальная мобильная полировка.
+   Держим эти правила в самом конце файла, чтобы они перебивали старые
+   адаптивные блоки и давали предсказуемое поведение на телефонах.
+   -------------------------------------------------------------------------- */
+@media (max-width: 740px) {
+  .consult-page {
+    overflow-x: hidden;
+  }
 
-.consult-page #fit .section__title {
-  margin: 0;
-  max-width: 11ch;
-}
-
-.consult-page #fit .fit-list {
-  margin: 0;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.consult-page #fit .fit-list li {
-  min-height: 96px;
-  display: flex;
-  align-items: center;
-  padding: 16px 18px 16px 40px;
-  border: 1px solid #dfe4ed;
-  border-radius: 16px;
-  background: #f7f9fc;
-}
-
-.consult-page #fit .fit-list li::before {
-  left: 18px;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  transform: translateY(-50%);
-}
-
-@media (max-width: 1024px) {
-  .consult-page #fit {
-    grid-template-columns: 1fr;
+  .consult-page .container {
+    width: calc(100% - 20px);
     gap: 14px;
   }
 
-  .consult-page #fit .section__title {
+  .consult-page .hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .consult-page .hero__title {
+    max-width: 10.8ch;
+    font-size: clamp(28px, 9.1vw, 38px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
+  }
+
+  .consult-page .hero__text {
+    margin: 10px 0 14px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.36;
+  }
+
+  .consult-page .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .consult-page .hero .btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 16px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .consult-page .hero__media {
+    min-height: 228px;
+    border-radius: 14px;
+    background-position: center 72%;
+    background-size: auto 92%;
+  }
+
+  .consult-page .section {
+    padding: 14px;
+  }
+
+  .consult-page .section__title,
+  .consult-page #workflow .section__title,
+  .consult-page #audience .section__title,
+  .consult-page .diagnostics-layout__title,
+  .consult-page #consult-form-section .section__title,
+  .consult-page #faq .section__title,
+  .consult-page .section--pricing .section__title {
+    font-size: clamp(28px, 8.3vw, 36px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .consult-page .section__lead,
+  .consult-page #audience .section__lead,
+  .consult-page #consult-form-section .section__lead,
+  .consult-page .diagnostics-layout__lead {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.38;
     max-width: 100%;
   }
 
-  .consult-page #fit .fit-list {
+  .consult-page .metrics-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
   }
-}
 
-@media (max-width: 740px) {
-  .consult-page #fit .fit-list {
+  .consult-page .metric-item {
+    min-height: 88px;
+    padding: 12px 10px;
+    gap: 4px;
+  }
+
+  .consult-page .metric-item strong {
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .consult-page .metric-item span {
+    font-size: 12px;
+    line-height: 1.24;
+  }
+
+  .consult-page .benefits-layout {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .consult-page .benefits-layout__col {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 
-  .consult-page #fit .fit-list li {
-    min-height: 0;
-    padding: 12px 12px 12px 34px;
-    border-radius: 12px;
+  .consult-page .benefit-side {
+    padding: 14px 12px;
+    border-radius: 14px;
+    border: 1px solid #dee4ee;
   }
 
-  .consult-page #fit .fit-list li::before {
-    left: 14px;
+  .consult-page .benefit-side__icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .consult-page .benefit-side h3 {
+    margin-bottom: 6px;
+    font-size: 24px;
+    line-height: 1.08;
+  }
+
+  .consult-page .benefit-side p {
+    font-size: 14px;
+    line-height: 1.34;
+  }
+
+  .consult-page .benefit-focus {
+    min-height: 220px;
+    border-radius: 16px;
+    padding: 14px 12px;
+    gap: 12px;
+  }
+
+  .consult-page .benefit-focus h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .consult-page .benefit-focus__art {
+    max-width: 100%;
+    min-height: 86px;
+    margin-top: 0;
+  }
+
+  .consult-page .benefit-focus__checklist {
+    gap: 8px;
+  }
+
+  .consult-page .benefit-focus__checklist-item {
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.22;
+  }
+
+  .consult-page .benefit-focus__check {
+    font-size: 16px;
+  }
+
+  .consult-page .benefit-focus__pulse {
     width: 7px;
     height: 7px;
+  }
+
+  .consult-page .benefit-focus__pulse--left {
+    left: 28px;
+    top: 46px;
+  }
+
+  .consult-page .benefit-focus__pulse--left::before {
+    left: -5px;
+    top: 3px;
+    width: 16px;
+  }
+
+  .consult-page .benefit-focus__pulse--left::after {
+    left: 3px;
+    top: -5px;
+    height: 16px;
+  }
+
+  .consult-page .benefit-focus__pulse--right {
+    right: 26px;
+    top: 30px;
+  }
+
+  .consult-page .benefit-focus__pulse--right::before {
+    left: -4px;
+    top: 3px;
+    width: 14px;
+  }
+
+  .consult-page .benefit-focus__pulse--right::after {
+    left: 3px;
+    top: -4px;
+    height: 14px;
+  }
+
+  .consult-page .benefit-focus__inner {
+    min-height: 110px;
+    border-width: 2px;
+    border-radius: 16px;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .consult-page .steps-grid,
+  .consult-page .audience-grid,
+  .consult-page .diagnostics-grid,
+  .consult-page .consult-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .consult-page #workflow .step-card {
+    min-height: 0;
+    padding: 42px 14px 14px;
+  }
+
+  .consult-page #workflow .step-card__index {
+    top: 14px;
+    left: 14px;
+    font-size: 22px;
+  }
+
+  .consult-page #workflow .step-card h3 {
+    font-size: 24px;
+    line-height: 1.08;
+  }
+
+  .consult-page #workflow .step-card p {
+    font-size: 14px;
+    line-height: 1.34;
+  }
+
+  .consult-page .step-card__calendar,
+  .consult-page .step-card__booking {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .consult-page .step-card__calendar-head strong {
+    font-size: 14px;
+  }
+
+  .consult-page .step-card__calendar-week span,
+  .consult-page .step-card__calendar-days span,
+  .consult-page .step-card__booking-row span,
+  .consult-page .step-card__booking-note {
+    font-size: 11px;
+  }
+
+  .consult-page .step-card__calendar-days span {
+    height: 46px;
+  }
+
+  .consult-page .audience-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    min-height: 0;
+    gap: 10px;
+    padding: 14px 14px 0;
+    border-radius: 16px;
+  }
+
+  .consult-page .audience-card h3 {
+    font-size: 24px;
+    line-height: 1.08;
+  }
+
+  .consult-page .audience-card p {
+    font-size: 14px;
+    line-height: 1.34;
+  }
+
+  .consult-page .audience-card__media {
+    margin-top: 0;
+    height: 170px;
+    min-height: 170px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .consult-page .diagnostics-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .consult-page .diagnostics-item {
+    min-height: 104px;
+    padding: 12px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+
+  .consult-page .diagnostics-item__icon {
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .consult-page .diagnostics-item p {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .consult-page .prep-grid,
+  .consult-page .scene-grid {
+    margin-top: 14px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .consult-page .prep-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .consult-page .prep-card__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .consult-page .prep-card h3,
+  .consult-page .scene-card__body h3 {
+    font-size: 20px;
+  }
+
+  .consult-page .prep-card p,
+  .consult-page .scene-card__body p {
+    font-size: 14px;
+    line-height: 1.34;
+  }
+
+  .consult-page .scene-card {
+    border-radius: 14px;
+    grid-template-rows: 170px auto;
+  }
+
+  .consult-page .scene-card__body {
+    padding: 12px;
+  }
+
+  .consult-page .consult-form {
+    margin-top: 14px;
+  }
+
+  .consult-page .consult-form__chips {
+    margin-bottom: 10px;
+  }
+
+  .consult-page .consult-form__chip {
+    min-height: 28px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .consult-page .consult-form__field input {
+    min-height: 50px;
+    padding: 0 14px;
+    font-size: 17px;
+  }
+
+  .consult-page .consult-form .btn--full {
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  .consult-page .consult-form__microtext,
+  .consult-page .consult-form__consent {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .consult-page .faq-item__question {
+    padding: 14px 12px;
+  }
+
+  .consult-page .faq-item__head {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .consult-page .faq-item__title {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .consult-page .faq-item__answer {
+    padding: 0 12px 0 44px;
+  }
+
+  .consult-page .faq-item.is-open .faq-item__answer {
+    max-height: 320px;
+    padding-bottom: 14px;
+  }
+
+  .consult-page .faq-item__answer p {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .consult-page .pricing {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .consult-page .pricing__description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.36;
+  }
+
+  .consult-page .pricing__label {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .consult-page .pricing__list {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .consult-page .pricing__list li {
+    padding-left: 20px;
+  }
+
+  .consult-page .pricing__list li::before {
+    width: 7px;
+    height: 7px;
+  }
+
+  .consult-page .pricing__price {
+    margin-top: 12px;
+    min-height: 48px;
+    padding: 0 18px;
+    font-size: 28px;
   }
 }
