@@ -4,7 +4,7 @@
 # Локальные временные артефакты согласования дизайна (не передаем в репозиторий).
 audience-grid*.png
 workflow-grid*.png
-pexels-*.jpg
+pexels-*-candidates.jpg
 local_draft/consultation/_backup/
 local_draft/consultation/assets/images/_contact-sheet.jpg
 local_draft/consultation/assets/images/_tmp-*.png
