@@ -50,43 +50,27 @@
         <h2 class="section__title">Что вы получите после консультации</h2>
         <p class="section__lead">Без сложных терминов и&nbsp;лишней теории.</p>
         <!-- Компоновка оставлена прежней: две боковые колонки + центральный фокус-блок. -->
-        <div class="benefits-layout">
-          <div class="benefits-layout__col">
-            <article class="benefit-side">
-              <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true"></span>
-              <h3>Поймете свою текущую ситуацию</h3>
-              <p>Увидите, что уже работает нормально, а&nbsp;где нужна корректировка.</p>
-            </article>
-            <article class="benefit-side">
-              <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true"></span>
-              <h3>Увидите основные риски</h3>
-              <p>Определим, что важно закрыть в&nbsp;первую очередь.</p>
-            </article>
-          </div>
-
-          <article class="benefit-focus">
-            <h3>Итог<br>сессии</h3>
-            <div class="benefit-focus__art">
-              <div class="benefit-focus__checklist">
-                <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>Анализ вашей ситуации</span></div>
-                <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>Выявленные риски</span></div>
-                <div class="benefit-focus__checklist-item"><span class="benefit-focus__check">✓</span><span>План действий</span></div>
-              </div>
-            </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true"></span>
+            <h3>Поймете свою текущую ситуацию</h3>
+            <p>Увидите, что уже работает нормально, а&nbsp;где нужна корректировка.</p>
           </article>
-
-          <div class="benefits-layout__col">
-            <article class="benefit-side">
-              <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true"></span>
-              <h3>Получите рекомендации по&nbsp;делу</h3>
-              <p>Сфокусируемся на&nbsp;шагах, которые можно внедрить сразу.</p>
-            </article>
-            <article class="benefit-side">
-              <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true"></span>
-              <h3>Уйдете с&nbsp;планом действий</h3>
-              <p>Закрепим последовательность шагов на ближайший период.</p>
-            </article>
-          </div>
+          <article class="benefit-card">
+            <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true"></span>
+            <h3>Увидите основные риски</h3>
+            <p>Определим, что важно закрыть в&nbsp;первую очередь.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true"></span>
+            <h3>Получите рекомендации по&nbsp;делу</h3>
+            <p>Сфокусируемся на&nbsp;шагах, которые можно внедрить сразу.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true"></span>
+            <h3>Уйдете с&nbsp;планом действий</h3>
+            <p>Закрепим последовательность шагов на ближайший период.</p>
+          </article>
         </div>
       </section>
 
@@ -232,6 +216,37 @@
         </div>
       </section>
 
+      <section class="section section--team" id="team">
+        <h2 class="section__title">Кто проводит&nbsp;консультации</h2>
+        <p class="section__lead">Практикующие специалисты с&nbsp;опытом в&nbsp;безопасности криптоактивов.</p>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-card__photo">
+              <img src="./assets/images/cons1.png" alt="Александр" loading="lazy" width="200" height="200">
+            </div>
+            <p class="team-card__name">Александр</p>
+          </article>
+          <article class="team-card">
+            <div class="team-card__photo">
+              <img src="./assets/images/cons2.png" alt="Виталий" loading="lazy" width="200" height="200">
+            </div>
+            <p class="team-card__name">Виталий</p>
+          </article>
+          <article class="team-card">
+            <div class="team-card__photo">
+              <img src="./assets/images/cons3.png" alt="Анатолий" loading="lazy" width="200" height="200">
+            </div>
+            <p class="team-card__name">Анатолий</p>
+          </article>
+          <article class="team-card">
+            <div class="team-card__photo">
+              <img src="./assets/images/cons4.png" alt="Максим" loading="lazy" width="200" height="200">
+            </div>
+            <p class="team-card__name">Максим</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section section--light" id="consult-form-section">
         <h2 class="section__title">Запишитесь на&nbsp;консультацию</h2>
         <p class="section__lead">Оставьте контакты&nbsp;— свяжемся с&nbsp;вами, уточним задачу и&nbsp;предложим удобное время.</p>
@@ -239,6 +254,7 @@
         <!-- Статическая форма для локального предпросмотра -->
         <form class="consult-form consult-form--mock" id="consult-form" novalidate>
           <div class="consult-form__chips" aria-hidden="true">
+            <span class="consult-form__chip">от&nbsp;2&nbsp;630&nbsp;₽</span>
             <span class="consult-form__chip">Ответ в&nbsp;течение 15 минут</span>
             <span class="consult-form__chip">Конфиденциально</span>
           </div>
@@ -326,25 +342,6 @@
               <p>Да, консультация проходит онлайн.</p>
             </div>
           </article>
-        </div>
-      </section>
-
-      <section class="section section--pricing" id="pricing">
-        <div class="pricing">
-          <div class="pricing__main">
-            <h2 class="section__title section__title--white">Персональная консультация<br>по безопасной работе<br>с криптоактивами</h2>
-            <p class="pricing__description">60 минут предметного разбора для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд.</p>
-            <p class="pricing__price">от 4 900 ₽</p>
-          </div>
-          <div class="pricing__included">
-            <p class="pricing__label">Что входит</p>
-            <ul class="pricing__list">
-              <li>Разбор вашей текущей ситуации</li>
-              <li>Выявление основных рисков</li>
-              <li>Практические рекомендации</li>
-              <li>Понятный план дальнейших действий</li>
-            </ul>
-          </div>
         </div>
       </section>
 

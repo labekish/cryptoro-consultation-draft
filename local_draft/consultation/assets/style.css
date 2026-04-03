@@ -1,5 +1,6 @@
-/* Точечный bridge из CRYPTORO template.css: берем только шрифты и базовую типографику. */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+/* Точечный bridge из CRYPTORO template.css: берем только шрифты и базовую типографику.
+   Шрифты Manrope/Gilroy/Space Grotesk загружаются из /local/templates/cryptoro/fonts/fonts.css.
+   Доступные веса: Manrope 400,500 · Gilroy 400,500 · Space Grotesk — variable (все). */
 :root {
   --font-family-main: 'Manrope', var(--font-family, var(--ui-font-family-system, sans-serif));
   --font-family-heading: var(--font3, 'Gilroy'), 'Manrope', sans-serif;
@@ -282,6 +283,39 @@ a {
   text-wrap: pretty;
 }
 
+.consult-page .benefits-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.consult-page .benefit-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consult-page .benefit-card h3 {
+  margin: 0;
+  font-family: var(--font-family-main);
+  font-size: clamp(17px, 1.1vw, 22px);
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.consult-page .benefit-card p {
+  margin: 0;
+  font-size: clamp(14px, 0.9vw, 17px);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 .consult-page .benefits-layout {
   margin-top: 18px;
   display: grid;
@@ -455,7 +489,7 @@ a {
   color: #01cd92;
   font-size: 18px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 500;
   transform: translateY(1px);
 }
 
@@ -491,7 +525,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 500;
   background: rgba(242, 139, 26, 0.15);
   color: #b55d00;
 }
@@ -612,7 +646,7 @@ a {
 
 .consult-page .step-card__calendar-head strong {
   justify-self: center;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .consult-page .step-card__calendar-week {
@@ -669,7 +703,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .consult-page .step-card__booking-row {
@@ -700,7 +734,7 @@ a {
   justify-content: center;
   width: 110px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .consult-page .step-card__booking-note {
@@ -747,7 +781,7 @@ a {
   font-size: clamp(24px, 1.45vw, 34px);
   line-height: 1.12;
   letter-spacing: -0.01em;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
 }
 
@@ -999,7 +1033,7 @@ a {
   font-size: clamp(24px, 1.45vw, 34px);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 500;
   color: #273043;
 }
 
@@ -1060,7 +1094,7 @@ a {
   font-size: clamp(24px, 1.45vw, 34px);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 500;
   color: #273043;
 }
 
@@ -1097,7 +1131,7 @@ a {
   background: #eaedf3;
   color: #565f6f;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
 }
@@ -1171,7 +1205,7 @@ a {
   min-height: 88px;
   border-radius: 30px;
   font-size: clamp(28px, 1.55vw, 38px);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .consult-page .btn--with-hex {
@@ -1532,6 +1566,67 @@ a {
   color: #4c5770;
 }
 
+.consult-page .section--team {
+  background: linear-gradient(115deg, #1b2130 0%, #28324a 55%, #1a2030 100%);
+  color: #ffffff;
+}
+
+.consult-page .section--team .section__title {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.consult-page .section--team .section__lead {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.consult-page .team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 40px);
+  margin-top: 10px;
+}
+
+.consult-page .team-card {
+  position: relative;
+}
+
+.consult-page .team-card__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.consult-page .team-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.consult-page .team-card:first-child .team-card__photo img {
+  transform: scale(1.25);
+  transform-origin: 50% 20%;
+}
+
+.consult-page .team-card__name {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  margin: 0;
+  font-family: var(--font-family-main);
+  font-size: clamp(13px, 0.85vw, 16px);
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 5px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.01em;
+  z-index: 1;
+}
+
 @media (max-width: 1024px) {
   .consult-page {
     padding-top: 14px;
@@ -1552,6 +1647,10 @@ a {
   .consult-page .hero__media {
     min-height: 340px;
     border-radius: 18px;
+  }
+
+  .consult-page .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .consult-page .benefits-layout,
@@ -1793,6 +1892,11 @@ a {
     height: 46px;
     flex-basis: 42px;
     border-radius: 6px;
+  }
+
+  .consult-page .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 }
 
@@ -2465,7 +2569,7 @@ a {
 
 .consult-page .pricing__label {
   font-size: clamp(18px, 1.08vw, 24px);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
   color: rgba(255, 244, 231, 0.96);
 }
