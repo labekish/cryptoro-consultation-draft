@@ -92,26 +92,42 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     <section class="section section--light" id="benefits">
       <h2 class="section__title">Что вы получите после консультации</h2>
       <p class="section__lead">Без сложных терминов и&nbsp;лишней теории.</p>
-      <div class="benefits-grid">
-        <article class="benefit-card">
-          <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true"></span>
-          <h3>Поймете свою текущую ситуацию</h3>
-          <p>Увидите, что уже работает нормально, а&nbsp;где нужна корректировка.</p>
+      <div class="benefits-grid benefits-grid--photo">
+        <article class="benefit-card benefit-card--photo">
+          <div class="benefit-card__photo">
+            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/benefit-1-situation.jpg" alt="" loading="lazy" width="240" height="240">
+          </div>
+          <div class="benefit-card__body">
+            <h3>Поймете свою текущую ситуацию</h3>
+            <p>Увидите, что уже работает нормально, а&nbsp;где нужна корректировка.</p>
+          </div>
         </article>
-        <article class="benefit-card">
-          <span class="benefit-side__icon benefit-side__icon--user" aria-hidden="true"></span>
-          <h3>Увидите основные риски</h3>
-          <p>Определим, что важно закрыть в&nbsp;первую очередь.</p>
+        <article class="benefit-card benefit-card--photo">
+          <div class="benefit-card__photo">
+            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/benefit-2-risks.jpg" alt="" loading="lazy" width="240" height="240">
+          </div>
+          <div class="benefit-card__body">
+            <h3>Увидите основные риски</h3>
+            <p>Определим, что важно закрыть в&nbsp;первую очередь.</p>
+          </div>
         </article>
-        <article class="benefit-card">
-          <span class="benefit-side__icon benefit-side__icon--box" aria-hidden="true"></span>
-          <h3>Получите рекомендации по&nbsp;делу</h3>
-          <p>Сфокусируемся на&nbsp;шагах, которые можно внедрить сразу.</p>
+        <article class="benefit-card benefit-card--photo">
+          <div class="benefit-card__photo">
+            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/benefit-3-recommendations.jpg" alt="" loading="lazy" width="240" height="240">
+          </div>
+          <div class="benefit-card__body">
+            <h3>Получите рекомендации по&nbsp;делу</h3>
+            <p>Сфокусируемся на&nbsp;шагах, которые можно внедрить сразу.</p>
+          </div>
         </article>
-        <article class="benefit-card">
-          <span class="benefit-side__icon benefit-side__icon--gear" aria-hidden="true"></span>
-          <h3>Уйдете с&nbsp;планом действий</h3>
-          <p>Закрепим последовательность шагов на ближайший период.</p>
+        <article class="benefit-card benefit-card--photo">
+          <div class="benefit-card__photo">
+            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/benefit-4-plan.jpg" alt="" loading="lazy" width="240" height="240">
+          </div>
+          <div class="benefit-card__body">
+            <h3>Уйдете с&nbsp;планом действий</h3>
+            <p>Закрепим последовательность шагов на ближайший период.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -334,7 +350,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
           </div>
           <label class="consult-form__consent">
             <input type="checkbox" name="consent" required>
-            <span>Я согласен с&nbsp;<a href="/company/consent/" target="_blank" rel="noopener noreferrer">обработкой персональных данных</a></span>
+            <span>Я согласен с&nbsp;<a href="<?= htmlspecialchars($PRIVACY_URL, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">обработкой персональных данных</a></span>
           </label>
           <button class="btn btn--primary btn--full btn--with-hex" type="submit">
             <span class="btn__label">Получить персональный план</span>
