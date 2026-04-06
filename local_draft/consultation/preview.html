@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-  <!-- Локальный статический предпросмотр без PHP/Bitrix -->
+  <!-- Локальный статический предпросмотр без PHP/Bitrix. Сгенерирован из index.php. -->
   <main class="consult-page" data-page-slug="/consultation/">
     <div class="container">
       <section class="hero" id="top">
@@ -17,8 +17,13 @@
           <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами за&nbsp;60 минут</h1>
           <p class="hero__text">Персональная консультация для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд. Покажем риски, объясним всё простым языком и&nbsp;дадим понятный план действий.</p>
           <div class="hero__actions">
-            <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
-            <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Выбрать время консультации</button>
+            <button class="btn btn--ghost" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
+            <button class="btn btn--cart" type="button" data-add-to-cart
+              data-product-id="consult-60"
+              data-product-title="Персональная консультация (60 минут)"
+              data-product-price="5250">
+              <span class="btn__cart-label">Купить за&nbsp;5&nbsp;250&nbsp;₽</span>
+            </button>
           </div>
         </div>
         <div class="hero__media" aria-hidden="true"></div>
@@ -49,7 +54,6 @@
       <section class="section section--light" id="benefits">
         <h2 class="section__title">Что вы получите после консультации</h2>
         <p class="section__lead">Без сложных терминов и&nbsp;лишней теории.</p>
-        <!-- Компоновка оставлена прежней: две боковые колонки + центральный фокус-блок. -->
         <div class="benefits-grid">
           <article class="benefit-card">
             <span class="benefit-side__icon benefit-side__icon--lock" aria-hidden="true"></span>
@@ -217,30 +221,30 @@
       </section>
 
       <section class="section section--team" id="team">
-        <h2 class="section__title">Кто проводит&nbsp;консультации</h2>
+        <h2 class="section__title">Кто&nbsp;проводит консультации</h2>
         <p class="section__lead">Практикующие специалисты с&nbsp;опытом в&nbsp;безопасности криптоактивов.</p>
         <div class="team-grid">
           <article class="team-card">
             <div class="team-card__photo">
-              <img src="./assets/images/cons1.png" alt="Александр" loading="lazy" width="200" height="200">
+              <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/cons1.png" alt="Александр" loading="lazy" width="200" height="200">
             </div>
             <p class="team-card__name">Александр</p>
           </article>
           <article class="team-card">
             <div class="team-card__photo">
-              <img src="./assets/images/cons2.png" alt="Виталий" loading="lazy" width="200" height="200">
+              <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/cons2.png" alt="Виталий" loading="lazy" width="200" height="200">
             </div>
             <p class="team-card__name">Виталий</p>
           </article>
           <article class="team-card">
             <div class="team-card__photo">
-              <img src="./assets/images/cons3.png" alt="Анатолий" loading="lazy" width="200" height="200">
+              <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/cons3.png" alt="Анатолий" loading="lazy" width="200" height="200">
             </div>
             <p class="team-card__name">Анатолий</p>
           </article>
           <article class="team-card">
             <div class="team-card__photo">
-              <img src="./assets/images/cons4.png" alt="Максим" loading="lazy" width="200" height="200">
+              <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES) ?>/images/cons4.png" alt="Максим" loading="lazy" width="200" height="200">
             </div>
             <p class="team-card__name">Максим</p>
           </article>
@@ -251,32 +255,57 @@
         <h2 class="section__title">Запишитесь на&nbsp;консультацию</h2>
         <p class="section__lead">Оставьте контакты&nbsp;— свяжемся с&nbsp;вами, уточним задачу и&nbsp;предложим удобное время.</p>
 
-        <!-- Статическая форма для локального предпросмотра -->
-        <form class="consult-form consult-form--mock" id="consult-form" novalidate>
-          <div class="consult-form__chips" aria-hidden="true">
-            <span class="consult-form__chip">от&nbsp;2&nbsp;630&nbsp;₽</span>
-            <span class="consult-form__chip">Ответ в&nbsp;течение 15 минут</span>
-            <span class="consult-form__chip">Конфиденциально</span>
-          </div>
-          <div class="consult-form__row">
-            <label class="consult-form__field">
-              <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+        <?php if ($bitrixMode && $CONSULT_FORM_ID > 0): ?>
+          <?php
+          // Подключение штатной веб-формы Bitrix. WEB_FORM_ID берется из переменной $CONSULT_FORM_ID.
+          $APPLICATION->IncludeComponent(
+              'bitrix:form.result.new',
+              '',
+              array(
+                  'WEB_FORM_ID' => (string)$CONSULT_FORM_ID,
+                  'IGNORE_CUSTOM_TEMPLATE' => 'N',
+                  'USE_EXTENDED_ERRORS' => 'N',
+                  'CACHE_TYPE' => 'A',
+                  'CACHE_TIME' => '3600',
+                  'SEF_MODE' => 'N',
+                  'LIST_URL' => '',
+                  'EDIT_URL' => '',
+                  'SUCCESS_URL' => '',
+                  'CHAIN_ITEM_TEXT' => '',
+                  'CHAIN_ITEM_LINK' => '',
+                  'VARIABLE_ALIASES' => array(
+                      'WEB_FORM_ID' => 'WEB_FORM_ID',
+                      'RESULT_ID' => 'RESULT_ID',
+                  ),
+              )
+          );
+          ?>
+        <?php else: ?>
+          <form class="consult-form consult-form--mock" id="consult-form" novalidate>
+            <div class="consult-form__chips" aria-hidden="true">
+              <span class="consult-form__chip">Ответ в&nbsp;течение 15 минут</span>
+              <span class="consult-form__chip">Конфиденциально</span>
+            </div>
+            <div class="consult-form__row">
+              <label class="consult-form__field">
+                <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+              </label>
+              <label class="consult-form__field">
+                <input type="tel" name="phone" placeholder="Телефон / Telegram" aria-label="Телефон / Telegram" required>
+              </label>
+            </div>
+            <label class="consult-form__consent">
+              <input type="checkbox" name="consent" required>
+              <span>Я согласен с&nbsp;<a href="/company/consent/" target="_blank" rel="noopener noreferrer">обработкой персональных данных</a></span>
             </label>
-            <label class="consult-form__field">
-              <input type="tel" name="phone" placeholder="Телефон / Telegram" aria-label="Телефон / Telegram" required>
-            </label>
-          </div>
-          <label class="consult-form__consent">
-            <input type="checkbox" name="consent" required>
-            <span>Я согласен с&nbsp;<a href="/company/consent/" target="_blank" rel="noopener noreferrer">обработкой персональных данных</a></span>
-          </label>
-          <button class="btn btn--primary btn--full btn--with-hex" type="submit">
-            <span class="btn__label">Получить персональный план</span>
-            <span class="btn__hex-icon" aria-hidden="true">↗</span>
-          </button>
-          <p class="consult-form__microtext">Подходит и&nbsp;новичкам, и&nbsp;тем, кто уже пользуется криптой.</p>
-          <p class="consult-form__result" data-form-result hidden></p>
-        </form>
+            <button class="btn btn--primary btn--full btn--with-hex" type="submit">
+              <span class="btn__label">Получить персональный план</span>
+              <span class="btn__hex-icon" aria-hidden="true">↗</span>
+            </button>
+            <p class="consult-form__microtext">Подходит и&nbsp;новичкам, и&nbsp;тем, кто уже пользуется криптой.</p>
+            <p class="consult-form__result" data-form-result hidden></p>
+          </form>
+        <?php endif; ?>
       </section>
 
       <section class="section" id="faq">

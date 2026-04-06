@@ -238,6 +238,78 @@ a {
   width: 100%;
 }
 
+.consult-page .btn--cart {
+  --btn-bg: #6ee2a8;
+  --btn-bg-hover: #5fd99c;
+  --btn-bg-active: #4fcc8e;
+  --btn-color: #0f1a2b;
+  --btn-color-hover: #0f1a2b;
+  --btn-color-active: #0f1a2b;
+  --btn-border: #6ee2a8;
+  --btn-border-hover: #5fd99c;
+  --btn-border-active: #4fcc8e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.consult-page .btn--cart.is-added {
+  --btn-bg: #4fcc8e;
+  --btn-bg-hover: #4fcc8e;
+  --btn-color: #0f1a2b;
+  --btn-color-hover: #0f1a2b;
+  --btn-border: #4fcc8e;
+  --btn-border-hover: #4fcc8e;
+}
+
+.consult-page .btn--cart.is-added {
+  --btn-bg: #01cd92;
+  --btn-bg-hover: #1ddea5;
+  --btn-color: #ffffff;
+  --btn-color-hover: #ffffff;
+  --btn-border: #01cd92;
+  --btn-border-hover: #1ddea5;
+}
+
+.consult-page .btn__cart-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='20' r='1.4'/%3E%3Ccircle cx='17' cy='20' r='1.4'/%3E%3Cpath d='M3 4h2.2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5l1.6-6.3H6.2'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='20' r='1.4'/%3E%3Ccircle cx='17' cy='20' r='1.4'/%3E%3Cpath d='M3 4h2.2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5l1.6-6.3H6.2'/%3E%3C/svg%3E");
+}
+
+.consult-page .cart-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #272b37;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.consult-page .cart-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .consult-page .section {
   background: #ffffff;
   border-radius: var(--radius-xl);
@@ -284,26 +356,38 @@ a {
 }
 
 .consult-page .benefits-grid {
-  margin-top: 18px;
+  margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
 }
 
 .consult-page .benefit-card {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 28px 22px;
+  padding: 44px 40px 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+  min-height: 240px;
+}
+
+.consult-page .benefit-card .benefit-side__icon {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 6px;
+}
+
+.consult-page .benefit-card .benefit-side__icon::before {
+  width: 36px;
+  height: 36px;
 }
 
 .consult-page .benefit-card h3 {
   margin: 0;
-  font-family: var(--font-family-main);
-  font-size: clamp(17px, 1.1vw, 22px);
+  font-family: var(--font-family-heading);
+  font-size: clamp(22px, 1.6vw, 30px);
   font-weight: 500;
   color: var(--text-main);
   line-height: 1.2;
@@ -311,9 +395,9 @@ a {
 
 .consult-page .benefit-card p {
   margin: 0;
-  font-size: clamp(14px, 0.9vw, 17px);
+  font-size: clamp(16px, 1.05vw, 19px);
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .consult-page .benefits-layout {
@@ -1576,6 +1660,14 @@ a {
   white-space: nowrap;
 }
 
+@media (max-width: 720px) {
+  .consult-page .section--team .section__title {
+    white-space: normal;
+    font-size: clamp(34px, 9vw, 56px);
+    line-height: 1.05;
+  }
+}
+
 .consult-page .section--team .section__lead {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1650,7 +1742,13 @@ a {
   }
 
   .consult-page .benefits-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .consult-page .benefit-card {
+    padding: 32px 24px;
+    min-height: 0;
   }
 
   .consult-page .benefits-layout,
@@ -2732,7 +2830,13 @@ a {
   }
 
   .consult-page .hero__media {
-    min-height: 220px;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-position: 55% 35%;
+    background-size: 210% auto;
+    border-radius: 18px;
+    border: 0;
   }
 
   .consult-page .section__lead {
@@ -2928,10 +3032,13 @@ a {
   }
 
   .consult-page .hero__media {
-    min-height: 228px;
-    border-radius: 14px;
-    background-position: center 72%;
-    background-size: auto 92%;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 0;
+    border-radius: 24px;
+    background-position: 55% 35%;
+    background-size: 210% auto;
   }
 
   .consult-page .section {

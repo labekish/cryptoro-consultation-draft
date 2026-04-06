@@ -183,6 +183,80 @@
     initSmoothScroll();
     initFaqAccordion();
     initMockForm();
+    initAddToCart();
     fixWidows();
   });
+
+  // Заглушка корзины: складываем выбранную услугу в localStorage и показываем тост.
+  // Когда появится бэкенд (WooCommerce/Bitrix), заменим тело обработчика на реальный запрос.
+  function initAddToCart() {
+    var buttons = document.querySelectorAll('[data-add-to-cart]');
+    if (!buttons.length) {
+      return;
+    }
+
+    var STORAGE_KEY = 'cryptoro_cart_draft';
+
+    function readCart() {
+      try {
+        var raw = window.localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function writeCart(items) {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      } catch (e) {}
+    }
+
+    function showToast(message) {
+      var toast = document.querySelector('.cart-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'cart-toast';
+        document.querySelector('.consult-page').appendChild(toast);
+      }
+      toast.textContent = message;
+      // reflow для повторной анимации
+      void toast.offsetWidth;
+      toast.classList.add('is-visible');
+      clearTimeout(toast._hideTimer);
+      toast._hideTimer = setTimeout(function () {
+        toast.classList.remove('is-visible');
+      }, 2400);
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-product-id') || 'unknown';
+        var title = btn.getAttribute('data-product-title') || 'Услуга';
+        var price = parseFloat(btn.getAttribute('data-product-price') || '0') || 0;
+
+        var cart = readCart();
+        var existing = null;
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].id === id) { existing = cart[i]; break; }
+        }
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id: id, title: title, price: price, qty: 1 });
+        }
+        writeCart(cart);
+
+        btn.classList.add('is-added');
+        var label = btn.querySelector('.btn__cart-label');
+        if (label) { label.textContent = 'Добавлено'; }
+        showToast('«' + title + '» добавлена в корзину');
+
+        setTimeout(function () {
+          btn.classList.remove('is-added');
+          if (label) { label.textContent = 'В корзину'; }
+        }, 2400);
+      });
+    });
+  }
 })();

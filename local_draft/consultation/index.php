@@ -55,8 +55,13 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
         <h1 class="hero__title">Поможем безопасно разобраться с&nbsp;криптоактивами за&nbsp;60 минут</h1>
         <p class="hero__text">Персональная консультация для обычных пользователей, инвесторов, предпринимателей и&nbsp;команд. Покажем риски, объясним всё простым языком и&nbsp;дадим понятный план действий.</p>
         <div class="hero__actions">
-          <button class="btn btn--primary" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
-          <button class="btn btn--ghost" type="button" data-scroll-to="#workflow">Выбрать время консультации</button>
+          <button class="btn btn--ghost" type="button" data-scroll-to="#consult-form-section">Получить персональный план</button>
+          <button class="btn btn--cart" type="button" data-add-to-cart
+            data-product-id="consult-60"
+            data-product-title="Персональная консультация (60 минут)"
+            data-product-price="5250">
+            <span class="btn__cart-label">Купить за&nbsp;5&nbsp;250&nbsp;₽</span>
+          </button>
         </div>
       </div>
       <div class="hero__media" aria-hidden="true"></div>
@@ -254,7 +259,7 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
     </section>
 
     <section class="section section--team" id="team">
-      <h2 class="section__title">Кто проводит&nbsp;консультации</h2>
+      <h2 class="section__title">Кто&nbsp;проводит консультации</h2>
       <p class="section__lead">Практикующие специалисты с&nbsp;опытом в&nbsp;безопасности криптоактивов.</p>
       <div class="team-grid">
         <article class="team-card">
@@ -316,7 +321,6 @@ if (defined('B_PROLOG_INCLUDED') && B_PROLOG_INCLUDED === true && isset($APPLICA
       <?php else: ?>
         <form class="consult-form consult-form--mock" id="consult-form" novalidate>
           <div class="consult-form__chips" aria-hidden="true">
-            <span class="consult-form__chip">от&nbsp;2&nbsp;630&nbsp;₽</span>
             <span class="consult-form__chip">Ответ в&nbsp;течение 15 минут</span>
             <span class="consult-form__chip">Конфиденциально</span>
           </div>
